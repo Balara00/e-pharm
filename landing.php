@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <?php include('connection.php');
 
@@ -77,3 +78,4 @@
 </body>
 
 </html>
+>>>>>>> origin
