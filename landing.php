@@ -1,54 +1,81 @@
-<?php
 
-include_once "pdo.php";
-session_start();
-if(!isset($_SESSION["username"]))
-{
- header("location:login.php");
-}
-//if (isset($_POST['button'])) {
-  //header("Location:login.php");
-//}
-
-$stmt = $pdo->prepare("SELECT * FROM customer where customerID = :xyz");
-$stmt->execute(array(":xyz" => $_GET['customerID']));
-$row = $stmt->fetch(PDO::FETCH_ASSOC);
-if ( $row === false ) {
-  $_SESSION['error'] = 'customer id is missing';
-  header( 'Location: login.php' ) ;
-  return;
-}
+<!DOCTYPE html>
+<?php include('connection.php');
 
 ?>
+<html lang="en">
 
-<html><head></head>
+<head>
+    <link rel="stylesheet" href="stylesLanding.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
 <body>
-<?php
-if ( isset($_SESSION['error']) ) {
-echo '<p style="color:red">'.$_SESSION['error']."</p>\n";
-unset($_SESSION['error']);
-}
-if ( isset($_SESSION['success']) ) {
-echo '<p style="color:green">'.$_SESSION['success']."</p>\n";
-unset($_SESSION['success']);
-}
-echo('<table border="1">'."\n");
-echo "<tr><td>";
-echo(htmlentities($row['name']));
-echo("</td><td>");
-echo(htmlentities($row['username']));
-echo("</td><td>");
-echo(htmlentities($row['password']));
-//echo("</td><td>");
-//echo('<a href="edit.php?user_id='.$row['user_id'].'">Edit</a> / ');
-//echo('<a href="delete.php?user_id='. $row['user_id'].'">Delete</a>');
-//echo("\n</form>\n");
-echo("</td></tr>\n");
-?>
-</table>
-<div class="container box">
-   <h3 align="center">Welcome - <?php echo $_SESSION["username"]; ?></h3>
-   <br />
-   <p><a href="logout.php">Logout</a></p>
-</div>
-<!--<button type="submit" name="button">Log Out</button>-->
+    <img class="back" src="background.svg">
+    <div class="sub">
+
+        <div class="navlanding">
+
+            <a href="cart.php"><img class="imgs bask" src="basket.svg"></a>
+
+            <button name="addPrescription" id="addPres" class="butn pres" type="submit">Add Prescription</button>
+
+            <script type="text/javascript">
+                document.getElementById("addPres").onclick = function() {
+                    location.href = "www.addPrescription.php";
+                };
+            </script>
+
+            <a href="logout.php"><img class="imgs logo" src="logo.svg"></a>
+
+            <button name="logOut" id="logout" class="butn log" type="submit">Logout</button>
+            <script type="text/javascript">
+                document.getElementById("logout").onclick = function() {
+                    location.href = "www.yoursite.com";
+                };
+            </script>
+
+
+        </div>
+        <header>E-Pharm</header>
+
+        <img class="two" src="2.png">
+        <img class="one" src="1.png">
+
+        <form id="Form" name="searchForm" action="results.php" method="get">
+            <div class="wrap">
+                <div class="search">
+
+                    <input id="searchTerm" name="search" type="text" class="searchTerm" placeholder="What are you looking for?">
+                    <button name="find" type="submit" class="searchButton">Find</button>
+
+
+                </div>
+            </div>
+            <select name="area" class="area">
+                <option value="Area">Area</option>
+                <option value="colombo">Colombo</option>
+                <option value="Kuliyapitiya">Kuliyapitiya</option>
+            </select>
+        </form>
+        <script>
+            const form = document.getElementById('Form');
+            form.addEventListener('submit', (e) => {
+                if (document.getElementById("searchTerm").value.length == 0) {
+                    e.preventDefault();
+                }
+
+            });
+        </script>
+
+    </div>
+    </nav>
+</body>
+
+</html>
+>>>>>>> origin
