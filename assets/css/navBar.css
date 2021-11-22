@@ -1,0 +1,51 @@
+.navbar_ePharm {
+    /* padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 1%; */
+    height: 73px;
+
+    /* background-color: lightsalmon; */
+    background-color: #EBEBEB;
+
+}
+
+.cartIcon {
+    height: 40px;
+    width: 40px;
+
+    position: absolute;
+    left: 500px;
+    top: 20px;
+}
+
+.userIcon {
+    height: 40px;
+    width: 31.37px;
+
+    position: absolute;
+    left: 750px;
+    top: 20px;
+
+}
+
+.navbarTitle {
+    position: absolute;
+    width: 275px;
+    height: 83px;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 320%;
+    line-height: 83px;
+   
+    text-align: center;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    background: -webkit-linear-gradient(#0041BF 0%, #000F2D 100%);
+    /* background: linear-gradient(180deg, #0041BF 0%, #000F2D 100%); */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
