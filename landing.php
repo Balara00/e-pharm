@@ -1,13 +1,15 @@
 
 <!DOCTYPE html>
 <?php include('connection.php');
+session_start();
 
 ?>
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="stylesLanding.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/stylesLanding.css">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,21 +33,21 @@
                 };
             </script>
 
-            <a href="logout.php"><img class="imgs logo" src="logo.svg"></a>
+            <a href="user.php?customerID="<?php $_GET['customerID'] ?>><img class="imgs logo" src="logo.svg"></a>
 
-            <button name="logOut" id="logout" class="butn log" type="submit">Logout</button>
-            <script type="text/javascript">
+            <a href="logout.php"><button name="logOut" id="logout" class="butn log" type="submit">Logout</button></a>
+            <!-- <script type="text/javascript">
                 document.getElementById("logout").onclick = function() {
                     location.href = "www.yoursite.com";
                 };
-            </script>
+            </script> -->
 
 
         </div>
         <header>E-Pharm</header>
 
-        <img class="two" src="2.png">
-        <img class="one" src="1.png">
+        <img class="two" src="assets/images/2.png">
+        <img class="one" src="assets/images/1.png">
 
         <form id="Form" name="searchForm" action="results.php" method="get">
             <div class="wrap">
@@ -61,6 +63,7 @@
                 <option value="Area">Area</option>
                 <option value="colombo">Colombo</option>
                 <option value="Kuliyapitiya">Kuliyapitiya</option>
+                <option value="Matara">Matara</option>
             </select>
         </form>
         <script>

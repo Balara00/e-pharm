@@ -146,7 +146,7 @@ header {
     color: #9DBFAF;
   }
   .searchTerm{
-      background-image: url("mdi_search2.png");
+      background-image: url("../images/mdi_search2.png");
       background-position-x: 5px;
       background-position-y: 10px;
       padding-left: 30px;
