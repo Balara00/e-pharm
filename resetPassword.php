@@ -48,7 +48,7 @@ if ( $row === false ) {
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" type="text/css" href="resetPassword.css">
+     <link rel="stylesheet" type="text/css" href="assets/css/resetPassword.css">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
      <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
      <title></title>
@@ -85,13 +85,13 @@ if ( $row === false ) {
            <form method="post">
              <input type="hidden" name="email" value="<?= $row['username'] ?>">
              <div class="TextInput">
-               <input type="text" name="firstPw" placeholder="Enter new password" /required>
+               <input type="password" name="firstPw" placeholder="Enter new password" /required>
              </div>
              <div class="WhiteSpace">
 
              </div>
              <div class="TextInput">
-               <input type="text" name="secondPw" placeholder="Confirm password" /required>
+               <input type="password" name="secondPw" placeholder="Confirm password" /required>
              </div>
              <div class="WhiteSpace">
 

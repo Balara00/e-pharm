@@ -119,6 +119,12 @@
 
     <div class="viewMed_container">
 
+        <nav class="navbar navbar-light navbar_ePharm">
+            <div class="container-fluid">
+                <a class="navbar-brand navbarTitle" href="index.php">E-Pharm</a>
+                <a class="btn btn-primary logoutBtn" href="logout.php">Logout</a>
+            </div>
+        </nav>
     
         <?php
             echo '<img class="imgMed" src="uploads/'.$pharm_medDet['medURL'].'">';

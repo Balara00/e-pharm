@@ -7,8 +7,8 @@ if(isset($_POST["_continue"]) && isset($_POST["email"])){
   $stmt = $pdo->prepare("SELECT verificationCode From customer WHERE username = :xyz");
   $stmt->execute(array(':xyz' => $_POST["email"]));
   $row = $stmt->fetch(PDO::FETCH_ASSOC);
-  if ( $row['validationCode'] !== $_POST['code'] ){
-    $_SESSION['error'] = 'Incorrect Validation Code.';
+  if ( $row['verificationCode'] !== $_POST['code'] ){
+    $_SESSION['error'] = 'Incorrect Verification Code.';
     header( 'Location: verifyCode.php?email='.$_GET["email"] ) ;
     return;
   }
@@ -35,7 +35,7 @@ if ( $row === false ) {
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" type="text/css" href="verifyCode.css">
+     <link rel="stylesheet" type="text/css" href="assets/css/verifyCode.css">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
      <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
      <title></title>

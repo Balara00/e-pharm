@@ -1,5 +1,5 @@
 body{
-    background-image: url(img2.svg);
+    background-image: url(../images/img2.svg);
     background-position: top top;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -10,7 +10,7 @@ body{
 }
 
 .MiddleBg{
-    background-image: url(img1.svg);
+    background-image: url(../images/img1.svg);
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
@@ -44,7 +44,7 @@ body{
     -webkit-text-fill-color: transparent;
 }
 
-.ResetForm{
+.CodeForm{
   width: 558px;
   height: 550px;
   position: absolute;
@@ -54,7 +54,7 @@ body{
   border-radius: 10px;
 }
 
-.Reset{
+.Code{
   text-align: center;
   width: 100%;
   margin-bottom: 70px;
@@ -89,6 +89,12 @@ body{
   height: 40px;
   border: 2px solid #4186ff;
   border-radius: 20px;
+}
+
+.TextInput img{
+  position: relative;
+  left: 5px;
+  flex: 0.5;
 }
 
 .TextInput input{
@@ -154,11 +160,17 @@ input:-webkit-autofill:active {
   padding-right: 70px;
 }
 
-a {
+#loginLink {
   color: black;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 37px;
+
 }
 
-#loginLink{
+#forgetPasswordLink {
   font-family: Ubuntu;
   font-style: normal;
   font-weight: bold;

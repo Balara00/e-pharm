@@ -8,8 +8,9 @@ session_start();
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="stylesResults.css">
+    
     <link rel="stylesheet" href="bootstrap-5.1.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/stylesResults.css">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,8 +45,8 @@ session_start();
         </div>
         <header>E-Pharm</header>
 
-        <img class="two" src="2.png">
-        <img class="one" src="1.png">
+        <img class="two" src="assets/images/2.png">
+        <img class="one" src="assets/images/1.png">
         <form id="Form" action="results.php" method="get">
             <div class="wrap">
                 <div class="search">
@@ -60,6 +61,7 @@ session_start();
                 <option value="Area">Area</option>
                 <option value="colombo">Colombo</option>
                 <option value="Kuliyapitiya">Kuliyapitiya</option>
+                <option value="Matara">Matara</option>
             </select>
         </form>
         <script>
@@ -81,7 +83,7 @@ session_start();
                     $searchq = preg_replace("#[^0-9a-z]#i", "", $searchq);
                     $medID;
                     $medPrice;
-                    $customerID = $_GET['customerID'];
+                    $customerID = $_SESSION['customerID'];
                     $pharmacyIDs = array();
 
                     $pharmacyID_pharmacy;

@@ -5,7 +5,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-require 'C:/laragon/bin/php/phpMailer/vendor/autoload.php';
+// require 'C:/laragon/bin/php/phpMailer/vendor/autoload.php';
+require 'vendor/autoload.php';
 
 if (isset($_POST["send_code"])) {
 
@@ -35,10 +36,10 @@ if (isset($_POST["send_code"])) {
     $mail->SMTPAuth = true;
 
     //SMTP username
-    $mail->Username = 'daruvindid99@gmail.com';
+    $mail->Username = 'ktst428@gmail.com';
 
     //SMTP password
-    $mail->Password = 'ru4620dil7068';
+    $mail->Password = '*AbbbbbA*';
 
     //Enable TLS encryption;
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
@@ -47,7 +48,7 @@ if (isset($_POST["send_code"])) {
     $mail->Port = 587;
 
     //Recipients
-    $mail->setFrom('daruvindid99@gmail.com', 'E-Pharm');
+    $mail->setFrom('ktst428@gmail.com', 'E-Pharm');
 
     //Add a recipient
     $mail->addAddress($email);
@@ -62,7 +63,7 @@ if (isset($_POST["send_code"])) {
 
     $mail->send();
     // echo 'Message has been sent';
-    $customerSql = "UPDATE customer SET validationCode = $verification_code WHERE username = :email";
+    $customerSql = "UPDATE customer SET verificationCode = $verification_code WHERE username = :email";
     $customerStmt = $pdo->prepare($customerSql);
     $customerStmt->execute(array(':email' => $_POST['email']));
 
@@ -84,7 +85,7 @@ if (isset($_POST["send_code"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="forgetPassword.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/forgetPassword.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
     <title>ForgetPassword</title>

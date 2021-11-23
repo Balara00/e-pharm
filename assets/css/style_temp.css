@@ -2,7 +2,7 @@ body {
   max-width: 100%;
   height: auto;
   overflow: hidden;
-  background-image: url(images/background.svg);
+  background-image: url(../images/background.svg);
   background-position: top top;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -18,7 +18,7 @@ body {
   left: 7%;
   right: 7%;
   position: absolute;
-  background-image: url(images/centerBackground.svg);
+  background-image: url(../images/centerBackground.svg);
   background-repeat: no-repeat;
   background-size: cover;
 }
