@@ -1,0 +1,29 @@
+.orderNow_body {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    background-image: url(../images/background_img.svg);
+    background-position: top top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.orderNow_container{
+    background-image: url(../images/viewMed_img.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  
+    width: 86%;
+    height: 96%;
+    top: 2%;
+    left: 7%;
+    position: absolute;
+}
+
+.phoneInp::-webkit-outer-spin-button,
+.phoneInp::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

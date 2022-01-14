@@ -55,9 +55,10 @@ if(isset($_POST['submit'])){
     <title>Document</title>
 </head>
 <body>
-    <form action="upload.php" method="post" enctype="multipart/form-data">
+    <form action="upload_B.php" method="post" enctype="multipart/form-data">
         
         <input type="file" name="file">
+        <!-- <input type="text" name="txt" id=""> -->
         <button type="submit" name="submit">upload</button>
     
 </body>

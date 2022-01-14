@@ -1,0 +1,271 @@
+.uploadPres_body {
+    max-width: 100%;
+    height: auto;
+    /* overflow: scroll; */
+    overflow: hidden;
+    background-image: url(../images/background_img.svg);
+    background-position: top top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.uploadPres_container{
+    background-image: url(../images/viewMed_img.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* position: fixed; */
+    overflow-y: auto;
+
+    width: 86%;
+    height: 96%;
+    top: 2%;
+    left: 7%;
+    position: absolute;
+}
+
+.pres_upload {
+    position: absolute;
+    left: 100px;
+
+    width: 650px;
+    height: 550px;
+    /* height: 900px; */
+
+    background-color: #FFFFFF;
+}
+
+.uploadPres_title {
+    position: absolute;
+    left: 11.73%;
+    right: 11.89%;
+    top: 5.83%;
+    bottom: 85.51%;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 55px;
+    text-align: center;
+
+    color: #1B93C7;
+}
+
+.uploadPres_decs{
+    position: absolute;
+    left: 16%;
+    right: 16.74%;
+    top: 19.67%;
+    bottom: 77.05%;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+
+    color: #7A7A7A;
+}
+
+.uploadPresc_area {
+    position: relative;
+    left: 30%;
+   
+    top: 10%;
+   
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    /* identical to box height */
+
+
+    color: #FFFFFF;
+
+}
+
+.uploadPresc_area_box {
+    position: absolute;
+    left: 22%;
+    top: 32%;
+
+    background: #1B93C7;
+    border-radius: 45px;
+
+    width: 90px;
+    height: 35px;
+}
+
+.uploadPresc_select {
+    position: absolute;
+    border-radius: 45px;
+
+    left: 37%;
+    top: 31.75%;
+
+    width: 40%;
+
+    border-color: #1B93C7;
+}
+
+.uploadPresc_txt {
+    position: absolute;
+    left: 15.5%;
+    top: 46%;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+
+    color: #7A7A7A;
+}
+
+.uploadPresc_photo {
+    position: relative;
+    left: 51%;
+    top: 45.5%;
+
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 23px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #FFFBFB;
+    border-radius: 0px 45px 45px 0px;
+    border-color: #1B93C7;
+    background: #1B93C7;
+
+    width: 35%;
+
+} 
+
+.uploadPresc_note {
+    position: absolute;
+    left: 17.21%;
+    top: 63%;
+    
+    border-color: #4186FF;
+    border-radius: 30px;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: left;
+
+    color: #7A7A7A;
+
+    width: 68%;
+    height: 85px;
+
+    word-break: normal;
+
+    padding: 10px;
+    padding-left: 25px;
+}
+
+#acceptedFilesBlock {
+    position: relative;
+    left: -10%;
+    top: 53%;
+}
+
+.uploadPrescBtn {
+    /* position: absolute;
+    width: 175px;
+    height: 38px;
+    left: 232px;
+    top: 383px; */
+
+    position: absolute;
+    left: 40%;
+    top: 83%;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+
+    color: #FFFBFB;
+    background: #1B93C7;
+    border-radius: 45px;
+
+
+    width: 120px;
+    height: 45px;
+}
+
+.modal {
+    display: block; 
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+  
+  /* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 45%; /* Could be more or less, depending on screen size */
+}
+  
+  /* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.imgPrescription {
+    /* position: absolute; */
+    width: 190px;
+    height: 212px;   
+}
+
+.success {
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 29px;
+
+    top: 30px;
+    margin: 25px;
+}
+
+.close {
+    position: relative;
+    vertical-align: right;
+}
