@@ -33,7 +33,7 @@ session_start();
                 };
             </script>
 
-            <a href="account.php"><img class="imgs logo" src="logo.svg"></a>
+            <a href="pharmacyAccount.php"><img class="imgs logo" src="logo.svg"></a>
             <!-- use GET -->
             <a href="logout.php"><button name="logOut" id="logout" class="butn log" type="submit">Logout</button></a>
 

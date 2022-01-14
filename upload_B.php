@@ -1,4 +1,4 @@
-<?php 
+<?php
 include_once ("pdo.php");
 
 if(isset($_POST['submit'])){
@@ -22,13 +22,14 @@ if(isset($_POST['submit'])){
                 $fileDestination='uploads/'.$fileNameNew;
                 move_uploaded_file($fileTmpName,$fileDestination);
 
-                $sql = "INSERT INTO `pharmacy_medicine`(`pharmacyID`,`medID`,`amount`,`medURL`) VALUES (:pID, :mID, :amnt, :murl)";
+                $sql = "INSERT INTO `prescription`(`customerID`,`prescURL`,`area`,`note`) VALUES (:cID, :purl, :area, :note)";
                 $stmt = $pdo -> prepare($sql);
                 $stmt -> execute(array(
-                    ':pID' => '1',
-                    ':mID' => '1',
-                    ':amnt' => '5',
-                    ':murl' => $fileNameNew
+                    ':cID' => '1',
+                    ':purl' => $fileNameNew,
+                    ':area' => 'Matara',
+                    ':note' => 'Test1'
+
                 ));
                 // $query=mysqli_query($pdo, "INSERT INTO `pharmacy_medicine`(`pharmacyID`,`medID`,`amount`,`medURL`) VALUES ('1005','100','5','$fileNameNew')") or die("failed");
                 echo $fileNameNew;
@@ -55,10 +56,11 @@ if(isset($_POST['submit'])){
     <title>Document</title>
 </head>
 <body>
-    <form action="upload.php" method="post" enctype="multipart/form-data">
-        
+    <form action="upload_B.php" method="post" enctype="multipart/form-data">
+
         <input type="file" name="file">
+        <!-- <input type="text" name="txt" id=""> -->
         <button type="submit" name="submit">upload</button>
-    
+
 </body>
 </html>

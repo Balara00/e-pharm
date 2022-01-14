@@ -6,56 +6,56 @@ session_start();
 // {
 //  header("location:landing.php");
 // }
-include_once "pdo.php";
-
-if(isset($_POST['password']) && isset($_POST['username'])) {
-  if (strlen($_POST['username']) < 1 || strlen($_POST['password']) < 1) {
-
-    $_SESSION['error'] = "Username and password are required";
-    header("Location: login.php");
-    return;
-  }
-
-  $check = md5($_POST['password']);
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-  //$check = hash('md5', $salt.$_POST['pass']);
-  $stmt = $pdo->prepare('SELECT customerID, name FROM customer WHERE username = :un AND password = :pw');
-  $stmt->execute(array( ':un' => $_POST['username'], ':pw' => $check));
-  $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-  $stmt2 = $pdo->prepare('SELECT pharmacyID, name FROM pharmacy WHERE username = :un AND password = :pw');
-  $stmt2->execute(array( ':un' => $_POST['username'], ':pw' => $check));
-  $row2 = $stmt2->fetch(PDO::FETCH_ASSOC);
-
-  if ( $row !== false OR $row2 !== false) {
-    if(isset($_POST['RememberMe'])){
-      setcookie ("username",$username,time()+ (10 * 365 * 24 * 60 * 60));
-      setcookie ("password",$password,time()+ (10 * 365 * 24 * 60 * 60));
-
-      //header("Location: landing.php?customerID=".$_GET['customerID']);
-    }
-    else{
-      if(isset($_COOKIE["username"])){
-        setcookie ("username","");
-      }
-      if(isset($_COOKIE["password"])){
-        setcookie ("password","");
-      }
-      //header("Location: landing.php?customerID=".$_GET['customerID']);
-    }
-    $_SESSION["customerID"] = $row['customerID'];
-    $_SESSION["username"] = $username;
-    header("Location: landing.php?customerID=".$row['customerID']);
-  }
-  else {
-    $_SESSION['error']  = "Incorrect username or password";
-      header("Location: login.php");
-      return;
-  }
-
-}
-
+// include_once "pdo.php";
+//
+// if(isset($_POST['password']) && isset($_POST['username'])) {
+//   if (strlen($_POST['username']) < 1 || strlen($_POST['password']) < 1) {
+//
+//     $_SESSION['error'] = "Username and password are required";
+//     header("Location: login.php");
+//     return;
+//   }
+//
+//   $check = md5($_POST['password']);
+//   $username = $_POST['username'];
+//   $password = $_POST['password'];
+//   //$check = hash('md5', $salt.$_POST['pass']);
+//   $stmt = $pdo->prepare('SELECT customerID, name FROM customer WHERE username = :un AND password = :pw');
+//   $stmt->execute(array( ':un' => $_POST['username'], ':pw' => $check));
+//   $row = $stmt->fetch(PDO::FETCH_ASSOC);
+//
+//   $stmt2 = $pdo->prepare('SELECT pharmacyID, name FROM pharmacy WHERE username = :un AND password = :pw');
+//   $stmt2->execute(array( ':un' => $_POST['username'], ':pw' => $check));
+//   $row2 = $stmt2->fetch(PDO::FETCH_ASSOC);
+//
+//   if ( $row !== false OR $row2 !== false) {
+//     if(isset($_POST['RememberMe'])){
+//       setcookie ("username",$username,time()+ (10 * 365 * 24 * 60 * 60));
+//       setcookie ("password",$password,time()+ (10 * 365 * 24 * 60 * 60));
+//
+//       //header("Location: landing.php?customerID=".$_GET['customerID']);
+//     }
+//     else{
+//       if(isset($_COOKIE["username"])){
+//         setcookie ("username","");
+//       }
+//       if(isset($_COOKIE["password"])){
+//         setcookie ("password","");
+//       }
+//       //header("Location: landing.php?customerID=".$_GET['customerID']);
+//     }
+//     $_SESSION["customerID"] = $row['customerID'];
+//     $_SESSION["username"] = $username;
+//     header("Location: landing.php?customerID=".$row['customerID']);
+//   }
+//   else {
+//     $_SESSION['error']  = "Incorrect username or password";
+//       header("Location: login.php");
+//       return;
+//   }
+//
+// }
+//
 
 ?>
 
@@ -104,7 +104,7 @@ if(isset($_POST['password']) && isset($_POST['username'])) {
                 ?>
           </div>
           <div class="Form">
-            <form method="post">
+            <form method="post" action="includes/login.inc.php">
               <div class="TextInput">
                 <img src="UserIcon.svg" >
                 <input type="text" name="username"

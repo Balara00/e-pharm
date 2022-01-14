@@ -1,4 +1,4 @@
-body{
+.EditBody{
     background-image: url(../images/img2.svg);
     background-position: top top;
     background-repeat: no-repeat;
@@ -6,6 +6,8 @@ body{
     background-size: cover;
     max-width: 100%;
     height: auto;
+    /* overflow: scroll; */
+    /* position: fixed; */
     overflow: hidden;
 }
 
@@ -23,6 +25,7 @@ body{
     height: 96%;
     padding: 10px;
 }
+
 
 #epharm{
     left: 3%;
@@ -44,30 +47,47 @@ body{
     -webkit-text-fill-color: transparent;
 }
 
-.LoginForm{
+.NavBar{
+  width: 96%;
+  height: 15%;
+  top: 50px;
+  bottom: 25px;
+}
+
+
+.editForm{
   width: 558px;
+  top: 20%;
   height: 550px;
   position: absolute;
   right: 5%;
   top: 40px;
   background-color: #fff;
   border-radius: 10px;
+  overflow-y: auto;
 }
 
-.Welcome{
-  text-align: center;
-  width: 100%;
-  margin-bottom: 70px;
-}
-#note{
-  font-weight: bold;
-  top: 40px;
+.Label{
+  flex: 10;
   font-family: Ubuntu;
-  color: #1b93c7;
-  
-  position: relative;
-  font-size: 350%;
+  padding-left: 15px;
+  left: 20px;
+  right: 70px;
+  width: 300px;
+  height: 40px;
+  border-color: transparent;
+  background-color: transparent;
 }
+
+#editnote{
+  font-weight: bold;
+  top: 10px;
+  font-family: Ubuntu;
+  color: #000;
+  position: relative;
+  font-size: 150%;
+}
+
 
 .TextInput{
   position: relative;
@@ -109,6 +129,22 @@ body{
 }
 
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  border: 1px solid transparent;
+  -webkit-text-fill-color: #000;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.WhiteSpace{
+  position: relative;
+  height: 25px;
+  right: 100px;
+}
+
 
 .LoginBtn{
   text-align: center;
@@ -128,78 +164,15 @@ body{
   color: #fff;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  border: 1px solid transparent;
-  -webkit-text-fill-color: #000;
-  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
-  transition: background-color 5000s ease-in-out 0s;
-}
-
-.WhiteSpace{
-  position: relative;
-  height: 25px;
-  right: 100px;
-}
-
-.CheckInput{
-  position: relative;
-  left: 70px;
-  right: 70px;
-  margin: 0px 12px 0px 12px;
+.edit button{
+  left: 70%;
+  margin: 25px 18px 25px 6px;
   padding-left: 10px;
-  flex: 10;
-  font-family: Ubuntu;
-  padding-left: 15px;
-}
-
-
-.ForgetPw{
-  position: relative;
-  text-align: right;
-  padding-right: 70px;
-  flex: 10;
-  font-family: Ubuntu;
-}
-
-.LoginBottom{
+  width: 30% !important;
+  height: 40px;
+  border: 2px solid #1b93c7;
+  border-radius: 45px;
+  background-color: #1b93c7;
   text-align: center;
-  font-family: Ubuntu;
-  position:relative;
-  padding-left: 70px;
-  padding-right: 70px;
-}
-
-a {
-  color: black;
-}
-
-#signUpLink{
-  font-family: Ubuntu;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 25px;
-  line-height: 37px;
-  color: black;
-}
-
-a:link {
-  text-decoration: none;
-}
-a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-a:active {
-  text-decoration: underline;
-}
-
-#forgetPwLink{
-  color: black;
+  color: #fff;
 }
