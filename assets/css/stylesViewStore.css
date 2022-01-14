@@ -1,0 +1,470 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(../images/mainback2.png) ;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  
+}
+/* .all{
+    background-color: #EBEBEB;
+    z-index: 5;
+    top:3%;
+    position: fixed;
+    width: 85.6%;
+    height: 230px;
+    left: 7.15%;
+} */
+
+
+.navlanding{
+    
+    display: inline-block;
+    height: 11%;
+    width: 20%;
+    margin-left:70%;
+    margin-top: 3%;
+   
+}
+.butn{
+    z-index: 1;
+    position: relative;
+    color: white;
+    background-color: #1B93C7;
+    border-radius: 25px;
+    border: 1px solid #1B93C7;
+    text-align: center;
+    height: 40px;
+    margin-top: 2%;
+    cursor: pointer;
+}
+.butn:hover{
+    background-color:#2cb3ec ;
+}
+.pres{
+    width: 25%;
+    margin-left: 3%;
+    
+    
+}
+.log{
+    width: 30%;
+    margin-left: 10%;
+    height: 50px;
+   
+    
+}
+ .imgs{
+    height: 50px;
+    margin-top: -1%;
+    z-index: 5;
+    margin-left: 20px;
+}
+.imgs:hover{
+    opacity: 0.8;
+    
+}
+
+.epharm {
+    z-index: 5;
+    position: fixed;
+    left: 8%;
+    top: 3%;
+    bottom: 74.38%;
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-weight: bold;
+    font-size: 80px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: -webkit-linear-gradient(#0041BF 0%, #000F2D 100%);
+    /* background: linear-gradient(180deg, #0041BF 0%, #000F2D 100%); */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+
+.pharmacy{
+    z-index: 5;
+    position: fixed;
+    left: 15%;
+    top:17%;
+    bottom: 74.38%;
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-weight: bold;
+    font-size: 40px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: -webkit-linear-gradient(#000006,#000006);
+     
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+.searchTerm {
+    width: 100%;
+    border: 1px solid #1B93C7;
+    border-right: none;
+    padding: 5px;
+    height:42px;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    color: #9DBFAF;
+  }
+
+  .searchTerm{
+      background-image: url("../images/mdi_search2.png");
+      background-position-x: 5px;
+      background-position-y: 10px;
+      padding-left: 30px;
+      background-size: 20px;
+      background-repeat: no-repeat;
+
+  }
+  
+  .searchTerm:focus{
+    color: #000303;
+  }
+  
+  .searchButton {
+    width: 29%;
+    height: 42px;
+    border: 1px solid #1B93C7;
+    background: #1B93C7;
+    text-align: center;
+    color: #fff;
+    border-radius:0px 20px 20px 0px;
+    cursor: pointer;
+    font-size: 15px;
+    left: 19%;
+  }
+  
+  /*Resize the wrap to see the search bar change!*/
+  .wrap{
+    width: 27%;
+    position: fixed;
+    top: 26%;
+    left: 15%;
+    z-index: 5;
+  }
+
+
+.table-pharm{
+    position:absolute ;
+    top :38%;
+    left:30%;
+    width: 50%;
+    height: 60%;
+    overflow-y: auto;
+    
+}
+.inside-row:hover{
+  
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px; 
+    transform: translate3d(0px, -2px, 0px);
+
+}
+
+
+.inside-row{
+    border-radius: 10px;
+    position: relative;
+    background-color: #fff;
+    margin-top:10px ;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-right:10px;
+    box-shadow: 3px 3px 3px 1px  rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.search-results{
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 35%;
+    left: 15%;
+}
+.no-results{
+  position: absolute;
+  top: 45%; 
+  left: 25%;
+  font-size: 17px;
+}
+
+.imgPharm{
+    
+    width: 90%;
+    height:120px;
+    width: 160px;
+    /* margin-left:12%; */
+    margin-top: 3%;
+
+}
+.availability{
+    
+    font-size: 20px;
+}
+.out-of-stock{
+    color: red;
+}
+.available{
+    color: #4F4F4F;
+}
+
+.drug-name{
+    
+    font-weight: bold;
+    font-size: 22px;
+    
+}
+
+.price{
+    color: blue;
+    font-size: 22px;
+}
+
+.pharmacy-details{
+    position: fixed;
+    text-align: center;
+    height: 50%;
+    
+    width: 20%;
+    background-color: white;
+    top:30%;
+    overflow-wrap: break-word;
+    
+}
+
+
+.title{
+    font-weight: bold;
+}
+.edit{
+    width: 50px;
+    margin-bottom: 10px;
+    border: 1px solid;
+    background-color: #1B93C7;
+    height: 30px;
+    border-radius: 20px;
+    
+}
+.plus {
+    box-shadow: 3px 3px 3px 1px  rgba(0,0,0,0.5);
+    position: absolute;
+    left:83%;
+    top:70%;
+    border-color: black;
+    background-color: #1B93C7;
+    
+    border-radius: 30px;
+    --b:4px; /* the thickness */
+    width:60px; /* the size */
+    aspect-ratio:1/1;
+    border:17px solid #1B93C7; /* the outer space */
+    background:
+      conic-gradient(from 90deg at var(--b) var(--b),#1B93C7 90deg,#fff 0) 
+      calc(100% + var(--b)/2) calc(100% + var(--b)/2)/
+      calc(50%  + var(--b))   calc(50%  + var(--b));
+    display:inline-block;
+  }
+  
+
+/* .imgContainer{
+    width: 100px;
+    height: 100px;
+} */
+
+.editImg{
+    position: absolute;
+    left:83%;
+    top:70%;
+    width: 70px;
+    height:70px;
+    border-radius:1px solid black;
+    
+}
+
+.editImg:hover{
+    opacity: 0.8;
+}
+
+
+
+.vertical-menu {
+    position: absolute;
+    
+    width: 13%;
+    top: 36%;
+    left: 15%;
+    height: 44.6%;
+    
+    border-top:1px solid black ;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-top-right-radius: 30px;
+     border-bottom-right-radius: 30px; 
+    
+    
+  }
+  
+  .vertical-menu a {
+    
+    background-color: #eee;
+    color: black;
+     display: block; 
+     block-size: 60px;
+    padding: 12px;
+    text-decoration: none;
+    
+    font-weight: bold;
+    
+    
+    
+    
+  }
+  .vertical-menu .a4{
+      block-size: 80px;
+      padding-top: 20px;
+  }
+
+  
+  
+  .vertical-menu a:hover{
+    background-color: #ccc;
+  }
+  .vertical-menu a.active {
+    background-color: #65c6f0;
+    color: white;
+    border-top-right-radius: 30px; 
+
+  }
+  
+  
+  .stripe{
+    top: 36%;
+    position: fixed;
+    width: 3%;
+    height:44.65%;
+    border-radius: 30px 0px 0px 30px;
+    background: #1B93C7;
+    left: 12%;
+    border-bottom: 1px solid black;
+    border-top:1px solid black ;
+    border-left: 1px solid black;
+     
+  }
+  
+  
+  .a1{
+    border-top-right-radius: 30px;
+  }
+
+  .a5{
+    border-bottom-right-radius: 30px; 
+  }
+
+  .orderType{
+    position: absolute;
+    
+    width: 6%;
+    top: 61.1%;
+    left: 21.9%;
+    height: 11%;
+    z-index: 10;
+    
+    
+  }
+
+  .delivery{
+    position: absolute;
+    height: 50%;
+    border-bottom: 1px solid black;
+  }
+  .pickup{
+    position: absolute;
+    top:50%;
+    height: 50%;
+  }
+  
+  .delivery-pickup{
+    position: absolute;
+    background-color: #eee;
+    color: black;
+    display: flex;
+    background: grey;
+    
+    color: white;
+    text-decoration: none;
+    
+    font-weight: bold;
+    width: 100%;
+    padding-left: 20px;
+    padding-top: 5px;
+    
+  }
+
+  .user-rating{
+    position: absolute;
+    top:20%;
+    left: 75%;
+    width: 13%;
+    height: 13%;
+    background-color: hsl(0, 10%, 84%);;
+    border-radius: 20px;
+}
+
+.ratingTitle{
+    position: absolute;
+    font-size: 18px;
+    font-weight: 500;
+    top: 1%;
+    left: 3%;
+    color: rgb(61, 59, 59);
+}
+
+.ratingvalue{
+    position: absolute;
+    font-size: 18px;
+    font-weight: 400;
+    top:30%;
+    left: 5%;
+    
+    color: rgb(109, 112, 111);
+}
+
+.container-star{
+    position: absolute;
+    width: 150px;
+    background: #111;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    height: 30px;
+}
+
+
+.star-widget .active{
+    color:#fd4;
+}
+

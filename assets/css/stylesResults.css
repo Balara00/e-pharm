@@ -28,12 +28,10 @@ body{
     
     display: inline-block;
     height: 11%;
-    width: 50%;
+    width: 60%;
     margin-left: 50%;
     margin-top: 2%;
-    
 }
-
 .butn{
     z-index: 1;
     position: relative;
@@ -44,38 +42,32 @@ body{
     text-align: center;
     height: 70%;
     margin-top: 2%;
-    cursor: pointer
-    ;
+    cursor: pointer;
 }
 .butn:hover{
     background-color:#2cb3ec ;
 }
 .pres{
     width: 25%;
-    margin-left: 2%;
+    margin-left: 3%;
+    
     
 }
 .log{
     width: 15%;
-    margin-left: 2%;
+    margin-left: 3%;
+   
     
 }
  .imgs{
     height: 70%;
     margin-top: -1%;
-    
-    cursor: pointer;
-    
+    z-index: 5;
+    margin-left: 17px;
 }
 .imgs:hover{
     opacity: 0.8;
-}
-
-.bask{
-    margin-left: 15%;
-}
-.logo{
-    margin-left: 15%;
+    
 }
 
 header {
@@ -88,8 +80,6 @@ header {
     font-weight: normal;
     font-weight: bold;
     font-size: 80px;
-    
-    
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     background: -webkit-linear-gradient(#0041BF 0%, #000F2D 100%);
     /* background: linear-gradient(180deg, #0041BF 0%, #000F2D 100%); */
@@ -113,7 +103,6 @@ header {
     height:85%;
     right:0%;
     bottom:0%;
-    
 
 
 }
@@ -132,7 +121,6 @@ header {
     /* transform: translate(120%, 520%); */
     top: 19.7%;
     left: 8%;
-    
     position: absolute;
     
 
@@ -153,6 +141,7 @@ header {
     outline: none;
     color: #9DBFAF;
   }
+
   .searchTerm{
       background-image: url("../images/mdi_search2.png");
       background-position-x: 5px;
@@ -160,6 +149,7 @@ header {
       padding-left: 30px;
       background-size: 20px;
       background-repeat: no-repeat;
+
   }
   
   .searchTerm:focus{
@@ -176,7 +166,6 @@ header {
     border-radius:0px 20px 20px 0px;
     cursor: pointer;
     font-size: 15px;
-    
     left: 19%;
   }
   
@@ -186,8 +175,6 @@ header {
     position: absolute;
     top: 19.9%;
     left: 19%;
-    
-    
   }
 
 .search-results{
@@ -211,7 +198,6 @@ header {
 #view{
     position: absolute;
     right: 5%;
-    
     width: 15%;
     height: 40px;
     background-color:#1B93C7 ;
@@ -233,8 +219,6 @@ header {
     width:55% ;
     height: 128px;
     padding-left: 20px;
-    
-    
 
 }
 .td3{
@@ -249,8 +233,6 @@ header {
     font-weight: bold;
     font-size: 22px;
     
-    
-    
 }
 .pharmacy-location{
     position: absolute;
@@ -261,7 +243,6 @@ header {
     
 }
 .availability{
-    
     
     font-size: 20px;
 }
@@ -284,7 +265,6 @@ header {
     box-shadow: 3px 3px 3px 1px  rgba(0,0,0,0.5);
     border-radius: 7px;
     
-    
 
 }
 tr:hover{
@@ -301,7 +281,6 @@ tr:hover{
     height: 142px;
     
     border-bottom: 5px solid rgb(211, 190, 190);
-    
     
 }
 .imgPharm{
