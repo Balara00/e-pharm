@@ -37,8 +37,7 @@ class OrderNowModel {
     }
 
     public function placeOrder($customerID, $pharmacyID, $orderType, $price, $date, $prescURL, $deliveryStatus) {
-        echo $customerID . " " . $pharmacyID . " " . $orderType . " " . $price . " " . $date . " " . $prescURL . " " . $deliveryStatus . "\n";
-        $sql = "INSERT INTO `order_`(`customerID`, `pharmacyID`, `orderType`, `price`, 'status', `date`, `prescURL`, `approveStatus`, `deliveryStatus`) VALUES (:customerID, :pharmacyID, :orderType, :price, :status, :date, :prescURL, :approveStatus, :deliveryStatus)";
+        $sql = "INSERT INTO `order_`(`customerID`, `pharmacyID`, `orderType`, `price`, `status`, `dateTime`, `prescriptionURL`, `approveStatus`, `deliveryStatus`) VALUES (:customerID, :pharmacyID, :orderType, :price, :status, :date, :prescURL, :approveStatus, :deliveryStatus)";
         $stmt = $this->pdo->prepare($sql);
         $stmt -> execute(array(
             ':customerID' => $customerID,
@@ -101,6 +100,23 @@ class OrderNowModel {
 
         return;
  
+    }
+
+    public function sendNotification($pharmacyID, $notifyTime) {
+        
+        $sql = "INSERT INTO `pharmacy_notification`(`pharmacyID`, `notification`, `dateTime`) VALUES (:pharmacyID, :notification, :dateTime)";
+        
+        $stmt = $this->pdo -> prepare($sql);
+////////////////////////////////////////////////////
+        $stmt -> execute(array(
+            ':pharmacyID' => $pharmacyID,
+            ':notification' => 'You have recieved a new order.',
+            ':dateTime' => $notifyTime,
+        ));
+        $_SESSION['success'] = "Notifications sent";
+        // header("Location: ../uploadPrescription.php?customerID=".$_GET['customerID']);
+
+        return;
     }
 }
 

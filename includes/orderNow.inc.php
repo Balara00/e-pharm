@@ -19,19 +19,21 @@ include "../View/orderNow.view.php";
 if (isset($_POST['confirmOrder'])) {
     $customerID = $_SESSION['customerID'];
     $pharmacyID = $_SESSION['pharmacyID'];
-    $date = $_POST['date'];
-    $name = $_POST['cus_name'];
+    // $date = $_POST['dateTime'];
+    // $name = $_POST['cus_name'];
     $phone = $_POST['phone'];
     $price = $_POST['tot'];
     $contactNo = $_POST['phone'];
     
     $orderNow_contr = new OrderNowContr();
 
+    date_default_timezone_set('Asia/Colombo');
+    $date = date('m/d/Y h:i:s a', time());
+    // echo $date;
     if (isset($_FILES['prescPhoto'])) {
         $uploadFile = $_FILES['prescPhoto'];
         $prescURL = $orderNow_contr->getPrescURL($uploadFile);
-        echo $prescURL;
-        echo '<br>';
+   
     } else {
         $prescURL = "";
     }
@@ -50,5 +52,9 @@ if (isset($_POST['confirmOrder'])) {
     $orderNow_contr->setOrderCustomer();
 
     $orderNow_contr->setOrderMedicine();
+
+    $orderNow_contr->sendNotification($pharmacyID, $date);
+
+    header("Location: ../orderNow.php");
 
 }

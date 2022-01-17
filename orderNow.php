@@ -26,9 +26,10 @@ session_start();
         include "View/orderNow.view.php"; 
 
         $_SESSION['buyNow'] = "true";
+        // $_SESSION['reseveNow'] = "true";
         $_SESSION['customerID'] = '1';
         $_SESSION['pharmacyID'] = '1';
-        $_SESSION['medQuantityArr'] = array('1' => '2', '2' => '4');
+        $_SESSION['medQuantityArr'] = array('1' => '2', '2' => '4', '1' => '3');
         
         $order_view = new OrderNowView();
 
@@ -37,10 +38,9 @@ session_start();
 
 <div class="orderNow_container">
     <?php include "navBar.php" ?>
+    <div class="orderDiv">
      <div class="medInfo">
-    <form action="includes/orderNow.inc.php" method="post" enctype="multipart/form-data">
-    
-    <input type="hidden" name="tot" value=<?php echo $total ?>>
+    <form action="includes/orderNow.inc.php" method="post" enctype="multipart/form-data" class="orderForm">
 
     <table class="table table-hover orderTable">
         <thead class="orderTableHead">
@@ -51,32 +51,37 @@ session_start();
             <th scope="col">Price</th>
             </tr>
         </thead>
-        <tbody>
+
+        <tbody class="orderTableBody">
 
         <?php
         $total = 0;
             foreach ($medArr as $obj) {
                 echo '<tr>';
                 echo '<td>' .$order_view->getMedName($obj). '</td>';
-                echo '<td>' .$order_view->getMedPrice($obj). '</td>';
+                echo '<td>Rs. ' .$order_view->getMedPrice($obj). '</td>';
                 echo '<td>' .$order_view->getMedQty($obj). '</td>';
 
                 $price = $order_view->getPrice($obj);
                 $total += $price;
 
-                echo '<td>' .$price. '</td>';
+                echo '<td>Rs. ' .$price. '</td>';
                 echo '</tr>';
             }
         ?>
 
         </tbody>
         <tfoot class="table-primary orderTableFooter" >
-            <tr>
-                <td>My Total</td>
+            <tr class="totalRow">
+                <td class="myTotal">My Total</td>
                 <td></td>
                 <td></td>
-                <td><?php echo $total ?></td>
+                <!-- <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> -->
+                <td>Rs. <?php echo $total ?></td>
+                <!-- <td></td> <td></td> <td></td> -->
+                
             </tr>
+        
         </tfoot>
     
     </table>
@@ -87,23 +92,20 @@ session_start();
         
         <?php
         date_default_timezone_set('Asia/Colombo');
-        $date = date('m/d/Y', time());
-        
+        $date =  date('m/d/Y', time());
         ?>
-
-        <input type="text" name="date" class="dateInp form-control" aria-label="readonly input" readonly value=<?php echo $date ?>>
+        <p class="dateInp form-control"><?php echo $date ?></p>
+        <!-- <input type="text" name="date" class="dateInp form-control" aria-label="readonly input" readonly value=<?php echo $date ?>> -->
 
         <p class="nameTxt">Name</p>
-        <input type="text" name="cus_name" class="nameInp form-control" aria-label="readonly input" readonly value=<?php echo $order_view->getCustomerName(); ?>>
+        <p class="nameInp form-control" ><?php echo $order_view->getCustomerName(); ?></p>
+
+        <!-- <input type="text" name="cus_name" class="nameInp form-control" aria-label="readonly input" readonly value=<?php echo $order_view->getCustomerName(); ?>> -->
 
         <p class="phoneTxt">
             Phone Number
         </p>
         <input type="number" name="phone" id="" class="phoneInp form-control" value=<?php echo $order_view->getCustomerNo(); ?> required oninput="validity.valid||(value='');" onKeyPress="if(this.value.length==10) return false;">
-        
-        <!-- <h1>hi </h1>
-        <input type="tel" name="" id="" pattern="[0-9]{10}"
-       required> -->
 
        <?php
        if(isset($_SESSION['buyNow'])){
@@ -117,10 +119,13 @@ session_start();
         
         <label for="upload" class="form-label uploadPresc_txt">Prescription</label>
         <input type="file" class="form-form-control-file uploadPresc_photo" name="prescPhoto" id="mypres" aria-describedby="acceptedFilesBlock" accept=".png, .jpg, .jpeg"/>
+        <input type="hidden" name="tot" value=<?php echo $total ?>>
+        <input type="submit" value="Confirm" class="btn btn-primary confirmOrderBtn" name="confirmOrder" data-bs-toggle="modal" data-bs-target="#myModal"/>
+    
     </div>
 
-    <input type="submit" value="Confirm" class="btn btn-primary confirmOrderBtn" name="confirmOrder" data-bs-toggle="modal" data-bs-target="#myModal"/>
-    </form>
+   </form>
+    </div>
 
 <?php if (isset($_SESSION['success'])) { ?>
 <!-- The Modal -->
@@ -133,7 +138,7 @@ session_start();
     </div>
     
     <img class="imgPrescription mx-auto" src="assets/images/prescription.svg">
-    <p class="mx-auto success">Order Confirmed</p>
+    <p class="mx-auto success">Placed Order Successfully.</p>
 
     </div>
 </div>

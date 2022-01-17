@@ -14,10 +14,10 @@ class OrderNowContr{
         $this->customerID = $_SESSION['customerID'];
         $this->orderNow_model = new OrderNowModel();
         $this->customer = $this->orderNow_model->getCustomerDetails($this->customerID);
+        $this->medArr = array();
     }
 
     public function getMedArr(){
-        $this->medArr = array();
         foreach ($this->medQuantityArr as $medID => $amount){
             
             $medDetail = $this->orderNow_model->getPharmMedDetails($medID, $this->pharmacyID);
@@ -88,7 +88,7 @@ class OrderNowContr{
             $_SESSION['error'] = "wrong type";
         
         }
-        echo $fileNameNew;
+  
       return $fileNameNew;
     }
 
@@ -111,9 +111,13 @@ class OrderNowContr{
 
     public function setOrderMedicine() {
         $orderID = $this->orderNow_model->getOrderID();
-        foreach ($this->medArr as $med) {
+    
+        foreach ($this->getMedArr() as $med) {
             $this->orderNow_model->setOrderMedicine($orderID, $med->getMedID(), $med->getamount());
         }
     }
 
+    public function sendNotification($pharmacyID, $notifyTime){
+        $this->orderNow_model->sendNotification($pharmacyID, $notifyTime);
+    }
 }
