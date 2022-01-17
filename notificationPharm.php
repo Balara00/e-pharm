@@ -1,10 +1,10 @@
 <?php
 include "classes/dbconnection.classes.php";
-include "model/notificPharmModel.php";
+include "Model/notificPharmModel.php";
 include "classes/Pharmacy.classes.php";
-include "controller/controller.php";
-include "controller/notificPharmContr.php";
-include "view/notificPharmView.php";
+include "Controller/controller.php";
+include "Controller/notificPharmContr.php";
+include "View/notificPharmView.php";
 session_start();
 $_SESSION['pharmacyID'] = 1;
 $notificPharmView = new notificPharmView();

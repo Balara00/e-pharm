@@ -11,9 +11,9 @@ if (isset($_POST['reg_user'])) {
     $password_2 =  $_POST['password_2'];
 
     include "../classes/dbconnection.classes.php";
-    include "../model/signupCusModel.php";
-    include "../controller/controller.php";
-    include "../controller/signupCusContr.php";
+    include "../Model/signupCusModel.php";
+    include "../Controller/controller.php";
+    include "../Controller/signupCusContr.php";
     include "../classes/MailSender.php";
     $signupCus = new signupCusContr($name, $username, $password_1, $password_2);
     $signupCus->signupCustmr();

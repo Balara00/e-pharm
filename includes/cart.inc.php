@@ -1,15 +1,15 @@
 <?php
 session_start();
 include "../classes/dbconnection.classes.php";
-include "../model/cartModel.php";
+include "../Model/cartModel.php";
 include "../classes/Cart.classes.php";
 include "../classes/Medicine.classes.php";
 include "../classes/pharmacy_medicine.classes.php";
 include "../classes/Pharmacy.classes.php";
 include "../classes/Pharmacy_.classes.php";
-include "../controller/controller.php";
-include "../controller/cartContr.php";
-include "../view/cartView.php";
+include "../Controller/controller.php";
+include "../Controller/cartContr.php";
+include "../View/cartView.php";
 
 $cartContr = new CartContr();
 

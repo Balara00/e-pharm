@@ -30,9 +30,9 @@ if (isset($_POST['reg_user'])) {
 
 
     include "../classes/dbconnection.classes.php";
-    include "../model/signupPharmModel.php";
-    include "../controller/controller.php";
-    include "../controller/signupPharmContr.php";
+    include "../Model/signupPharmModel.php";
+    include "../Controller/controller.php";
+    include "../Controller/signupPharmContr.php";
     include "../classes/MailSender.php";
     $signupPharm = new signupPharmContr($name, $username, $password_1, $password_2, $area, $address, $contactNo, $dvStatus, $dvOrders);
     $signupPharm->signupPharm();

@@ -12,9 +12,9 @@ if (isset($_POST['add_med'])) {
     $file = $_FILES['uploadFile'];
 
     include "../classes/dbconnection.classes.php";
-    include "../model/addMedModel.php";
-    include "../controller/controller.php";
-    include "../controller/addMedContr.php";
+    include "../Model/addMedModel.php";
+    include "../Controller/controller.php";
+    include "../Controller/addMedContr.php";
     $addMedContr = new AddMedContr($name, $price, $amount, $file);
     $addMedContr->addMedicine();
 }
