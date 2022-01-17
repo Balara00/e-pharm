@@ -1,7 +1,7 @@
 <?php
 //include('includes/signupCus.inc.php');
 session_start();
-$_SESSION['pharmacyID'] = 1;
+
 if (isset($_SESSION['medname'])) {
     $name = $_SESSION['medname'];
 } else {

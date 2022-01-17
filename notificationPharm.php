@@ -6,7 +6,6 @@ include "Controller/controller.php";
 include "Controller/notificPharmContr.php";
 include "View/notificPharmView.php";
 session_start();
-$_SESSION['pharmacyID'] = 1;
 $notificPharmView = new notificPharmView();
 $ntfs = $notificPharmView->getNotifications($_SESSION['pharmacyID']);
 ?>

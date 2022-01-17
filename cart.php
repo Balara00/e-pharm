@@ -11,7 +11,7 @@ include "Controller/controller.php";
 include "Controller/cartContr.php";
 include "View/cartView.php";
 
-$_SESSION['customerID'] = 24;
+
 
 $cartView = new CartView();
 

@@ -6,7 +6,7 @@ include "Controller/controller.php";
 include "Controller/notificContr.php";
 include "View/notificView.php";
 session_start();
-$_SESSION['customerID'] = 24;
+
 $notificView = new NotificView();
 $ntfs = $notificView->getNotifications($_SESSION['customerID']);
 ?>

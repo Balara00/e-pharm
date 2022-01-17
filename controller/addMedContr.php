@@ -1,5 +1,5 @@
 <?php
-class AddMedContr
+class AddMedContr extends Controller
 {
     private $name;
     private $addMedModel;
