@@ -1,40 +1,27 @@
-body {
+.container {
+  background-image: url(../images/landingMain_img.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow-y: auto;
+  width: 86%;
+  height: 96%;
+  top: 2%;
+  left: 7%;
+  position: absolute;
+}
+
+.index_body {
   max-width: 100%;
   height: auto;
   overflow: hidden;
-  background-image: url(../images/background.svg);
+  background-image: url(../images/background_img.svg);
   background-position: top top;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-}
 
-.center_bg {
-  width: 86%;
-  height: 96%;
-  margin: auto;
-  top: 2%;
-  bottom: 2%;
-  left: 7%;
-  right: 7%;
-  position: absolute;
-  background-image: url(../images/centerBackground.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-#e-pharm {
   font-family: Ubuntu;
-  left: 4%;
-  top: 2.5%;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 500%;
-  position: absolute;
-  /* line-height: 165px; */
-  text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
-  background: -webkit-linear-gradient(#0041bf 50%, #000f2d 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 .sign-form {
   width: 558px;
@@ -48,14 +35,6 @@ body {
 #welcome {
   font-weight: bold;
   top: 40px;
-  font-family: Ubuntu;
-  color: #1b93c7;
-  position: relative;
-  font-size: 350%;
-}
-#welcomeP {
-  font-weight: bold;
-  top: 20px;
   font-family: Ubuntu;
   color: #1b93c7;
   position: relative;
@@ -91,9 +70,18 @@ body {
   margin: 0px 12px 0px 12px;
   padding-left: 10px;
   width: 380px !important;
-  height: 36px;
+  height: 40px;
   border: 2px solid #4186ff;
-  border-radius: 18px;
+  border-radius: 20px;
+}
+.input-file {
+  position: relative;
+  left: 70px;
+  right: 70px;
+  margin: 0px 12px 0px 12px;
+  padding-left: 10px;
+  width: 380px !important;
+  height: 40px;
 }
 .input-group img {
   position: relative;
@@ -119,39 +107,6 @@ body {
 textarea {
   background-color: transparent;
 }
-#field_8 {
-  position: relative;
-  left: 70px;
-  right: 70px;
-  margin: 0px 12px 0px 12px;
-  padding-left: 10px;
-  width: 380px !important;
-  height: 40px;
-}
-#field_8 img {
-  position: relative;
-  left: 5px;
-  flex: 0.5;
-}
-#field_8 input {
-  flex: 10;
-  font-family: Ubuntu;
-  padding-left: 15px;
-  left: 20px;
-  right: 70px;
-  width: 360px;
-  height: 40px;
-  border-color: transparent;
-  background-color: transparent;
-}
-#field_8 input:focus {
-  outline: none;
-  background-color: transparent;
-}
-#field_8 input,
-textarea {
-  background-color: transparent;
-}
 .signup-btn {
   text-align: center;
 }
@@ -167,25 +122,6 @@ textarea {
   background-color: #1b93c7;
   text-align: center;
   color: #fff;
-}
-.login-ask {
-  margin: 20px 0 20px 0;
-  color: #7a7a7a;
-  text-align: center;
-}
-.login-askP {
-  margin: 1px 0 1px 0;
-  color: #7a7a7a;
-  text-align: center;
-}
-#log-link {
-  font-weight: bold;
-  color: black;
-  font-size: larger;
-  text-decoration: none;
-}
-#log-link:hover {
-  color: #1b93c7;
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -240,11 +176,7 @@ input:-webkit-autofill:active {
   margin: 15px 12px 15px 12px;
   top: 5px;
 }
-.bet-inputs {
-  position: relative;
-  height: 10px;
-  right: 100px;
-}
+
 .isAvbTxt {
   color: #7a7a7a;
 }
