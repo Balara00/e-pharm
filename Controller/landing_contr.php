@@ -1,5 +1,5 @@
 <?php 
-require_once('Controller.php');
+// require_once('Controller.php');
 include "../classes/dbconnection.php";
 include "../Model/landing_model.php";
 

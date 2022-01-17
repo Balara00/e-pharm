@@ -60,6 +60,28 @@ body{
   
 }
 
+.notificationNo {
+  position: absolute;
+  left: 55.83%;
+  top: 8.4%;
+  background: #E31313;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+   
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 28px;
+  text-align: center;
+
+  color: #FAFAFA;
+
+  padding-bottom: 10px;
+ 
+}
+
 .epharm {
   z-index: 5;
   position: fixed;

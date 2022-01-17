@@ -10,7 +10,7 @@ class ViewPharmacyContr extends Controller{
     private $viewModel;
     private $searchq;
     private $area;
-    
+    private $customerID;
     private $pharmacyID;
     private $medID;
     private $medPrice;
@@ -59,6 +59,7 @@ class ViewPharmacyContr extends Controller{
         $this->viewModel = new ViewPharmacyModel();
         $this->pharmacyID = $pharmacyID;
         $this->medObjs = array();
+        $this->customerID = $_SESSION['customerID'];
     }
  
     public function searchMed($searchq){
@@ -88,6 +89,9 @@ class ViewPharmacyContr extends Controller{
     public function searchPharmacy($pharmacyID){
         $result = $this->viewModel->searchPharm($pharmacyID);
         return $result;
+    }
+    public function getcustomerID(){
+        return $this->customerID;
     }
     
     public function getsearchq(){

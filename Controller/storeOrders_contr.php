@@ -109,6 +109,10 @@ class StoreOrderContr extends Controller{
         $result = $this->storeOrderModel->updateDStatus($status,$orderID);
         return $result;
     }
+    public function reduceAmounts($orderID,$pharmacyID){
+        $result= $this->storeOrderModel->reduceMedAmounts($orderID,$pharmacyID);
+        return $result;
+    }
 
     public function getOrder($orderID){
         $result =$this->storeOrderModel->searchOrder($orderID);

@@ -1,8 +1,12 @@
+<!DOCTYPE html>
 <?php session_start(); 
 include "../Controller/viewStore_contr.php";
 $pharmacyID=1005;
-$viewPharmacyContr = new ViewStoreContr($pharmacyID); ?>
-<!DOCTYPE html>
+$viewPharmacyContr = new ViewStoreContr($pharmacyID); 
+include "../Model/navBar.model.php"; 
+include "../Controller/navBar.contr.php";
+$navbarContr = new NavBarContr();?>
+
 <html lang="en">
 <head>
     <link rel="stylesheet" href="../assets/bootstrap-5.1.3-dist/css/bootstrap.min.css">
@@ -20,7 +24,15 @@ $viewPharmacyContr = new ViewStoreContr($pharmacyID); ?>
     <div class="navlanding">
             
             <a href="notification.php?pharmacyID="<?=$_SESSION['pharmacyID']?>><img class="imgs bask" src="../assets/icons/notification.svg"></a>
-            
+            <?php
+
+            $notificationNo = $navbarContr->getPharmacyNotificationNo($_SESSION['pharmacyID']);
+            if ($notificationNo != 0) {
+
+                echo '<p class="notificationNo">'.$notificationNo.'</p>';
+
+            }
+            ?>
             <a href="user.php?pharmacyID="<?=$_SESSION['pharmacyID']?>><img class="imgs bask" src="../assets/icons/user.svg"></a>
             
             <a href="logout.php?pharmacyID="<?=$_SESSION['pharmacyID']?>><button name="logOut" id="logout" class="butn log" type="submit">Logout</button></a>

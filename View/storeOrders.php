@@ -1,6 +1,10 @@
 <?php session_start(); 
-$pharmacyID = 1005;
+$pharmacyID = 1003;
 $_SESSION['pharmacyID']=$pharmacyID;
+include "../Controller/storeOrders_contr.php";
+include "../Model/navBar.model.php"; 
+include "../Controller/navBar.contr.php";
+$navbarContr = new NavBarContr();
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +23,15 @@ $_SESSION['pharmacyID']=$pharmacyID;
 <div class="navlanding">
             
             <a href="notification.php?pharmacyID="<?=$_SESSION['pharmacyID']?>><img class="imgs bask" src="../assets/icons/notification.svg"></a>
+            <?php
+
+            $notificationNo = $navbarContr->getPharmacyNotificationNo($_SESSION['pharmacyID']);
+            if ($notificationNo != 0) {
+
+                echo '<p class="notificationNo">'.$notificationNo.'</p>';
             
+            }
+            ?>
             <a href="user.php?pharmacyID="<?=$_SESSION['pharmacyID']?>><img class="imgs bask" src="../assets/icons/user.svg"></a>
             
             <a href="logout.php?pharmacyID="<?=$_SESSION['pharmacyID']?>><button name="logOut" id="logout" class="butn log" type="submit">Logout</button></a>
@@ -72,7 +84,7 @@ $_SESSION['pharmacyID']=$pharmacyID;
         </Form>
 
         <?php 
-        include "../Controller/storeOrders_contr.php";
+        
             $orders = new StoreOrderContr();
             if(isset($_POST['select'])){
                 $orders->displayRadio($_POST['select'],$_GET['type']) ;

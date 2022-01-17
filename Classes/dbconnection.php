@@ -9,6 +9,7 @@ class DBConnection{
     private $pwd = 'zap';
     private $dbname = "e_pharm";
     private $port = "3306";
+    private $pdo;
     
     private  function __construct()
     {
@@ -17,6 +18,7 @@ class DBConnection{
     public static function getInstance(){
         if((self::$connection==null)){
             self::$connection = new DBConnection();
+            self::$connection->connect();
         }
         return self::$connection;
     }
@@ -26,12 +28,18 @@ class DBConnection{
             $pdo=new PDO('mysql:host='.$this->host.';port='.$this->port.';dbname='.$this->dbname,
             $this->user, $this->pwd);
             
-            return $pdo;
+            $this->pdo = $pdo;
+    
             
             
         }catch(PDOException $e){
             print "Error!: ".$e->getMessage()."<br/>";
             die();
         }
+    }
+
+    public function getPDO()
+    {
+        return $this->pdo;
     }
 }

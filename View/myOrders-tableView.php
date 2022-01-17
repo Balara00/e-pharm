@@ -18,7 +18,7 @@
             <div class="col backk">
                 <div class="inside-row">
                             
-                <?php echo '<h class="date">' . $row['date']  . '</h>' ?><br>
+                <?php echo '<h class="date">' . $row['dateTime']  . '</h>' ?><br>
                 <?php echo '<h class="price">Rs.' . $row['price']  . '</h>' ?><br>
                 <?php echo '<h class="pharmacy-name">' . $pharmacy->getname().' - '.$pharmacy->getarea() . '</h>' ?><br>
                 <h5 class="orderSummary">Order Summary</h5>
@@ -58,7 +58,9 @@
                 </form>
                 
                 <?php
-                if(($this->getOrder($row['orderID']))['status'] == 'received' || ($this->getOrder($row['orderID']))['status'] == 'cancelled') {
+                $orderstats=$this->getOrder($row['orderID']);
+                if($orderstats['status'] == 'received' || $orderstats['status'] == 'cancelled' || $orderstats['approveStatus'] == 'declined'
+                        || $orderstats['approveStatus'] == 'accepted') {
                         
                         ?>
                         <script>

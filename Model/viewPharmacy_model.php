@@ -2,9 +2,14 @@
 require_once('../Classes/dbconnection.php');
 
 class ViewPharmacyModel {
+    private $pdo;
 
+    public function __construct()
+    {
+        $this->pdo=DBConnection::getInstance()->getPDO();
+    }
     public function searchResult($searchq){
-        $stmt = $this->connect()->prepare("SELECT * FROM medicine WHERE name LIKE ? ");
+        $stmt = $this->pdo->prepare("SELECT * FROM medicine WHERE name LIKE ? ");
         
         if(!$stmt->execute(['%'.$searchq.'%'])){
             
@@ -19,7 +24,7 @@ class ViewPharmacyModel {
     }
 
     public function searchMedPharmacy($pharmacyID,$medID){
-        $stmt = $this->connect()->prepare("SELECT * FROM pharmacy_medicine WHERE pharmacyID LIKE ? AND medID LIKE ?");
+        $stmt = $this->pdo->prepare("SELECT * FROM pharmacy_medicine WHERE pharmacyID LIKE ? AND medID LIKE ?");
 
         if(!$stmt->execute([$pharmacyID,$medID])){
             
@@ -33,7 +38,7 @@ class ViewPharmacyModel {
     }
 
     public function searchAllItems($pharmacyID){
-        $stmt = $this->connect()->prepare("SELECT * FROM pharmacy_medicine WHERE pharmacyID LIKE ?");
+        $stmt = $this->pdo->prepare("SELECT * FROM pharmacy_medicine WHERE pharmacyID LIKE ?");
 
         if(!$stmt->execute([$pharmacyID])){
 
@@ -46,7 +51,7 @@ class ViewPharmacyModel {
     }
 
     public function searchmedNamePrice($medID){
-        $stmt = $this->connect()->prepare("SELECT * FROM medicine WHERE medID LIKE ?");
+        $stmt = $this->pdo->prepare("SELECT * FROM medicine WHERE medID LIKE ?");
 
         if(!$stmt->execute([$medID])){
 
@@ -59,7 +64,7 @@ class ViewPharmacyModel {
     }
 
     public function getRating($pharmacyID){
-        $stmt = $this->connect()->prepare("SELECT * FROM rating_pharmacy WHERE pharmacyID = ?");
+        $stmt = $this->pdo->prepare("SELECT * FROM rating_pharmacy WHERE pharmacyID = ?");
 
         if(!$stmt->execute([$pharmacyID])){
             $stmt = null;
@@ -71,7 +76,7 @@ class ViewPharmacyModel {
     }
 
     public function searchPharm($pharmacyID){
-        $stmt = $this->connect()->prepare("SELECT * FROM pharmacy WHERE pharmacyID = ?");
+        $stmt = $this->pdo->prepare("SELECT * FROM pharmacy WHERE pharmacyID = ?");
 
         if(!$stmt->execute([$pharmacyID])){
             $stmt = null;
@@ -82,7 +87,5 @@ class ViewPharmacyModel {
         return $result;
     }
 
-    public function connect(){
-        return DBConnection::getInstance()->connect();
-    }
+    
 }

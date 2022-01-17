@@ -17,7 +17,7 @@
         ?>
             <div class="col backk">
                 <div class="inside-row">
-                <img class="imgPharm" src="../uploads/<?= $pharmacyMed->getmedURL() ?>"><br>
+                <a href="medDetail.php?customerID=<?php echo $this->getcustomerID() ."&medID=".$pharmacyMed->getmedID()."&pharmacyID=". $pharmacyMed->getpharmacyID(); ?>"><img class="imgPharm" src="../uploads/<?= $pharmacyMed->getmedURL() ?>"></a><br>
                 <?php echo '<h class="drug-name">' . $medicine['name'] . '</h>' ?><br>
                 <?php echo '<h class="price">Rs.' . $row['price']  . '</h>' ?><br>
                 <?php if ($pharmacyMed->getamount() == 0) {

@@ -16,9 +16,9 @@
             <div class="col backk">
                 <div class="inside-row">
                             
-                <?php echo '<h class="date">' . $row['date']  . '</h>' ?><br>
+                <?php echo '<h class="date">' . $row['dateTime']  . '</h>' ?><br>
                 <?php echo '<h class="price">Rs.' . $row['price']  . '</h>' ?><br>
-                <?php echo '<h class="customer-name">' . $customer['name'].' - 0'.$customer['mobile'] . '</h>' ?><br>
+                <?php echo '<h class="customer-name">' . $customer['name'].' - 0'.$customer['contactNo'] . '</h>' ?><br>
                 <h5 class="orderSummary">Order Summary</h5>
 
                 <?php 
@@ -40,9 +40,9 @@
                 if($row['prescriptionURL']!=null){
                     ?>
 
-                    <div id="pres-container<?= $i?>" class="pres-container hidden">
-                    <button class="close-modal" onclick="close(<?= $i?>)">&times;</button>
-                    <img src="../uploads/<?=$row['prescriptionURL']?>" id="presImg<?= $i?>" class="presImg ">
+                    <div id="pres-container<?php echo $i; ?>" class="pres-container hidden">
+                        <button class="close-modal" id="close-modal<?php echo $i; ?>">&times;</button>
+                        <img src="../uploads/<?=$row['prescriptionURL']?>" id="presImg<?= $i?>" class="presImg ">
                     </div>
                     <?php
                 }
@@ -50,9 +50,13 @@
                 if($row['status'] == "cancelled"){
                     echo '<p class="status cancelled">Order cancelled</p>';
                 }
+                if($row['approveStatus'] == "declined"){
+                    echo '<p class="status cancelled">Order declined</p>';
+                }
                 if($row['orderType']== "delivery" && $row['deliveryStatus'] == "delivered"){
                     echo '<p  class="status delivered">Delivery completed</p>';
                 }
+
 
                 if($row['orderType']== "pickup" && $row['approveStatus'] == "accepted"){
                     echo '<p  class="status delivered">Reserved</p>';
@@ -61,7 +65,7 @@
                 
                 ?>
                 
-                <form action="../includes/acceptdeclineOrder.php?orderID=<?= $row['orderID']; ?>&type=<?= $row['orderType']?>" method="post">
+                <form action="../includes/acceptdeclineOrder.php?orderID=<?= $row['orderID']; ?>&type=<?= $row['orderType']?>&pharmacyID=<?= $row['pharmacyID']; ?>" method="post">
                     <button id="myBtn<?php echo $i; ?>" name="accept" onclick='return confirm("Are you sure?")' class="btn-primary btn accept" type="submit">Accept order</button>
                 </form>
                 
@@ -76,9 +80,10 @@
                                 document.getElementById("pres-container"+i).classList.remove('hidden');
                                 
                             }
-                            function close(i){
-                                document.getElementById("pres-container"+i).classList.add('hidden');
-                            }
+
+                            document.getElementById("close-modal<?php echo $i; ?>").addEventListener("click", function(){
+                                document.getElementById("pres-container<?php echo $i; ?>").classList.add('hidden');
+                            });
                             
                     </script>
                 <?php
@@ -90,8 +95,8 @@
 
                <?php 
                 }
-
-                if(($this->getOrder($row['orderID']))['approveStatus'] == 'accepted' || ($this->getOrder($row['orderID']))['approveStatus'] == 'declined') {
+                $orderstats=$this->getOrder($row['orderID']);
+                if($orderstats['approveStatus'] == 'accepted' || $orderstats['approveStatus'] == 'declined' || $orderstats['status']=='cancelled'){
                         
                         ?>
                         <script>
@@ -105,10 +110,23 @@
                                 
                             
                         </script>
+                            
+                        <script>
+                            function disableDelivery(i){
+                                document.getElementById("myBtn"+i).disabled = true;
+                                // document.getElementById("myBtn"+i).setAttribute("style","display:none;")
+
+                                document.getElementById("myreceived"+i).disabled = true;
+                                // document.getElementById("myreceived"+i).setAttribute("style","display:none;")
+
+                                document.getElementById("deliverBtn"+i).disabled = true;
+                            }
+
+                        </script>
                         <?php 
                         echo '<script> disableBtns('.$i.'); </script>';
                     }
-                if( ($this->getOrder($row['orderID']))['deliveryStatus'] == 'delivered'){
+                if( $orderstats['deliveryStatus'] == 'delivered' || $orderstats['status']=='cancelled' || $orderstats['approveStatus'] == 'declined'){
                     ?>
                     <script>
                         function disabledeliverBtns(i){

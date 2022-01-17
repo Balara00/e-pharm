@@ -65,6 +65,27 @@ body{
     z-index: 5;
     margin-left: 17px;
 }
+.notificationNo {
+    position: absolute;
+    left: 58.35%;
+    top: 7%;
+    background: #E31313;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+     z-index: 14;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 28px;
+    text-align: center;
+
+    color: #FAFAFA;
+
+    padding-bottom: 10px;
+   
+}
 .imgs:hover{
     opacity: 0.8;
     

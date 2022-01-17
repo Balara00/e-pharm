@@ -5,16 +5,20 @@ include "../Controller/storeOrders_contr.php";
 
 if(isset($_POST['accept'])){
     $obj = new StoreOrderContr();
-    if($obj->updateApproveStatus('accepted',$_GET['orderID']) == true){
-        header("Location: ../View/storeOrders.php?type=".$_GET['type']);
+    if($obj->reduceAmounts($_GET['orderID'],$_GET['pharmacyID'])==true){
+        if($obj->updateApproveStatus('accepted',$_GET['orderID']) == true){
+
+        }
     }
+    header("Location: ../View/storeOrders.php?type=".$_GET['type']);
+    
 
 }
 
 if(isset($_POST['decline'])){
     $obj = new StoreOrderContr();
     if($obj->updateApproveStatus('declined',$_GET['orderID']) == true){
-        header("Location: ../View/storeOrders.php)type=".$_GET['type']);
+        header("Location: ../View/storeOrders.php?type=".$_GET['type']);
     }
 }
 

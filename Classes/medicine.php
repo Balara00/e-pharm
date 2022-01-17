@@ -22,9 +22,7 @@ class Medicine{
         $medicine->setname($name);
         
     }
-    
-    
-    
+
     public function setname($name){
         $this->name = $name;
     }

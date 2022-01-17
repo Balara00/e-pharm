@@ -2,13 +2,19 @@
 require_once('../Classes/dbconnection.php');
 
 class MyOrderModel{
+    private $pdo;
+
+    public function __construct()
+    {
+        $this->pdo=DBConnection::getInstance()->getPDO();
+    }
 
     public function searchOrderType($customerID,$name,$type){
         $stmt = null;
 
         
         if($name == 'All'){
-            $stmt = $this->connect()->prepare("SELECT * FROM order_ WHERE customerID LIKE ? and orderType LIKE ?");
+            $stmt = $this->pdo->prepare("SELECT * FROM order_ WHERE customerID LIKE ? and orderType LIKE ?");
             if(!$stmt->execute([$customerID,$type])){
                 $stmt = null;
                 header("location: ../View/myOrders.php?error=stmt=searchDeliveryFailed");
@@ -17,13 +23,13 @@ class MyOrderModel{
         }
         else{
             if($name == 'Pending'){
-                $stmt = $this->connect()->prepare("SELECT * FROM order_ WHERE customerID LIKE ? and orderType LIKE ? and status LIKE ?");
+                $stmt = $this->pdo->prepare("SELECT * FROM order_ WHERE customerID LIKE ? and orderType LIKE ? and status LIKE ?");
     
             }elseif($name == 'Received'){
-                $stmt = $this->connect()->prepare("SELECT * FROM order_ WHERE customerID LIKE ? and orderType LIKE ? and status LIKE ?");
+                $stmt = $this->pdo->prepare("SELECT * FROM order_ WHERE customerID LIKE ? and orderType LIKE ? and status LIKE ?");
     
             }elseif($name == 'Cancelled'){
-                $stmt = $this->connect()->prepare("SELECT * FROM order_ WHERE customerID LIKE ? and orderType LIKE ? and status LIKE ?");
+                $stmt = $this->pdo->prepare("SELECT * FROM order_ WHERE customerID LIKE ? and orderType LIKE ? and status LIKE ?");
             }
             
             if(!$stmt->execute([$customerID,$type,strtolower($name)])){
@@ -40,7 +46,7 @@ class MyOrderModel{
     }
 
     public function searchmedNamePrice($medID){
-        $stmt = $this->connect()->prepare("SELECT * FROM medicine WHERE medID LIKE ?");
+        $stmt = $this->pdo->prepare("SELECT * FROM medicine WHERE medID LIKE ?");
 
         if(!$stmt->execute([$medID])){
 
@@ -53,7 +59,7 @@ class MyOrderModel{
     }
 
     public function searchPharmacyDetails($pharmacyID){
-        $stmt = $this->connect()->prepare("SELECT * FROM pharmacy WHERE pharmacyID LIKE ?");
+        $stmt = $this->pdo->prepare("SELECT * FROM pharmacy WHERE pharmacyID LIKE ?");
 
         if(!$stmt->execute([$pharmacyID])){
 
@@ -67,7 +73,7 @@ class MyOrderModel{
     }
 
     public function searchOrderMeds($orderID){
-        $stmt = $this->connect()->prepare("SELECT * FROM order_medicine WHERE orderID LIKE ?");
+        $stmt = $this->pdo->prepare("SELECT * FROM order_medicine WHERE orderID LIKE ?");
 
         if(!$stmt->execute([$orderID])){
             $stmt = null;
@@ -79,7 +85,7 @@ class MyOrderModel{
     }
 
     public function updateStatus($status,$orderID){
-        $stmt = $this->connect()->prepare("UPDATE order_ SET status=? WHERE orderID=?");
+        $stmt = $this->pdo->prepare("UPDATE order_ SET status=? WHERE orderID=?");
 
         $result = null;
         if(!$stmt->execute([$status,$orderID])){
@@ -97,7 +103,7 @@ class MyOrderModel{
     public function searchOrder($orderID){
 
 
-        $stmt=$this->connect()->prepare("SELECT * FROM order_ WHERE orderID = ?");
+        $stmt=$this->pdo->prepare("SELECT * FROM order_ WHERE orderID = ?");
 
         if(!$stmt->execute([$orderID])){
             $stmt= null;
@@ -122,7 +128,7 @@ class MyOrderModel{
         }elseif($rating == "5"){
             $value = 5;
         }
-        $stmt1 = $this->connect()->prepare("SELECT * FROM rating_pharmacy WHERE pharmacyID LIKE ?");
+        $stmt1 = $this->pdo->prepare("SELECT * FROM rating_pharmacy WHERE pharmacyID LIKE ?");
         if(!$stmt1->execute([$pharmacyID])){
             $stmt1 = null;
             header("location: ../myOrders.php?error=stmt=selectRatingFailed");
@@ -131,7 +137,7 @@ class MyOrderModel{
         }
         $result = $stmt1->fetch(PDO::FETCH_ASSOC);
         if($result == null){
-            $stmt = $this->connect()->prepare("INSERT INTO rating_pharmacy(pharmacyID, totalRating, noOfReviews, averageRating) VALUES (?, ?, ?,?)");
+            $stmt = $this->pdo->prepare("INSERT INTO rating_pharmacy(pharmacyID, totalRating, noOfReviews, averageRating) VALUES (?, ?, ?,?)");
             if(!$stmt->execute([$pharmacyID,$value,1,$value])){
                 $stmt = null;
                 header("location: ../myOrders.php?error=stmt=insertRatingFailed");
@@ -143,7 +149,7 @@ class MyOrderModel{
             $noOfReviews = $result['noOfReviews'] + 1;
             $averageRating = $totalRating/$noOfReviews;
 
-            $stmt = $this->connect()->prepare("UPDATE rating_pharmacy SET totalRating=? ,noOfReviews=? ,averageRating=? WHERE pharmacyID=?");
+            $stmt = $this->pdo->prepare("UPDATE rating_pharmacy SET totalRating=? ,noOfReviews=? ,averageRating=? WHERE pharmacyID=?");
             if(!$stmt->execute([$totalRating,$noOfReviews,$averageRating,$pharmacyID])){
                 $stmt = null;
                 header("location: ../myOrders.php?error=stmt=updateRatingFailed");
@@ -155,8 +161,6 @@ class MyOrderModel{
 
     }
 
-    public function connect(){
-        return DBConnection::getInstance()->connect();
-    }
+    
     
 }

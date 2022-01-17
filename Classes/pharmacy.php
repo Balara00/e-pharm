@@ -20,4 +20,5 @@ class pharmacy{
     public function getarea(){
         return $this->area;
     }
+    
 }

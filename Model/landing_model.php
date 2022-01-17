@@ -2,10 +2,14 @@
 require_once('../Classes/dbconnection.php');
 
 class LandingModel{
+    private $pdo;
 
-
+    public function __construct()
+    {
+        $this->pdo=DBConnection::getInstance()->getPDO();
+    }
     public function getAreas(){
-        $stmt = $this->connect()->prepare("SELECT `area` FROM pharmacy");
+        $stmt = $this->pdo->prepare("SELECT `area` FROM pharmacy");
         if(!$stmt -> execute(array())){
             $stmt = null;
             header("location: ../index.php?error=stmt=getAreasFailed");
@@ -16,7 +20,5 @@ class LandingModel{
         return $pharmacyDet;
     }
 
-    public function connect(){
-        return DBConnection::getInstance()->connect();
-    }
+    
 }

@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+<?php session_start(); 
+$_SESSION['customerID']=1;
+include "../Controller/myOrders_contr.php";
+include "../Model/navBar.model.php"; 
+include "../Controller/navBar.contr.php";
+$navbarContr = new NavBarContr();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +21,14 @@
 <div class="navlanding">
             <a href="landing.php?customerID="<?php $_SESSION['customerID'] ?>><img class="imgs bask" src="../assets/icons/search.svg"></a>
             <a href="notification.php?customerID="<?=$_SESSION['customerID']?>><img class="imgs bask" src="../assets/icons/notification.svg"></a>
+            <?php 
+            $notificationNo = $navbarContr->getCustomerNotificationNo($_SESSION['customerID']);
+            if ($notificationNo != 0) {
+
+                echo '<p class="notificationNo">'.$notificationNo.'</p>';
+            
+            }
+            ?>          
             <a href="cart.php?customerID="<?=$_SESSION['customerID']?>><img class="imgs bask" src="../assets/icons/cart.svg"></a>
 
             <a href="user.php?customerID="<?=$_SESSION['customerID']?>><img class="imgs bask" src="../assets/icons/user.svg"></a>
@@ -67,7 +81,7 @@
         </Form>
 
         <?php 
-        include "../Controller/myOrders_contr.php";
+        
             $orders = new MyOrderContr();
             if(isset($_POST['select'])){
                 $orders->displayRadio($_POST['select'],$_GET['type']) ;
