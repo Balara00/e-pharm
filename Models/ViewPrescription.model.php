@@ -83,7 +83,7 @@ class ViewPrescription{
     public function setApproveState($prescID, $status){
         $stmt = $this->pdo->prepare('UPDATE `pharmacy_prescription` SET `approveState`=:stat WHERE `pharmacyID`=:pharmID AND `prescID`= :prescID');
         $stmt->execute(array(':pharmID' => $_SESSION['pharmacyID'], ':prescID' => $prescID, ':stat' => $status));
-        reeturn;
+        return;
     }
 
     

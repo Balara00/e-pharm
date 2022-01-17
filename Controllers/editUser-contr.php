@@ -5,17 +5,17 @@ class EditUserContr extends EditUser{
   //private $uid;
   private $name;
   private $address;
-  private $email;
+  private $contactNumber;
 
-  public function __construct( $name, $address, $email){
+  public function __construct( $name, $address, $contactNumber){
     //$this->$uid = $uid;
     $this->name = $name;
     $this->address = $address;
-    $this->email = $email;
+    $this->contactNumber = $contactNumber;
   }
 
   public function editUserDetails(){
-    $this->setUserDetails($_SESSION["customerID"], $this->name, $this->address, $this->email);
+    $this->setUserDetails($_SESSION["customerID"], $this->name, $this->address, $this->contactNumber);
   }
 
   //should validate inputs
