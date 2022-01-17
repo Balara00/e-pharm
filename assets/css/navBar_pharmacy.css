@@ -1,0 +1,93 @@
+.navbar_ePharm {
+    height: 15%;
+    /* position: fixed; */
+
+    background-color: #EBEBEB;
+    /* background-color: darkgray; */
+
+}
+
+.navbarTitle {
+    position: absolute;
+    width: 275px;
+    height: 83px;
+    left: 4%;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 395%;
+    line-height: 83px;
+   
+    text-align: center;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    background: -webkit-linear-gradient(#0041BF 0%, #000F2D 100%);
+    /* background: linear-gradient(180deg, #0041BF 0%, #000F2D 100%); */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navBarBtn {
+    position: absolute;
+    height: 40px;
+    background: #1B93C7;
+    border-radius: 45px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+
+    color: #FAFAFA;
+}
+
+.logoutBtn {
+    width: 110px;
+    left: 88%;
+}
+
+.notificationIcon  {
+    position: absolute;
+    width: 36px;
+    height: 48px;
+    left: 78.5%;
+    top: 28%;
+}
+
+
+.userIcon {
+    position: absolute;
+    width: 33px;
+    height: 42px;
+    left: 83.5%;
+    top: 28%;
+}
+
+.iconNavBar:hover {
+    filter: hue-rotate(45deg) saturate(8);
+}
+
+.notificationNo {
+    position: absolute;
+    left: 80%;
+    background: #E31313;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 28px;
+    text-align: center;
+
+    color: #FAFAFA;
+
+    padding-bottom: 10px;
+   
+}
