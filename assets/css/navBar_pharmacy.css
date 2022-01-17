@@ -50,40 +50,20 @@
     left: 88%;
 }
 
-.uploadPrescriptionBtn {
-    width: 220px;
-    left: 70%;
-}
-
-.searchIcon {
-    position: absolute;
-    width: 46px;
-    height: 44px;
-    left: 50%;
-    top: 29%;
-}
-
 .notificationIcon  {
     position: absolute;
     width: 36px;
     height: 48px;
-    left: 56%;
+    left: 78.5%;
     top: 28%;
 }
 
-.cartIcon {
-    position: absolute;
-    width: 43px;
-    height: 43px;
-    left: 61%;
-    top: 28%;
-}
 
 .userIcon {
     position: absolute;
     width: 33px;
     height: 42px;
-    left: 66%;
+    left: 83.5%;
     top: 28%;
 }
 
@@ -93,7 +73,7 @@
 
 .notificationNo {
     position: absolute;
-    left: 57.5%;
+    left: 80%;
     background: #E31313;
     width: 25px;
     height: 25px;
@@ -111,4 +91,3 @@
     padding-bottom: 10px;
    
 }
-

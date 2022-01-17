@@ -177,58 +177,40 @@
 
 }
 
-.buyNowBtn {
-
-    /* Rectangle 50 */
-
+.medDetBtn {
     position: absolute;
-    width: 185px;
-    height: 50px;
-
-    background: #1B93C7;
+    height: 45px;
+    
     border-radius: 45px;
     border: none;
-
-    /* Buy now */
 
     font-family: Ubuntu;
     font-style: normal;
     font-weight: normal;
-    font-size: 28px;
+    font-size: 145%;
     line-height: 34px;
     text-align: center;
 
     color: #FFFFFF;
 
     top: 225px;
-    left: -480px;
+}
 
+.buyNowBtn {
+    background: #1B93C7;
+    width: 140px;
+    left: -545px;
 }
 
 .addToCartBtn {
-    /* Rectangle 50 */
+    width: 170px;
+    left: -180px;
+}
 
-    position: absolute;
+.reserveNowBtn {
+    background: #1B93C7;
     width: 185px;
-    height: 50px;
-
-    border-radius: 45px;
-    border: none;
-
-
-    /* Add to Cart */
-
-    font-family: Ubuntu;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 28px;
-    line-height: 34px;
-    text-align: center;
-
-    color: #FFFFFF;
-
-    top: 225px;
-    left: -260px;
+    left: -385px;
 }
 
 #quantityTxtBox {
@@ -248,7 +230,7 @@
     line-height: 29px;
 }
 
-.quantityTxt {
+.quantityText {
     /* Quantity */
 
     position: absolute;
@@ -269,59 +251,65 @@
     left: 38px;
 }
 
-.navbar_ePharm {
-    height: 73px;
 
-    /* background-color: lightsalmon; */
-    background-color: #EBEBEB;
 
+.modal {
+    display: block; 
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+  
+  /* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+  
+  /* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-.navbarTitle {
-    position: absolute;
-    top: 15px;
-    left: 55px;
+.viewCartBtn {
+    border-radius: 45px;
+    width: 250px;
+}
 
+.imgCart {
+    /* position: absolute; */
+    width: 200px;
+    height: 200px;   
+}
+
+.success {
     font-family: Ubuntu;
     font-style: normal;
-    font-weight: bold;
-    font-size: 75px;
-    line-height: 83px;
-   
-    text-align: center;
-
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-    background: -webkit-linear-gradient(#0041BF 0%, #000F2D 100%);
-    /* background: linear-gradient(180deg, #0041BF 0%, #000F2D 100%); */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 29px;
 }
 
-.logoutBtn {
-
-    /* Rectangle 55 */
-
-    position: absolute;
-    width: 110px;
-    height: 50px;
-
-    background: #1B93C7;
-    border-radius: 45px;
-
-
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 22px;
-    line-height: 28px;
-    text-align: center;
-
-    color: #FAFAFA;
-
-    padding-top: 10px;
-    padding-left: 15px;
-
-    top: 30px;
-    left: 1125px;
+.close {
+    position: relative;
+    vertical-align: right;
 }
