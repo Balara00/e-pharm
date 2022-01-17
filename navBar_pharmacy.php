@@ -15,7 +15,7 @@
         include "Controller/navBar.contr.php";
         include "View/navBar.view.php";
 
-        $_SESSION['pharmacyID'] = '1';
+        // $_SESSION['pharmacyID'] = '1';
 
         $navBar_view = new NavBarView();
     ?>

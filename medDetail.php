@@ -42,7 +42,7 @@ session_start();
     $isDeliveyAvailable = $med_det_view->getPharmDelAvailability();
 
     // 
-    $_SESSION['customerID'] = $customerID;
+    // $_SESSION['customerID'] = $customerID;
     // 
 
         if(isset($_SESSION['get'])) {

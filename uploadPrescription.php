@@ -30,7 +30,7 @@ session_start();
 
     ////////////////////////////////
     $customerID = $_GET['customerID'];
-    $_SESSION['customerID'] = $customerID;
+    // $_SESSION['customerID'] = $customerID;
 
         if(isset($_SESSION['get'])) {
             header("Location: uploadPrescription.php?customerID=".$customerID);
