@@ -56,7 +56,7 @@ session_start();
     <div class="medEdit_container">
 
         <?php 
-        include "navBar.php";
+        include "navBar_pharmacy.php";
         
             echo '<img class="imgMed" src="uploads/'. $medURL .'">';
                 
