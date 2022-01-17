@@ -47,7 +47,7 @@ else{
          <div class="LoginForm">
            <?php
            include "classes/DBConn.php";
-           include "Models/ViewPrescription.model.php";
+           include "Model/ViewPrescription.model.php";
            include "View/viewPrescription.view.php";
            $presView = new ViewPrescription_view();
            $prescriptions = $presView->getFilteredData($filter);

@@ -59,7 +59,7 @@
           <form method="post" action="includes/editUser.inc.php">
             <?php
             include_once "classes/DBConn.php";
-            include_once "Models/account.models.php";
+            include_once "Model/account.models.php";
             include_once "classes/customer.classes.php";
             include_once "View/account.view.php";
             $accountView = new AccountView();

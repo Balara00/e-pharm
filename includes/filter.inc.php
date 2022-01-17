@@ -7,7 +7,7 @@ if($filter == "all"){
 }
 else{
     include "../classes/DBConn.php";
-    include "../Models/myPrescriptions.models.php";
+    include "../Model/myPrescriptions.models.php";
     include "../View/myPrescriptions.view.php";
     $presView = new MyPrescriptionView();
     

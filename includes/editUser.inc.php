@@ -7,8 +7,8 @@ if(isset($_POST["saveChanges"])){
   $uid = $_SESSION['customerID'];
 
   include_once "../classes/DBConn.php";
-  include_once "../Models/editUser.models.php";
-  include_once "../Controllers/editUser-contr.php";
+  include_once "../Model/editUser.models.php";
+  include_once "../Controller/editUser-contr.php";
 
   $edit = new EditUserContr($name, $address, $contactNumber);
   $edit->editUserDetails();

@@ -7,9 +7,9 @@ if(isset($_GET['status']) and isset($_GET['prescID'])){
     // echo "status: ".$status;
     // echo "prescID: ".$prescID;
     include "../classes/DBConn.php";
-    include "../Models/ViewPrescription.model.php";
-    include "../Controllers/Controller.php";
-    include "../Controllers/viewPrescription-contr.php";
+    include "../Model/ViewPrescription.model.php";
+    include "../Controller/Controller.php";
+    include "../Controller/viewPrescription-contr.php";
     $notification = 'All the medicines in your prescription (ref No: '.$prescID.') are available in our pharmacy!';
     $viewPrescContr = new ViewPrescriptionContr($status, $prescID);
     $viewPrescContr->executeStatus($notification);
@@ -29,9 +29,9 @@ elseif(isset($_POST['send'])){
     ."Special Note: <br>".$specialNote."<br>";
 
     include "../classes/DBConn.php";
-    include "../Models/ViewPrescription.model.php";
-    include "../Controllers/Controller.php";
-    include "../Controllers/viewPrescription-contr.php";
+    include "../Model/ViewPrescription.model.php";
+    include "../Controller/Controller.php";
+    include "../Controller/viewPrescription-contr.php";
 
     $viewPrescContr = new ViewPrescriptionContr($status, $prescID);
     $viewPrescContr->executeStatus($notification);

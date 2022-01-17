@@ -4,9 +4,9 @@ $pid = $_GET["prescID"];
     //echo $pid;
     
     include "../classes/DBConn.php";
-    include "../Models/MyPrescriptions.models.php";
-    include "../Controllers/Controller.php";
-    include "../Controllers/myPrescription-contr.php";
+    include "../Model/MyPrescriptions.models.php";
+    include "../Controller/Controller.php";
+    include "../Controller/myPrescription-contr.php";
 
     $prescContr = new MyPrescriptionContr();
 
