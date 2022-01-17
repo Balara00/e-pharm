@@ -1,7 +1,8 @@
 <?php
 // include "../Model/medDetail.model.php";
+include "controller.php";
 
-class MedDetailContr {
+class MedDetailContr extends Controller {
     private $medID;
     private $pharmacyID;
 

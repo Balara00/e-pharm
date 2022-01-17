@@ -1,6 +1,7 @@
 <?php
+include "controller.php";
 
-class MedEditorContr {
+class MedEditorContr extends Controller {
     private $medID;
     private $pharmacyID;
 

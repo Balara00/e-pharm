@@ -1,6 +1,7 @@
 <?php
+include "controller.php";
 
-class UploadPrescriptionContr {
+class UploadPrescriptionContr extends Controller {
     private $uploadPresc_model;
     private $notificationMed;
     private $fileNameNew;

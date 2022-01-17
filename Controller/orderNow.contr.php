@@ -1,5 +1,7 @@
 <?php
-class OrderNowContr{
+include "controller.php";
+
+class OrderNowContr extends Controller {
     private $pharmacyID;
     private $medQuantityArr;
     private $customerID;
