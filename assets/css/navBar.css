@@ -90,3 +90,24 @@
 .iconNavBar:hover {
     filter: hue-rotate(45deg) saturate(8);
 }
+
+.notificationNo {
+    position: absolute;
+    left: 57.5%;
+    background: #E31313;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 28px;
+    text-align: center;
+
+    color: #FAFAFA;
+
+    padding-bottom: 10px;
+   
+}
