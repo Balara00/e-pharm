@@ -20,10 +20,215 @@
     top: 2%;
     left: 7%;
     position: absolute;
+
+    font-family: Ubuntu;
+    font-style: normal;
+   
+
 }
 
 .phoneInp::-webkit-outer-spin-button,
 .phoneInp::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.orderTableHead, .orderTableBody {
+  text-align: center;
+}
+
+.orderTable {
+  height: 50%;
+  /* width: 100%; */
+}
+
+.medInfo {
+  overflow-y: auto;
+  background-color: white;
+  width: 60%;
+  height: 75%;
+  position: absolute;
+  left: 5%;
+  top: 17.5%;
+
+  padding: 2%;
+  font-size: 125%;
+
+}
+
+.cusInfo {
+  background-color: white;
+  position: absolute;
+  left: 67%;
+  top: 17.5%;
+
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 1.5%; 
+  padding-right: 1.5%;
+  height: 75%;
+  width: 30%;
+
+  font-weight: bold;
+  font-size: 110%;
+  /* line-height: 100%; */
+}
+
+.orderTableFooter {
+  position: absolute;
+  top: 84%;
+  left: 9%;
+  /* padding-left: 5%; */
+
+  /* width: 93.5%; */
+  /* border-color: transparent; */
+}
+
+
+.myTotal {
+  width: 78.75%;
+  font-weight: bold;
+}
+
+.dateInp{
+  /* background-color: white; */
+  cursor: not-allowed;
+  
+  position: relative;
+  top: -2%;
+}
+
+.nameTxt {
+  position: relative;
+  top: -2.5%;
+}
+
+.nameInp {
+  cursor: not-allowed;
+  position: relative;
+  top: -4.5%;
+}
+
+.phoneTxt {
+  position: relative;
+  top: -4.5%;
+}
+
+.phoneInp{
+  position: relative;
+  top: -6.5%;
+}
+
+.addressTxt {
+  position: relative;
+  top: -3.5%;
+}
+
+.adderssInp {
+  position: relative;
+  top: -5%;
+}
+
+.uploadPresc_txt {
+  position: relative;
+  top: -1%;
+}
+
+.uploadPresc_photo {
+  position: relative;
+  left: 3%;
+  /* top: -8%; */
+
+  text-align: center;
+
+  color: #FFFBFB;
+  border-radius: 0px 45px 45px 0px;
+  border-color: #1B93C7;
+  background: #1B93C7;
+  font-size: 90% !important;
+  width: 65%;
+}
+
+.uploadPresc_photo:hover {
+  cursor: pointer;
+}
+
+.confirmOrderBtn {
+  position: absolute;
+  left: 40%;
+  top: 84%;
+
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+
+  color: #FFFBFB;
+  background: #1B93C7;
+  border-radius: 45px;
+
+
+  width: 120px;
+  height: 45px;
+}
+
+.modal {
+  display: block; 
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 45%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.imgPrescription {
+  /* position: absolute; */
+  width: 190px;
+  height: 212px;   
+}
+
+.success {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 29px;
+
+  top: 30px;
+  margin: 25px;
+}
+
+.close {
+  position: relative;
+  vertical-align: right;
 }
