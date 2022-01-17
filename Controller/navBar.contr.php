@@ -1,5 +1,5 @@
 <?php
-include "controller.php";
+// include "controller.php";
 
 class NavBarContr extends Controller {
     private $navBar_model;

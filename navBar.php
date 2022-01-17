@@ -19,7 +19,7 @@
     ?>
     <nav class="navbar navbar-light navbar_ePharm sticky-top ">
         <div class="container-fluid">
-            <a class="navbar-brand navbarTitle" href="index.php">E-Pharm</a>
+            <a class="navbar-brand navbarTitle">E-Pharm</a>
 
             <?php
             
@@ -33,7 +33,7 @@
                 echo '<p class="notificationNo">'.$notificationNo.'</p>';
             
             }
-            echo '<a class="navbar-brand nav-link" href="cart.php?customerID=' .$_SESSION['customerID']. '"> <img src="assets/icons/cart.svg" class="cartIcon iconNavBar"> </a>';
+            echo '<a class="navbar-brand nav-link" href="cart.php"> <img src="assets/icons/cart.svg" class="cartIcon iconNavBar"> </a>';
 
             echo '<a class="navbar-brand nav-link " href="account.php?customerID=' .$_SESSION['customerID']. '"> <img src="assets/icons/user.svg" class="userIcon iconNavBar"> </a>';
 
@@ -44,4 +44,5 @@
         </div>
     </nav>
 </body>
+
 </html>

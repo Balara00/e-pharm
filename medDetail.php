@@ -20,7 +20,7 @@ session_start();
 
     <?php
 
-    include "classes/dbConnection.class.php";
+    include "classes/dbconnection.classes.php";
     include "classes/medicine.class.php";
     include "classes/pharmacy.class.php";
     include "classes/pharmacy_medicine.class.php";
@@ -136,7 +136,7 @@ session_start();
             <p class="mx-auto success">Sucessfully added to cart</p>
 
             <?php
-            echo '<a class="btn btn-primary viewCartBtn mx-auto" href="cart.php?customerID='.$customerID.'" role="button">Check out now</a>';
+            echo '<a class="btn btn-primary viewCartBtn mx-auto" href="cart.php" role="button">Check out now</a>';
             ?>    
         <!-- </div> -->
             </div>

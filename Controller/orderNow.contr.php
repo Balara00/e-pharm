@@ -66,6 +66,8 @@ class OrderNowContr extends Controller {
         $fileType = $uploadFile['type'];
         $fileNameNew = '';
 
+        echo $fileName;
+
         $fileExt = explode('.',$fileName);
         $fileActualExt = strtolower(end($fileExt));
     

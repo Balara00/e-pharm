@@ -17,13 +17,18 @@ session_start();
 </head>
 <body class="orderNow_body">
     <?php
-        include "classes/dbConnection.class.php";
+        include "classes/dbconnection.classes.php";
         include "classes/pharmacy_medicine.class.php";
         include "classes/pharmacy.class.php";
         include "classes/medicine.class.php";
         include "Model/orderNow.model.php"; 
         include "Controller/orderNow.contr.php";
         include "View/orderNow.view.php"; 
+
+        if(isset($_SESSION['error'])) {
+            echo('<p style="color:red;">'.htmlentities($_SESSION['error'])."</p>\n");
+            unset($_SESSION['error']);
+        }
 
         // $_SESSION['buyNow'] = "true";
         // $_SESSION['reseveNow'] = "true";
@@ -101,15 +106,22 @@ session_start();
         <p class="nameInp form-control" ><?php echo $order_view->getCustomerName(); ?></p>
 
         <!-- <input type="text" name="cus_name" class="nameInp form-control" aria-label="readonly input" readonly value=<?php echo $order_view->getCustomerName(); ?>> -->
-
+        <?php
+       if(isset($_SESSION['order']) && $_SESSION['order'] == "reserveNow"){
+        ?>
         <p class="phoneTxt">
-            Phone Number
-        </p>
+            Phone Number</p>
         <input type="number" name="phone" id="" class="phoneInp form-control" value=<?php echo $order_view->getCustomerNo(); ?> required oninput="validity.valid||(value='');" onKeyPress="if(this.value.length==10) return false;">
 
+        <?php
+       }?>
+        
        <?php
-       if(isset($_SESSION['buyNow'])){
+        if(isset($_SESSION['order']) && $_SESSION['order'] == "buyNow"){
         ?>
+        <p class="phoneTxt">
+            Phone Number</p>
+        <input type="number" name="phone" id="" class="phoneInp form-control" required value=<?php echo $order_view->getCustomerNo(); ?> required oninput="validity.valid||(value='');" onKeyPress="if(this.value.length==10) return false;">
 
         <p class="addressTxt">Address</p>
         <input type="text" name="address" id="" class="adderssInp form-control" required value=<?php echo $order_view->getCustomerAddress(); ?>>     
@@ -120,7 +132,7 @@ session_start();
         <label for="upload" class="form-label uploadPresc_txt">Prescription</label>
         <input type="file" class="form-form-control-file uploadPresc_photo" name="prescPhoto" id="mypres" aria-describedby="acceptedFilesBlock" accept=".png, .jpg, .jpeg"/>
         <input type="hidden" name="tot" value=<?php echo $total ?>>
-        <input type="submit" value="Confirm" class="btn btn-primary confirmOrderBtn" name="confirmOrder" data-bs-toggle="modal" data-bs-target="#myModal"/>
+        <input type="submit" id="confirmBtn" value="Confirm" class="btn btn-primary confirmOrderBtn" name="confirmOrder" data-bs-toggle="modal" data-bs-target="#myModal"/>
     
     </div>
 
@@ -153,7 +165,11 @@ session_start();
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
     modal.style.display = "none";
+
     }   
+    var btn = document.getElementById("confirmBtn");
+
+    btn.style.display = "none";
 </script>
 
 <?php

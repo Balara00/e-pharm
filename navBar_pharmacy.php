@@ -21,11 +21,11 @@
     ?>
     <nav class="navbar navbar-light navbar_ePharm sticky-top ">
         <div class="container-fluid">
-            <a class="navbar-brand navbarTitle" href="index.php">E-Pharm</a>
+            <a class="navbar-brand navbarTitle">E-Pharm</a>
 
             <?php
             
-            echo '<a class="navbar-brand nav-link" href="notification.php?pharmacyID=' .$_SESSION['pharmacyID']. '"> <img src="assets/icons/notification.svg" class="notificationIcon iconNavBar"> </a>';
+            echo '<a class="navbar-brand nav-link" href="notificationPharm.php?pharmacyID=' .$_SESSION['pharmacyID']. '"> <img src="assets/icons/notification.svg" class="notificationIcon iconNavBar"> </a>';
 
             $notificationNo = $navBar_view->getPharmacyNotificationNo($_SESSION['pharmacyID']);
             if ($notificationNo != 0) {

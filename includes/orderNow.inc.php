@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include "../classes/dbConnection.class.php";
+include "../classes/dbconnection.classes.php";
 
 include "../Model/orderNow.model.php";
 
@@ -30,21 +30,23 @@ if (isset($_POST['confirmOrder'])) {
     date_default_timezone_set('Asia/Colombo');
     $date = date('m/d/Y h:i:s a', time());
     // echo $date;
-    if (isset($_FILES['prescPhoto'])) {
-        $uploadFile = $_FILES['prescPhoto'];
-        $prescURL = $orderNow_contr->getPrescURL($uploadFile);
-   
-    } else {
+    if ($_FILES['prescPhoto']['name'] == "") {
         $prescURL = "";
     }
-
-    if (isset($_SESSION['buyNow']) && isset($_POST['address'])) {
-        $address = $_POST['address'];
-        $orderNow_contr->setDeliveryOrderObj($customerID, $pharmacyID, $price, $date, $prescURL, $address, $contactNo);
+    else {
+        $uploadFile = $_FILES['prescPhoto'];
+        $prescURL = $orderNow_contr->getPrescURL($uploadFile);
     }
 
-    if (isset($_SESSION['reserveNow'])) {
+    if (isset($_SESSION['order']) && isset($_POST['address']) && $_SESSION['order'] == "buyNow") {
+        $address = $_POST['address'];
+        $orderNow_contr->setDeliveryOrderObj($customerID, $pharmacyID, $price, $date, $prescURL, $address, $contactNo);
+       
+    }
+
+    if (isset($_SESSION['order']) && $_SESSION['order'] == "reserveNow") {
         $orderNow_contr->setPickUpOrderObj($customerID, $pharmacyID, $price, $date, $prescURL, $contactNo);
+      
     }
 
     $orderNow_contr->orderNow();

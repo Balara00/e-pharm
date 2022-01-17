@@ -18,7 +18,7 @@ session_start();
 <body class="uploadPres_body">
 
     <?php
-    include "classes/dbConnection.class.php";
+    include "classes/dbconnection.classes.php";
     include "Model/pharmacy.model.php";
     include "classes/pharmacy.class.php";
     include "classes/notificationMediator.php";
@@ -112,7 +112,7 @@ session_start();
             </div>
             
             <img class="imgPrescription mx-auto" src="assets/images/prescription.svg">
-            <p class="mx-auto success">Sucessfully updated</p>
+            <p class="mx-auto success">Sucessfully uploaded</p>
 
             </div>
         </div>
