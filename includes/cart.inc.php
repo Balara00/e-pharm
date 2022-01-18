@@ -32,15 +32,19 @@ if (isset($_GET['status'])) {
 if (isset($_POST['buyNow'])) {
     $_SESSION['pharmID'] = $_POST['pharmID'];
     $_SESSION['medQuantityArr'] = unserialize($_POST['medQuantityArr']);
+
     $_SESSION['order'] = "buyNow";
     header('Location: ../orderNow.php');
     exit();
+
 }
 if (isset($_POST['reserveNow'])) {
     $_SESSION['pharmID'] = $_POST['pharmID'];
     $_SESSION['medQuantityArr'] = unserialize($_POST['medQuantityArr']);
+
     $_SESSION['order'] = "reserveNow";
     header('Location: ../orderNow.php');
     exit();
+
 }
 header('Location: ../cart.php');

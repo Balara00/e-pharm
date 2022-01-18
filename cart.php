@@ -38,6 +38,7 @@ $cart = $cartView->showCart($_SESSION['customerID']);
     <?php 
         include "navBar.php";
         ?>
+
         <div class="cart-all">
             <div class="cart-topic">
                 <p>Cart</p>

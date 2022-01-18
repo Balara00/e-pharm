@@ -38,11 +38,13 @@ if (!isset($_SESSION['errors'])) {
 
     <body class="index_body">
         <div class="container">
+
         <?php 
         include "classes/dbconnection.classes.php";
         include "Controller/controller.php";
         include "navBar_pharmacy.php";
         ?>
+
             <div class="sign-form">
                 <div class="welcome-container">
                     <h3 id="welcome">Add Medicine</h3>
