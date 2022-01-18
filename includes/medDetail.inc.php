@@ -16,7 +16,7 @@ include "../View/medDetail.view.php";
 if (isset($_POST['buyNow'])) {
     $amount = $_POST['quantityTxt'];
     
-    $_SESSION['buyNow'] = "true";
+    $_SESSION['order'] = "buyNow";
     $_SESSION['pharmacyID'] = $_GET['pharmacyID'];
     $_SESSION['medQuantityArr'] = array($_GET['medID']=> $amount);
     header("Location: ../orderNow.php");
@@ -25,7 +25,7 @@ if (isset($_POST['buyNow'])) {
 if (isset($_POST['reserveNow'])) {
     $amount = $_POST['quantityTxt'];
 
-    $_SESSION['reserveNow'] = "true";
+    $_SESSION['order'] = "reserveNow";
     $_SESSION['pharmacyID'] = $_GET['pharmacyID'];
     $_SESSION['medQuantityArr'] = array($_GET['medID']=> $amount);
     header("Location: ../orderNow.php");
