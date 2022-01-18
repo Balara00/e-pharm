@@ -19,13 +19,13 @@
     ?>
     <nav class="navbar navbar-light navbar_ePharm sticky-top ">
         <div class="container-fluid">
-            <a class="navbar-brand navbarTitle" href="index.php">E-Pharm</a>
+            <a class="navbar-brand navbarTitle">E-Pharm</a>
 
             <?php
             
             echo '<a class="btn navbar-brand nav-link" href="landing.php?customerID=' .$_SESSION['customerID']. '"> <img src="assets/icons/search.svg" class="searchIcon iconNavBar"> </a>';
 
-            echo '<a class="navbar-brand nav-link" href="notification.php?customerID=' .$_SESSION['customerID']. '"> <img src="assets/icons/notification.svg" class="notificationIcon iconNavBar"> </a>';
+            echo '<a class="navbar-brand nav-link" href="notification.php"> <img src="assets/icons/notification.svg" class="notificationIcon iconNavBar"> </a>';
 
             $notificationNo = $navBar_view->getCustomerNotificationNo($_SESSION['customerID']);
             if ($notificationNo != 0) {
@@ -33,7 +33,7 @@
                 echo '<p class="notificationNo">'.$notificationNo.'</p>';
             
             }
-            echo '<a class="navbar-brand nav-link" href="cart.php?customerID=' .$_SESSION['customerID']. '"> <img src="assets/icons/cart.svg" class="cartIcon iconNavBar"> </a>';
+            echo '<a class="navbar-brand nav-link" href="cart.php"> <img src="assets/icons/cart.svg" class="cartIcon iconNavBar"> </a>';
 
             echo '<a class="navbar-brand nav-link " href="account.php?customerID=' .$_SESSION['customerID']. '"> <img src="assets/icons/user.svg" class="userIcon iconNavBar"> </a>';
 
