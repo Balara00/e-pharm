@@ -30,10 +30,10 @@ class SignupCus
     }
     public function signup($username, $password_1, $name, $verificationCode)
     {
-        echo $username . '<br>';
-        echo $password_1 . '<br>';
-        echo $name . '<br>';
-        echo $verificationCode . '<br>';
+        // echo $username . '<br>';
+        // echo $password_1 . '<br>';
+        // echo $name . '<br>';
+        // echo $verificationCode . '<br>';
         $password = md5($password_1); //encrypt the password before saving in the database
         $query = "INSERT INTO customer (username,password,address,name,isActive,verificationCode,verifyingStatus,contactNo) 
         VALUES(:username,:password,:address,:name,:isActive,:verificationCode,:verifyingStatus,'')";
