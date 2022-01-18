@@ -29,7 +29,7 @@ else{
            <a class="nav-link active" href="pharmacyAccount.php">Account</a>
          </li>
          <li class="nav-item">
-           <a class="nav-link" href="cart.php">Cart</a>
+           <a class="nav-link" href="notificationPharm.php">Notification</a>
          </li>
          <li class="nav-item">
            <a class="nav-link" href="logout.php">Logout</a>

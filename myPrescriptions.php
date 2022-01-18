@@ -58,9 +58,9 @@ else{
               <div class="PrescDetail">
                 <h5 class="card-title">Ref No: <?php echo $prescription["prescID"]  ?></h5>
                 <div class="ImgDiv">
-                <a href="uploads/<?php echo $prescription["prescURL"] ?>" target="_blank">
-                  <img class="presImg" src="uploads/<?php echo $prescription["prescURL"]?>" alt="">
-                </a>
+                  <a href="uploads/<?php echo $prescription["prescURL"] ?>" target="_blank">
+                    <img class="presImg" src="uploads/<?php echo $prescription["prescURL"]?>" alt="">
+                  </a>
                 </div>
                 <div class="noteDiv">
                 <label for="title" >Special Note: </label><br>

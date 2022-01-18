@@ -85,7 +85,7 @@
               <input type="text" name="address"
               value="<?php echo  $accountView->getUserAddress(); ?>"
               placeholder= "address"
-               required>
+               >
             </div>
             <div class="WhiteSpace">
             </div>
@@ -96,7 +96,7 @@
               <input type="text" name="contactNumber"
               value="<?php echo  $accountView->getUserContact(); ?>"
               placeholder= "Contact Number"
-               required>
+               >
             </div>
             <div class="WhiteSpace">
             </div>

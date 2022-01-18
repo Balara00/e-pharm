@@ -134,10 +134,11 @@ body{
 }
 
 .noteDiv{
-  position: relative;
+  /* position: relative; */
   /* left: 200px; */
   top: 20px;
   height: 150px;
+  left: 200px;
   /* text-align: center; */
 }
 

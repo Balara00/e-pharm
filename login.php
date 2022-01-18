@@ -128,23 +128,25 @@ session_start();
 
               <div class="WhiteSpace">
               </div>
-              <div class="CheckInput">
+              <!-- <div class="CheckInput">
                 <input class="form-check-input" type="checkbox" id="autoSizingCheck" name='RememberMe'
                 <?php if(isset($_COOKIE["username"])) { ?> checked <?php } ?> />
                 <label >
                   Remember me
                 </label>
 
-              </div>
-              <div class="WhiteSpace">
-              </div>
+              </div> -->
+              <!-- <div class="WhiteSpace">
+              </div> -->
               <div class="LoginBtn">
                 <button type="submit" class="btn" name="login_user">Log In</button>
               </div>
             </form>
             <div class="LoginBottom">
               Don't have an account?
-              <a href="signUpCustomer.php" id="signUpLink">Sign Up</a>
+              <a href="signUpCus.php" id="signUpLink">Sign Up</a> <br>
+              Haven't register your pharmacy yet?
+              <a href="signUpPharm.php" id="signUpLink">Register</a> <br>
             </div>
           </div>
         </div>

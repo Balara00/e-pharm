@@ -1,0 +1,224 @@
+.container {
+  background-image: url(../images/landingMain_img.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow-y: auto;
+  width: 86%;
+  height: 96%;
+  top: 2%;
+  left: 7%;
+  position: absolute;
+}
+
+.index_body {
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-image: url(../images/background_img.svg);
+  background-position: top top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  font-family: Ubuntu;
+}
+
+.nav-bar {
+  height: 15%;
+  background-color: aqua;
+}
+.cart-topic {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bolder;
+}
+.pharmacy-name {
+  font-weight: bold;
+  font-size: 30px;
+}
+.pharmacy {
+  position: relative;
+  display: block;
+  min-height: 330px;
+}
+.row-med {
+  position: relative;
+  width: 400px;
+  height: 100px;
+}
+td {
+  background-color: white;
+  border: 1px solid white;
+  /* border-radius: 13px; */
+}
+td:first-child {
+  border-top-left-radius: 13px;
+  border-bottom-left-radius: 13px;
+  border-color: transparent;
+}
+td:last-child {
+  border-top-right-radius: 13px;
+  border-bottom-right-radius: 13px;
+  border-color: transparent;
+}
+
+.medicine-list {
+  position: relative;
+  max-width: 900px;
+}
+.med-img {
+  height: 150px;
+  width: 250px;
+  margin: 10px;
+}
+.td1 {
+  margin: 5px;
+}
+.td4 {
+  text-align: right;
+  padding: 10px;
+}
+.drug-name {
+  font-size: 25px;
+  line-height: 2px;
+}
+.drug-price {
+  font-size: 27px;
+  color: #0038ff;
+}
+.saveChangesBtn {
+  left: 70px;
+  right: 70px;
+  margin: 25px 18px 25px 6px;
+  padding-left: 10px;
+  width: 200px !important;
+  height: 40px;
+  border: 2px solid #1b93c7;
+  border-radius: 20px;
+  background-color: #1b93c7;
+  text-align: center;
+  color: #fff;
+}
+.modal {
+  display: block;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.imgCart {
+  /* position: absolute; */
+  width: 200px;
+  height: 200px;
+}
+
+.success {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 29px;
+}
+
+.close {
+  position: relative;
+  vertical-align: right;
+}
+.order-summry {
+  position: absolute;
+  right: 5px;
+  left: 75%;
+  top: 70px;
+  width: 260px !important;
+  height: 310px;
+}
+.summ-text {
+  padding-top: 4px;
+  font-size: 22px;
+  text-align: center;
+  height: 50px;
+  color: white;
+  background-color: #1b93c7;
+  border: 1px solid #1b93c7;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+.summ-content {
+  padding-top: 4px;
+  text-align: center;
+  background-color: white;
+  border: 1px solid white;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  height: 210px;
+}
+.btns {
+  margin: 5px 18px 5px 6px;
+  padding-left: 10px;
+  width: 140px !important;
+  height: 40px;
+  border: 2px solid #1b93c7;
+  border-radius: 20px;
+  background-color: #1b93c7;
+  text-align: center;
+  color: #fff;
+}
+.note {
+  height: 55px;
+  color: #ff7b00;
+}
+.dlt {
+  position: relative;
+  top: 5px;
+  right: 5px;
+}
+.btns:disabled,
+.btns[disabled] {
+  border: 2px solid #a3d7ee;
+  border-radius: 20px;
+  background-color: #a3d7ee;
+}
+.between-row {
+  height: 20px;
+  background-color: transparent;
+}
+.stock-exceeded {
+  font-size: 15px;
+  color: #ff5650;
+}
+.summ-below {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  background-color: #ff7b00;
+}

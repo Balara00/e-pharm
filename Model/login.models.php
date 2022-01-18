@@ -55,7 +55,7 @@ class Login{
   }
 
   public function sendNotifications($notification,$customerID,$pharmacyID,$dateTime){
-    $stmt = $this->pdo->prepare('INSERT INTO `customer_notification`(`customerID`, `pharmacyID`, `Notification`, `dateTime`, `isRead`, `isNew`)
+    $stmt = $this->pdo->prepare('INSERT INTO `customer_notification`(`customerID`, `pharmacyID`, `notification`, `dateTime`, `isRead`, `isNew`)
       VALUES (:cid, :pid, :note, :dateAndTime, "0", "0")');
     $stmt->execute(array(
     ':cid'=>$customerID,

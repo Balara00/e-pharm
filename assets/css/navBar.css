@@ -1,51 +1,90 @@
 .navbar_ePharm {
-    /* padding-top: 18px;
-    padding-bottom: 18px;
-    padding-left: 1%; */
-    height: 73px;
-
-    /* background-color: lightsalmon; */
-    background-color: #EBEBEB;
-
+  height: 15%;
+  /* position: fixed; */
+  background-color: #ebebeb;
+  /* background-color: darkgray; */
 }
 
-/* .cartIcon {
-    height: 40px;
-    width: 40px;
+.navbarTitle {
+  position: absolute;
+  width: 275px;
+  height: 83px;
+  left: 4%;
 
-    position: absolute;
-    left: 500px;
-    top: 20px;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 395%;
+  line-height: 83px;
+
+  text-align: center;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  background: -webkit-linear-gradient(#0041bf 0%, #000f2d 100%);
+  /* background: linear-gradient(180deg, #0041BF 0%, #000F2D 100%); */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navBarBtn {
+  position: absolute;
+  height: 40px;
+  background: #1b93c7;
+  border-radius: 45px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+
+  color: #fafafa;
+}
+
+.logoutBtn {
+  width: 110px;
+  left: 88%;
+}
+
+.uploadPrescriptionBtn {
+  width: 220px;
+  left: 70%;
+}
+
+.searchIcon {
+  position: absolute;
+  width: 46px;
+  height: 44px;
+  left: 50%;
+  top: 29%;
+}
+
+.notificationIcon {
+  position: absolute;
+  width: 36px;
+  height: 48px;
+  left: 56%;
+  top: 28%;
+}
+
+.cartIcon {
+  position: absolute;
+  width: 43px;
+  height: 43px;
+  left: 61%;
+  top: 28%;
 }
 
 .userIcon {
-    height: 40px;
-    width: 31.37px;
-
-    position: absolute;
-    left: 750px;
-    top: 20px;
-
-} */
-
-.navbarTitle {
-    position: absolute;
-    width: 275px;
-    height: 83px;
-
-    font-family: Ubuntu;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 320%;
-    line-height: 83px;
-   
-    text-align: center;
-
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-    background: -webkit-linear-gradient(#0041BF 0%, #000F2D 100%);
-    /* background: linear-gradient(180deg, #0041BF 0%, #000F2D 100%); */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  position: absolute;
+  width: 33px;
+  height: 42px;
+  left: 66%;
+  top: 28%;
 }
 
+.iconNavBar:hover {
+  filter: hue-rotate(45deg) saturate(8);
+}
