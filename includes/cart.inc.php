@@ -27,18 +27,28 @@ if (isset($_GET['status'])) {
     if ($_GET['status'] == 'yes') {
         $cartContr->removeMed($_SESSION['customerID'], $_SESSION['pID'], $_SESSION['mID']);
     }
-    unset($_SESSION['successDlt']);
+    if (isset($_SESSION['successDlt'])) {
+        unset($_SESSION['successDlt']);
+    }
 }
 if (isset($_POST['buyNow'])) {
     $_SESSION['pharmID'] = $_POST['pharmID'];
     $_SESSION['medQuantityArr'] = unserialize($_POST['medQuantityArr']);
-    $_SESSION['buyNow'] = true;
+    $_SESSION['order'] = 'buyNow';
+    if (isset($_SESSION['successDlt'])) {
+        unset($_SESSION['successDlt']);
+    }
     header('Location: ../orderNow.php');
+    exit();
 }
 if (isset($_POST['reserveNow'])) {
     $_SESSION['pharmID'] = $_POST['pharmID'];
     $_SESSION['medQuantityArr'] = unserialize($_POST['medQuantityArr']);
-    $_SESSION['reserveNow'] = true;
+    $_SESSION['order'] = 'reserveNow';
+    if (isset($_SESSION['successDlt'])) {
+        unset($_SESSION['successDlt']);
+    }
     header('Location: ../orderNow.php');
+    exit();
 }
 header('Location: ../cart.php');

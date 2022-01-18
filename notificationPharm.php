@@ -28,7 +28,7 @@ $ntfs = $notificPharmView->getNotifications($_SESSION['pharmacyID']);
 
 <body class="index_body">
     <div class="container">
-        <?php include "navBar.php" ?>
+        <?php include "navBar_pharmacy.php" ?>
         <div class="out-dv">
             <div class="in-dv">
                 <div class="accordion" id="accordionExample">

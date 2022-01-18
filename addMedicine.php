@@ -1,7 +1,8 @@
 <?php
 //include('includes/signupCus.inc.php');
 session_start();
-
+// $_SESSION['customerID'] = 24;
+// $_SESSION['pharmacyID'] = 1;
 if (isset($_SESSION['medname'])) {
     $name = $_SESSION['medname'];
 } else {
@@ -28,9 +29,10 @@ if (!isset($_SESSION['errors'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/addMed.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap-5.1.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+    <link rel="stylesheet" type="text/css" href="assets/css/addMed.css">
     <title>Add Medicine</title>
 </head>
 
@@ -38,6 +40,8 @@ if (!isset($_SESSION['errors'])) {
 
     <body class="index_body">
         <div class="container">
+            <?php include "Controller/controller.php" ?>
+            <?php include "navBar_pharmacy.php" ?>
             <div class="sign-form">
                 <div class="welcome-container">
                     <h3 id="welcome">Add Medicine</h3>
@@ -114,12 +118,57 @@ if (!isset($_SESSION['errors'])) {
                         </div>
                         <div class="between-inputs"></div>
                         <div class="signup-btn">
-                            <button type="submit" class="btn" name="add_med">Add</button>
+                            <!-- <td class="td3"><br><br><br><input type="submit" name="saveChanges" class="saveChangesBtn" value="Save Changes" data-bs-toggle="modal" data-bs-target="#myModal" /></td> -->
+                            <button type="submit" class="btn" name="add_med" data-bs-toggle="modal" data-bs-target="#myModal">Add</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
+
+        <?php
+        if (isset($_SESSION['successAdd'])) {
+        ?>
+            <!-- Trigger/Open The Modal -->
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+
+                    <!-- <div class="modal-body"> -->
+                    <div>
+                        <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <img class="imgCart mx-auto" src="assets/images/cart.svg">
+                    <p class="mx-auto success">Successfully added to the store</p>
+
+                    <!-- </div> -->
+                </div>
+            </div>
+
+            <script>
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+            </script>
+
+        <?php
+
+            // if (isset($_SESSION['success'])) {
+            unset($_SESSION['successAdd']);
+        }
+        ?>
+
 
         <script>
             function change_color(x) {
@@ -127,5 +176,6 @@ if (!isset($_SESSION['errors'])) {
                 document.getElementById(x).style.boxShadow = "none";
             }
         </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     </body>

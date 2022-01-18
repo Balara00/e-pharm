@@ -39,6 +39,8 @@
 }
 .pharmacy {
   position: relative;
+  display: block;
+  min-height: 330px;
 }
 .row-med {
   position: relative;
@@ -158,7 +160,7 @@ td:last-child {
   left: 75%;
   top: 70px;
   width: 260px !important;
-  height: 260px;
+  height: 310px;
 }
 .summ-text {
   padding-top: 4px;
@@ -213,4 +215,10 @@ td:last-child {
 .stock-exceeded {
   font-size: 15px;
   color: #ff5650;
+}
+.summ-below {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  background-color: #ff7b00;
 }
