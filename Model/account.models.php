@@ -6,8 +6,8 @@ class Account{
   private $pdo;
 
   public function __construct(){
-    $dbc = DBConn::getConnection();
-    $this->pdo = $dbc->connect();
+    $dbc = DBConnection::getInstance();
+    $this->pdo = $dbc->getPDO();
   }
 
   public function getUser($uid){

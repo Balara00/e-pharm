@@ -1,4 +1,4 @@
-.EditBody{
+.EditPharmacyBody{
     background-image: url(../images/img2.svg);
     background-position: top top;
     background-repeat: no-repeat;
@@ -57,28 +57,26 @@
 
 .editForm{
   width: 558px;
-  top: 10%;
+  top: 20%;
   height: 550px;
   position: absolute;
   right: 5%;
-  /* top: 40px; */
+  top: 40px;
   background-color: #fff;
   border-radius: 10px;
   overflow-y: auto;
-  /* text-align: center; */
 }
 
 .Label{
   flex: 10;
   font-family: Ubuntu;
-  padding-left: 40px;
-  /* left: 10%; */
-  /* right: 70px; */
+  padding-left: 15px;
+  left: 20px;
+  right: 70px;
   width: 300px;
-  height: 30px;
+  height: 40px;
   border-color: transparent;
   background-color: transparent;
-  font-weight: bold;
 }
 
 #editnote{
@@ -88,8 +86,6 @@
   color: #000;
   position: relative;
   font-size: 150%;
-  height: 20%;
-  margin-bottom: 40px;
 }
 
 
@@ -166,10 +162,6 @@ input:-webkit-autofill:active {
   background-color: #1b93c7;
   text-align: center;
   color: #fff;
-}
-
-.edit{
-  text-align: center;
 }
 
 .edit button{

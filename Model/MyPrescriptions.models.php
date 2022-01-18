@@ -7,8 +7,8 @@ class MyPrescription{
 
   public function __construct(){
 
-    $this->dbc = DBConn::getConnection();
-    $this->pdo = $this->dbc->connect();
+    $this->dbc = DBConnection::getInstance();
+    $this->pdo = $this->dbc->getPDO();
 
   }
 

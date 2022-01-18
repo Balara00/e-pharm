@@ -53,7 +53,99 @@
   top: 50px;
   bottom: 25px;
 }
-.vertical-menu {
+
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 20%;
+  width: 15%;
+  top: 30%;
+  position: fixed;
+  left: 15%;
+  /* z-index: 1; */
+  /* top: 0;
+  left: 0; */
+  background-color: rgb(253, 253, 253);
+  /* overflow-x: hidden;
+  padding-top: 20px; */
+}
+
+.blueBar {
+  height: 20%;
+  width: 3%;
+  top: 30%;
+  position: fixed;
+  border-radius: 30px 0px 0px 30px;
+  left: 12%;
+  /* z-index: 1; */
+  /* top: 0;
+  left: 0; */
+  background-color: rgb(10, 14, 240);
+  /* overflow-x: hidden;
+  padding-top: 20px; */
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  background-color:rgb(253, 253, 253);
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  height: 10%;
+  font-weight: bold;
+  block-size: 40%;
+  /* font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none; */
+}
+
+.dropdown-btn button{
+    border-width: 5px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+
+
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  background-color: #ccc;
+}
+
+
+
+/* Add an active class to the active dropdown button */
+.sidenav a.active {
+  background-color: #65c6f0;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #1273ce;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+/* .vertical-menu {
   width: 25%;
   float: left;
   position: fixed;
@@ -74,23 +166,56 @@
 .vertical-menu a.active {
   background-color: #1b93c7;
   color: white;
-}
-.DetailsCard{
+} */
+
+.OuterDetailsCard{
   width: 60%;
   height: 80%;
   padding: 10px;
   position: relative;
-  left: 30%;
-  border: 5px solid #1b93c7;
+  left: 35%;
+  /* border: 5px solid #1b93c7; */
   background: #FFFFFF;
+  
   border-radius: 45px 0px;
-  text-align: left;
+  text-align: center;
 }
 
+.DetailsCard{
+  display: inline-block;
+  margin: 0 auto;
+  top: 5%;
+  width: 90%;
+  height: 90%;
+  padding: 10px;
+  position: relative;
+  /* left: 10%; */
+  border: 5px solid #1b93c7;
+  background: #FFFFFF;
+  /* border-style: inset; */
+  border-radius: 45px 0px;
+  /* text-align: center; */
+}
+
+.tag{
+  text-align: left;
+  font-family: Ubuntu;
+  display: inline-block;
+  margin: 0 auto;
+  height: 10%;
+  width: 100%;
+  left: 30%;
+  padding: 20px;
+}
 
 .detail{
-  height: 25%;
-  width: 100%;
+  /* text-align: left; */
+  font-family: Ubuntu;
+  /* display: inline-block; */
+  margin: 0 auto;
+  height: 10%;
+  width: 80%;
+  left: 10%;
   padding: 20px;
 }
 
@@ -110,3 +235,5 @@
   text-align: center;
   color: #fff;
 }
+
+

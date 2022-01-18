@@ -6,7 +6,7 @@ if(isset($_GET['status']) and isset($_GET['prescID'])){
     $prescID = $_GET['prescID'];
     // echo "status: ".$status;
     // echo "prescID: ".$prescID;
-    include "../classes/DBConn.php";
+    include "../classes/dbconnection.classes.php";
     include "../Model/ViewPrescription.model.php";
     include "../Controller/Controller.php";
     include "../Controller/viewPrescription-contr.php";
@@ -28,7 +28,7 @@ elseif(isset($_POST['send'])){
     $notification = "Prescription ref No: <br>".$prescID."<br>"."Available Medicines: <br>".$availableMeds."<br>"."Unavailable Medicines: <br>".$unavailableMeds."<br>"
     ."Special Note: <br>".$specialNote."<br>";
 
-    include "../classes/DBConn.php";
+    include "../classes/dbconnection.classes.php";
     include "../Model/ViewPrescription.model.php";
     include "../Controller/Controller.php";
     include "../Controller/viewPrescription-contr.php";

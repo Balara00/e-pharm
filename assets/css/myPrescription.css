@@ -75,19 +75,14 @@ body{
   background-color: #1b93c7;
   color: white;
 }
-.DetailsCard{
-  width: 60%;
-  height: 80%;
+
+
+.PrescDetail{
+  background-color: #fff;
   padding: 10px;
-  position: relative;
-  left: 30%;
-  border: 5px solid #1b93c7;
-  background: #FFFFFF;
-  border-radius: 45px 0px;
-  text-align: left;
+  margin: 20px;
+  border-radius: 20px;
 }
-
-
 .detail{
   height: 25%;
   width: 100%;
@@ -123,6 +118,14 @@ body{
   overflow-y: auto;
 } */
 
+.ImgDiv{
+  width: 200px;
+  text-align: center;
+  /* padding: 25px; */
+  
+  float: left;
+}
+
 .presImg {
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -130,8 +133,28 @@ body{
   width: 150px;
 }
 
+.noteDiv{
+  position: relative;
+  /* left: 200px; */
+  top: 20px;
+  height: 150px;
+  /* text-align: center; */
+}
+
+.cardBottom{
+  float: none;
+  top: 200px;
+  left: 20px;
+  text-align: center;
+}
+
+.buttonArea{
+  top: 400px;
+  text-align: right;
+}
+
 .LoginForm{
-  width: 558px;
+  width: 50%;
   height: 530px;
   position: absolute;
   left: 30%;

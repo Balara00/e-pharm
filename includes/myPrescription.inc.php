@@ -3,7 +3,7 @@ session_start();
 $pid = $_GET["prescID"];
     //echo $pid;
     
-    include "../classes/DBConn.php";
+    include "../classes/dbconnection.classes.php";
     include "../Model/MyPrescriptions.models.php";
     include "../Controller/Controller.php";
     include "../Controller/myPrescription-contr.php";

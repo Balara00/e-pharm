@@ -37,7 +37,7 @@
       </div>
       <div class="DetailsCard" >
         <?php
-        include_once "classes/DBConn.php";
+        include_once "classes/dbconnection.classes.php";
         include_once "Model/account.models.php";
         include_once "classes/customer.classes.php";
         include_once "View/account.view.php";
@@ -73,7 +73,7 @@
           <?php echo "No of delivery services that can handle per day: ".$pharmacyDetails["dvOrdersPerDay"]."\n"; ?>
         </div>
         <div class="edit">
-          <a href="edit.php">
+          <a href="editPharmacy.php">
             <button type="button" id="editbtn" class="btn" name="editBtn">Edit</button>
           </a>
         </div>

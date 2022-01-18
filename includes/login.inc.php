@@ -7,7 +7,7 @@ if(isset($_POST["login_user"])){
   $pwd = $_POST["password"];
   $rememberMe = $_POST['RememberMe'];
 
-  include_once "../classes/DBConn.php";
+  include_once "../classes/dbconnection.classes.php";
   include_once "../Model/login.models.php";
   include_once "../Controller/Controller.php";
   include_once "../Controller/login-contr.php";

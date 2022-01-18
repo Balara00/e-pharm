@@ -4,8 +4,8 @@ class Login{
   private $pdo;
 
   public function __construct(){
-    $dbc = DBConn::getConnection();
-    $this->pdo = $dbc->connect();
+    $dbc = DBConnection::getInstance();
+    $this->pdo = $dbc->getPDO();
   }
 
   public function getCustomer($uid, $pwd){
@@ -22,53 +22,6 @@ class Login{
     return $row2;
   }
 
-  // public function getUser($uid, $pwd){
-
-    
-  //   $stmt = $this->pdo->prepare('SELECT customerID, name FROM customer WHERE username = :un AND password = :pw AND verifyingStatus = "verified" ');
-  //   $stmt->execute(array( ':un' => $uid, ':pw' => $pwd));
-  //   $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-  //   $stmt2 = $this->pdo->prepare('SELECT pharmacyID, name FROM pharmacy WHERE username = :un AND password = :pw AND verifyingStatus = "verified" ');
-  //   $stmt2->execute(array( ':un' => $uid, ':pw' => $pwd));
-  //   $row2 = $stmt2->fetch(PDO::FETCH_ASSOC);
-
-  //   if ( $row !== false OR $row2 !== false) {
-  //     // if(isset($_POST['RememberMe'])){
-  //     //   setcookie ("username",$username,time()+ (10 * 365 * 24 * 60 * 60));
-  //     //   setcookie ("password",$password,time()+ (10 * 365 * 24 * 60 * 60));
-
-  //     //   //header("Location: landing.php?customerID=".$_GET['customerID']);
-  //     // }
-  //     // else{
-  //     //   if(isset($_COOKIE["username"])){
-  //     //     setcookie ("username","");
-  //     //   }
-  //     //   if(isset($_COOKIE["password"])){
-  //     //     setcookie ("password","");
-  //     //   }
-  //     //   //header("Location: landing.php?customerID=".$_GET['customerID']);
-  //     // }
-  //     //$this->viewPickUpOrders();
-  //     if($row){
-  //       $_SESSION["customerID"] = $row['customerID'];
-  //       $_SESSION["username"] = $uid;
-  //       header("Location: ../landing.php?customerID=".$row['customerID']);
-  //     }
-  //     elseif($row2){
-  //       $_SESSION["pharmacyID"] = $row2['pharmacyID'];
-  //       $_SESSION["username"] = $uid;
-  //       header("Location: ../pharmacyLanding.php?pharmacyID=".$row2['pharmacyID']);
-  //     }
-      
-  //   }
-  //   else {
-  //     $_SESSION['error']  = "Incorrect username or password";
-  //       header("Location: ../login.php");
-  //       return;
-  //   }
-  // }
-
   public function viewPickUpOrders(){
     $stmt = $this->pdo->prepare('SELECT `dateTime`, orderID, customerID, pharmacyID FROM order_ WHERE orderType = "pickup" AND `status`="pending" AND approveStatus = "pending" ');
     $stmt->execute();
@@ -81,6 +34,24 @@ class Login{
     $stmt = $this->pdo->prepare('UPDATE `order_` SET `approveStatus`= "cancelled", `status`= "cancelled" WHERE `orderID`=:orderID');
     $stmt->execute(array(':orderID' => $orderID));
     return;
+  }
+
+  public function setMedicineAmount($orderID, $pharmacyID){
+    $stmt = $this->pdo->prepare("SELECT medID, amount FROM order_medicine WHERE orderID=:orderID");
+    $stmt->execute(array(':orderID' => $orderID));
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($results as $medicine){
+      $medID = $medicine["medID"];
+      
+      $stmt1 = $this->pdo->prepare("SELECT amount FROM pharmacy_medicine WHERE medID=:medID AND pharmacyID=:pharmacyID");
+      $stmt1->execute(array(':medID' => $medID, ':pharmacyID' => $pharmacyID));
+      $currentAmount = $stmt1->fetch(PDO::FETCH_ASSOC);
+      $amount = $medicine["amount"] + $currentAmount['amount'];
+      $stmt = $this->pdo->prepare('UPDATE `pharmacy_medicine` SET `amount`=:amount WHERE `medID`=:medID AND `pharmacyID`=:pharmacyID');
+      $stmt->execute(array(':amount' => $amount, ':medID' => $medID, ':pharmacyID' => $pharmacyID));
+      return;
+    }
   }
 
   public function sendNotifications($notification,$customerID,$pharmacyID,$dateTime){

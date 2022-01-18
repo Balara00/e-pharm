@@ -86,14 +86,15 @@ class LoginContr extends Controller{
     $currentDateTime = date('m/d/Y h:i:s a', time());
     $result = $this->loginModel->viewPickUpOrders();
     foreach($result as $order){
-      $date = substr($order['dateTime'],0,10);
-      $time = substr($order['dateTime'],11);
+      // $date = substr($order['dateTime'],0,10);
+      // $time = substr($order['dateTime'],11);
       $expectedDate = date('m/d/Y h:i:s a', strtotime($order['dateTime'].'+2 days'));
       if($currentDateTime>$expectedDate){
         $orderID = $order['orderID'];
         $customerID = $order['customerID'];
         $pharmacyID = $order['pharmacyID'];
         $this->loginModel->setOrderStatus($orderID);
+        $this->loginModel->setMedicineAmount($orderID, $pharmacyID);
         $notification = "The pick-up order with order ID - ".$orderID." got cancelled due to exceeding two days!";
         $this->loginModel->sendNotifications($notification,$customerID,$pharmacyID,$currentDateTime);
         

@@ -46,7 +46,7 @@ else{
          </div>
          <div class="LoginForm">
            <?php
-           include "classes/DBConn.php";
+           include "classes/dbconnection.classes.php";
            include "Model/ViewPrescription.model.php";
            include "View/viewPrescription.view.php";
            $presView = new ViewPrescription_view();

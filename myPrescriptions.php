@@ -36,7 +36,7 @@ else{
          </li>
        </ul>
      </div>
-     <div class="stripe-menu">
+     <!-- <div class="stripe-menu"> -->
 
          <div class="vertical-menu">
              <a href="account.php" class="a1">My Profile</a>
@@ -45,7 +45,7 @@ else{
          </div>
          <div class="LoginForm">
            <?php
-           include "classes/DBConn.php";
+           include "classes/dbconnection.classes.php";
            include "Model/myPrescriptions.models.php";
            include "View/myPrescriptions.view.php";
            $presView = new MyPrescriptionView();
@@ -54,7 +54,35 @@ else{
            if($prescriptions){
             foreach ($prescriptions as $prescription) {
               ?>
-              <div class="card">
+
+              <div class="PrescDetail">
+                <h5 class="card-title">Ref No: <?php echo $prescription["prescID"]  ?></h5>
+                <div class="ImgDiv">
+                <a href="uploads/<?php echo $prescription["prescURL"] ?>" target="_blank">
+                  <img class="presImg" src="uploads/<?php echo $prescription["prescURL"]?>" alt="">
+                </a>
+                </div>
+                <div class="noteDiv">
+                <label for="title" >Special Note: </label><br>
+                  <?php echo $prescription["note"] ?> <br>
+                </div>
+                <hr>
+                <div class="cardBottom">
+                  
+                <label for="title">Selected Area: </label>
+                <?php echo $prescription["area"] ?> <br>
+                <?php echo $prescription["dateTime"] ?>
+                </div>
+                <div class="buttonArea">
+                <?php if($prescription["prescState"] == 0) {?>
+                    <a href="includes/myPrescription.inc.php?operator=restore&prescID=<?php echo $prescription["prescID"] ?>" class="btn btn-primary" name="Restore">Restore</a>
+                  <?php } else {?>
+                    <a href="includes/myPrescription.inc.php?operator=remove&prescID=<?php echo $prescription["prescID"] ?>" class="btn btn-danger" name="Remove">Remove</a>
+                  <?php } ?>
+                </div>
+              </div>
+            
+              <!-- <div class="card">
                 <div class="card-header">
                 <label for="title">Selected Area: </label>
                 <?php echo $prescription["area"] ?>
@@ -76,7 +104,7 @@ else{
                   <?php } ?>
                   
                 </div>
-              </div>
+              </div> -->
              <?php
            }
           }

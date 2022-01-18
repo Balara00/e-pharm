@@ -10,9 +10,9 @@ require '../vendor/autoload.php';
 class ForgetPW{
     public function sendUserMail($email){
 
-        $dbc = DBConn::getConnection();
+        $dbc = DBConnection::getInstance();
 
-        $customerStmt = $dbc->connect()->prepare("SELECT * FROM customer where username = :xyz");
+        $customerStmt = $dbc->getPDO()->prepare("SELECT * FROM customer where username = :xyz");
         $customerStmt->execute(array(":xyz" => $email));
         $customerRow = $customerStmt->fetch(PDO::FETCH_ASSOC);
         if ( $customerRow === false ) {
