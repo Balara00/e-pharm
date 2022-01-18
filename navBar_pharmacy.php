@@ -34,7 +34,7 @@
             
             }
 
-            echo '<a class="navbar-brand nav-link" href="account.php?pharmacyID=' .$_SESSION['pharmacyID']. '"> <img src="assets/icons/user.svg" class="userIcon iconNavBar"> </a>';
+            echo '<a class="navbar-brand nav-link" href="pharmacyAccount.php"> <img src="assets/icons/user.svg" class="userIcon iconNavBar"> </a>';
 
             ?>
             

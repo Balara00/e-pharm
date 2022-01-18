@@ -35,7 +35,7 @@
             }
             echo '<a class="navbar-brand nav-link" href="cart.php"> <img src="assets/icons/cart.svg" class="cartIcon iconNavBar"> </a>';
 
-            echo '<a class="navbar-brand nav-link " href="account.php?customerID=' .$_SESSION['customerID']. '"> <img src="assets/icons/user.svg" class="userIcon iconNavBar"> </a>';
+            echo '<a class="navbar-brand nav-link " href="account.php"> <img src="assets/icons/user.svg" class="userIcon iconNavBar"> </a>';
 
             echo '<a class="btn btn-primary uploadPrescriptionBtn navBarBtn" href="uploadPrescription.php?customerID='. $_SESSION['customerID'] .'">Upload Prescription</a>';
             ?>
