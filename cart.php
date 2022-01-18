@@ -1,5 +1,6 @@
 <?php
 session_start();
+//$_SESSION['customerID'] = 24;
 include "classes/dbconnection.classes.php";
 include "Model/cartModel.php";
 include "classes/Cart.classes.php";
@@ -35,7 +36,7 @@ $cart = $cartView->showCart($_SESSION['customerID']);
 
 <body class="index_body">
     <div class="container">
-        <div class="nav-bar"></div>
+        <?php include "navBar.php" ?>
         <div class="cart-all">
             <div class="cart-topic">
                 <p>Cart</p>

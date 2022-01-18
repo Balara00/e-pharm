@@ -96,8 +96,13 @@ class AddMedContr extends Controller
                     }
                 }
                 //header("Location: ../v.php");
-                exit();
+                //exit();
             }
+            unset($_SESSION['medname']);
+            unset($_SESSION['price']);
+            unset($_SESSION['amount']);
+            unset($_SESSION['errors']);
+            $_SESSION['successAdd'] = "successAdd";
         }
         //exit();
     }

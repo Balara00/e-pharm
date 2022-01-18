@@ -35,11 +35,6 @@ class AddMedModel
     }
     public function addPharmMed($medID, $pharmID, $amount, $price, $medURL)
     {
-        echo $medID;
-        echo $pharmID;
-        echo $amount;
-        echo $price;
-        echo $medURL;
         $query = "INSERT INTO pharmacy_medicine (pharmacyID,medID,amount,price,medURL) VALUES(:pharmID,:medID,:amount,:price,:medURL)";
         $stmt = $this->pdo->prepare($query);
         $stmt->execute(array(
