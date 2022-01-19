@@ -1,3 +1,167 @@
+/* .index_body {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    background-image: url(../images/background_img.svg);
+    background-position: top top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    font-family: Ubuntu;
+}
+
+.container{
+    background-image: url(../images/landingMain_img.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  
+    width: 86%;
+    height: 96%;
+    top: 2%;
+    left: 7%;
+    position: absolute;
+}
+
+
+.text_index {
+    position: absolute;
+    text-align: center;
+}
+
+.title_ePharm {
+    left: 10%;
+    top: 2.5%;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 700%;
+    line-height: 165px;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+    background: -webkit-linear-gradient(#0041BF 0%, #000F2D 100%);
+    /* background: linear-gradient(180deg, #0041BF 0%, #000F2D 100%); */
+    /* -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+} */
+/* 
+.desc_ePharm {
+    width: 960px;
+    height: 63px;
+    left: 12%;
+    top: 27%;
+    
+    font-style: italic;
+    font-weight: bold;
+    font-size: 325%;
+    line-height: 63px;
+    
+    color: #4F4F4F;
+}
+
+
+.forCustomers {
+    left: 18.06%;
+    right: 58.54%;
+    top: 51.46%;
+    bottom: 42.97%;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 250%;
+    line-height: 57px;
+
+    color: #000000;
+}
+
+.forPharmacies {
+    left: 57.29%;
+    right: 18.06%;
+    top: 51.46%;
+    bottom: 42.97%;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 250%;
+    line-height: 57px;
+
+    color: #000000;
+}
+.signUpBtn {
+    position: absolute;
+    width: 250px;
+    height: 90px;
+
+    top: 60.94%;
+    bottom: 29.3%;
+
+    background: #1B93C7;
+    border-radius: 45px;
+
+    margin-top: 1%;
+
+    padding-top: 0.5%;
+}
+
+.customerSignUpBtn {
+    left: 20.07%;
+    right: 62.57%;
+}
+
+
+.pharmacySignUpBtn {
+    left: 60.33%;
+    right: 19.1%;
+}
+
+.signUpBtnText {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 175%;
+    line-height: 34px;
+    text-align: center;
+
+    color: #FFFFFF;    
+}
+
+.loginBtnNav {
+    position: absolute;
+    width: 110px;
+    height: 40px;
+    
+    top: 8%;
+    left: 75%;
+    background: #1B93C7;
+    border-radius: 45px;
+}
+
+.signUpBtnNav {
+    position: absolute;
+    width: 110px;
+    height: 40px;
+    
+    left: 85%;
+    top: 8%;
+    background: #1B93C7;
+    border-radius: 45px;
+}
+
+.landBtnText {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 120%;
+    line-height: 28px;
+    text-align: center;
+    
+    color: #FAFAFA;
+}  */
+
+
+
+/*new*/
 .index_body {
     max-width: 100%;
     height: auto;
@@ -158,6 +322,4 @@
     
     color: #FAFAFA;
 }
-
-
 

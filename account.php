@@ -1,5 +1,13 @@
 <?php
 session_start();
+
+          // session_start();
+  include_once "classes/dbconnection.classes.php";
+  include_once "Model/account.models.php";
+  include_once "classes/customer.classes.php";
+  include_once "View/account.view.php";
+  $accountView = new AccountView();
+          
  ?>
 
  <!DOCTYPE html>
@@ -16,7 +24,7 @@ session_start();
    </head>
    <body class="AccountBody">
      <div class="MiddleBg" >
-     <?php include "navBar.php"; ?>
+     <?php include "navBar.php" ?>
        <!-- <div class="NavBar">
          <h1 id="epharm">E-Pharm</h1>
          <ul class="nav justify-content-end NavBarContent">
@@ -43,21 +51,13 @@ session_start();
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-          <a href="myOrders.php?<?= "type=delivery"?>">Delivery</a>
-          <a href="myOrders.php?<?= "type=pickup"?>">Pick Up</a>
+          <a href="View/myOrders.php?<?= "type=delivery"?>">Delivery</a>
+          <a href="View/myOrders.php?<?= "type=pickup"?>">Pick Up</a>
         </div>
         <a href="myPrescriptions.php">My Prescriptions</a>
       </div>
       <div class="OuterDetailsCard">
         <div class="DetailsCard" >
-          <?php
-          // session_start();
-          include_once "classes/dbconnection.classes.php";
-          include_once "Model/account.models.php";
-          include_once "classes/customer.classes.php";
-          include_once "View/account.view.php";
-          $accountView = new AccountView();
-          ?>
           <div class="tag">
             <label for="name"><b>Name:-</b></label>
           </div>

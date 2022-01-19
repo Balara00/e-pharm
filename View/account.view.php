@@ -9,7 +9,7 @@ class AccountView{
   }
 
   public function getPharmacyDetails(){
-    echo "ID: ".$_SESSION["pharmacyID"];
+    // echo "ID: ".$_SESSION["pharmacyID"];
     $results = $this->accountModel->getPharmacy($_SESSION["pharmacyID"]);
     return $results;
   }

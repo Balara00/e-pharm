@@ -106,7 +106,7 @@ session_start();
           <div class="Form">
             <form method="post" action="includes/login.inc.php">
               <div class="TextInput">
-                <img src="UserIcon.svg" >
+                <img src="assets/icons/UserIcon.svg" >
                 <!-- <?php echo "cookie uid ".$_COOKIE['username'];?> -->
                 <input type="text" name="username"
                 value="<?php if(isset($_COOKIE['username'])) { echo $_COOKIE['username']; } ?>"
@@ -115,7 +115,7 @@ session_start();
               <div class="WhiteSpace">
               </div>
               <div class="TextInput">
-                <img src="passwordIcon.svg" alt="">
+                <img src="assets/icons/passwordIcon.svg" alt="">
                 <input type="password" name="password"
                 value="<?php if(isset($_COOKIE['password'])) { echo $_COOKIE['password']; } ?>"
                 placeholder="password" required>

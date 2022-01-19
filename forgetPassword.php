@@ -122,7 +122,7 @@ session_start();
         <div class="Form">
           <form action="includes/forgetPW.inc.php" method="post">
             <div class="TextInput">
-              <img src="mailIcon.svg" height="14px">
+              <img src="assets/icons/mailIcon.svg" height="14px">
               <input type="text" name="email" placeholder="email address">
             </div>
             <div class="WhiteSpace">

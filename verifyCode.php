@@ -70,7 +70,7 @@ session_start();
            <form method="post" action="includes/verifyCode.inc.php">
              <input type="hidden" name="email" value="<?php echo $_GET["email"]; ?>">
              <div class="TextInput">
-               <img src="verification.svg" alt="">
+               <img src="assets/icons/verification.svg" alt="">
                <input type="text" name="code" placeholder="verification code" /required>
              </div>
              <div class="WhiteSpace">

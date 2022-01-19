@@ -37,13 +37,30 @@ else{
        </ul>
      </div>
      <div class="stripe-menu">
+          <div class="stripe"></div>
+          <div class="vertical-menu">
+              <a href="View/viewStore.php?pharmacyID=<?= $_SESSION['pharmacyID']?>" class="a1">Store</a>
+              <a href="pharmacyAccount.php?pharmacyID=<?= $_SESSION['pharmacyID']?>" id="a2"  class="a2">Pharmacy Profile</a>  
+              <a class="a4">Orders</a>
+              <a class="active" href="prescriptions.php?pharmacyID=<?= $_SESSION['pharmacyID']?>" class="a5">Prescriptions</a>
+          </div>
+      </div>
 
-         <div class="vertical-menu">
-            <a href="store.php" class="a1">Pharmacy Store</a>
+      <!-- <a href=""> <button class="plus"></button></a> -->
+      <!-- <a href="addNew.php"><img src="../assets/images/editBtn.png" class="editImg"></a> -->
+      
+
+      <div class="orderType">
+          <a class = "delivery delivery-pickup" href = "View/storeOrders.php?pharmacyID=<?= $_SESSION['pharmacyID'];?>&<?= "type=delivery"?>" >Delivery</a>
+          <a class = "pickup delivery-pickup" href="View/storeOrders.php?<?= "type=pickup"?>"">Pickup</a>
+      </div>
+
+         <!-- <div class="vertical-menu">
+            <a href="View/viewStore.php" class="a1">Pharmacy Store</a>
             <a href="pharmacyAccount.php" class="a2">Pharmacy Profile</a>
             <a href="orders.php" class="a2">Orders</a>
             <a href="prescriptions.php" class="active" class="a3">Prescriptions</a>
-         </div>
+         </div> -->
          <div class="LoginForm">
            <?php
            include "classes/dbconnection.classes.php";
