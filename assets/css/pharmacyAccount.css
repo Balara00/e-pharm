@@ -75,7 +75,21 @@ body{
   background-color: #1b93c7;
   color: white;
 }
-.DetailsCard{
+
+.OuterDetailsCard{
+  width: 60%;
+  height: 80%;
+  padding: 10px;
+  position: relative;
+  left: 35%;
+  /* border: 5px solid #1b93c7; */
+  background: #FFFFFF;
+  
+  border-radius: 45px 0px;
+  text-align: center;
+}
+
+/* .DetailsCard{
   width: 60%;
   height: 80%;
   padding: 10px;
@@ -85,6 +99,22 @@ body{
   background: #FFFFFF;
   border-radius: 45px 0px;
   text-align: left;
+} */
+
+.DetailsCard{
+  display: inline-block;
+  margin: 0 auto;
+  top: 5%;
+  width: 90%;
+  height: 90%;
+  padding: 10px;
+  position: relative;
+  /* left: 10%; */
+  border: 5px solid #1b93c7;
+  background: #FFFFFF;
+  /* border-style: inset; */
+  border-radius: 45px 0px;
+  /* text-align: center; */
 }
 
 

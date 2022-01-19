@@ -1,5 +1,5 @@
 <?php
-
+session_start();
  ?>
 
  <!DOCTYPE html>
@@ -35,6 +35,7 @@
         <a href="orders.php" class="a3">Orders</a>
         <a href="prescriptions.php" class="a4">Prescriptions</a>
       </div>
+      <div class="OuterDetailsCard">
       <div class="DetailsCard" >
         <?php
         include_once "classes/dbconnection.classes.php";
@@ -79,6 +80,8 @@
         </div>
 
       </div>
+      </div>
+      
      </div>
    </body>
  </html>

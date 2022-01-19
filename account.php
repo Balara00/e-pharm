@@ -1,5 +1,5 @@
 <?php
-
+session_start();
  ?>
 
  <!DOCTYPE html>
@@ -16,7 +16,8 @@
    </head>
    <body class="AccountBody">
      <div class="MiddleBg" >
-       <div class="NavBar">
+     <?php include "navBar.php"; ?>
+       <!-- <div class="NavBar">
          <h1 id="epharm">E-Pharm</h1>
          <ul class="nav justify-content-end NavBarContent">
           <li class="nav-item">
@@ -29,7 +30,7 @@
             <a class="nav-link" href="logout.php">Logout</a>
           </li>
         </ul>
-      </div>
+      </div> -->
       <!-- <div class="vertical-menu">
         <a href="account.php?customerID="."$_SESSION['customerID']" class="active">My Profile</a>
         <a href="orders.php">My Orders</a>
@@ -50,6 +51,7 @@
       <div class="OuterDetailsCard">
         <div class="DetailsCard" >
           <?php
+          // session_start();
           include_once "classes/dbconnection.classes.php";
           include_once "Model/account.models.php";
           include_once "classes/customer.classes.php";

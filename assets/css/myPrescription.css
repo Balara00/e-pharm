@@ -82,6 +82,7 @@ body{
   padding: 10px;
   margin: 20px;
   border-radius: 20px;
+  height: 275px;
 }
 .detail{
   height: 25%;
@@ -143,14 +144,15 @@ body{
 }
 
 .cardBottom{
-  float: none;
+  float: left;
   top: 200px;
   left: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .buttonArea{
   top: 400px;
+  float: right;
   text-align: right;
 }
 

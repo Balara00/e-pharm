@@ -22,7 +22,7 @@ else{
   </head>
   <body>
     <div class="MiddleBg" >
-      <div class="NavBar">
+      <!-- <div class="NavBar">
         <h1 id="epharm">E-Pharm</h1>
         <ul class="nav justify-content-end NavBarContent">
          <li class="nav-item">
@@ -35,9 +35,10 @@ else{
            <a class="nav-link" href="logout.php">Logout</a>
          </li>
        </ul>
-     </div>
+     </div> -->
+     <?php include "navBar.php"; ?>
      <!-- <div class="stripe-menu"> -->
-
+       
          <div class="vertical-menu">
              <a href="account.php" class="a1">My Profile</a>
              <a href="myOrders.php" clas="a2">My Orders</a>
