@@ -52,7 +52,7 @@ class LoginContr extends Controller{
       if($customer){
         $_SESSION["customerID"] = $customer['customerID'];
         $_SESSION["username"] = $this->uid;
-        header("Location: ../landing.php?customerID=".$customer['customerID']);
+        header("Location: ../View/landing.php?customerID=".$customer['customerID']);
       }
       elseif($pharmacy){
         $_SESSION["pharmacyID"] = $pharmacy['pharmacyID'];

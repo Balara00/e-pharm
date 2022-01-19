@@ -1,5 +1,5 @@
 <?php
-
+session_start();
  ?>
 
  <!DOCTYPE html>
@@ -42,8 +42,8 @@
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-          <a href="myOrders.php?<?= "type=delivery"?>">Delivery</a>
-          <a href="myOrders.php?<?= "type=pickup"?>">Pick Up</a>
+          <a href="../View/myOrders.php?<?= "type=delivery"?>">Delivery</a>
+          <a href="../View/myOrders.php?<?= "type=pickup"?>">Pick Up</a>
         </div>
         <a href="myPrescriptions.php">My Prescriptions</a>
       </div>
