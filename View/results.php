@@ -5,7 +5,7 @@ include "../Controller/results_contr.php";
 include "../Controller/navBar.contr.php";
 include "../Model/navBar.model.php"; 
 $navbarContr = new NavBarContr();
-$_SESSION['customerID']=$_SESSION['customerID'];
+
 ?>
 
 <!DOCTYPE html>
@@ -20,16 +20,15 @@ $_SESSION['customerID']=$_SESSION['customerID'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Results <?php echo $_SESSION['customerID']?></title>
 </head>
 
 <body>
     <img class="back" src="../assets/images/background.svg">
     <div class="sub">
     <div class="navlanding">
-            <a href="landing.php?customerID="<?php $_SESSION['customerID'] ?>><img class="imgs bask" src="../assets/icons/search.svg"></a>
-            <a href="../notification.php?customerID="<?=$_SESSION['customerID']?>><img class="imgs bask" src="../assets/icons/notification.svg"></a>
-            <a href="../cart.php?customerID="<?=$_SESSION['customerID']?>><img class="imgs bask" src="../assets/icons/cart.svg"></a>
+    <a href="landing.php?customerID=<?= $_SESSION['customerID'] ;?>"><img class="imgs bask" src="../assets/icons/search.svg"></a>
+            <a href="../notification.php?customerID=<?=$_SESSION['customerID']?>"><img class="imgs bask" src="../assets/icons/notification.svg"></a>
             <?php 
             $notificationNo = $navbarContr->getCustomerNotificationNo($_SESSION['customerID']);
             if ($notificationNo != 0) {
@@ -38,11 +37,13 @@ $_SESSION['customerID']=$_SESSION['customerID'];
             
             }
             ?>
-            <a href="../account.php?customerID="<?=$_SESSION['customerID']?>><img class="imgs bask" src="../assets/icons/user.svg"></a>
-            <a href=""><button name="addPrescription" id="addPres" class="butn pres" type="submit">Add Prescription</button></a>
+            <a href="../cart.php?customerID=<?=$_SESSION['customerID']?>"><img class="imgs bask" src="../assets/icons/cart.svg"></a>
+
+            <a href="../account.php?customerID=<?=$_SESSION['customerID']?>"><img class="imgs bask" src="../assets/icons/user.svg"></a>
+            <a href="../myPrescriptions.php"><button name="addPrescription" id="addPres" class="butn pres" type="submit">Add Prescription</button></a>
 
 
-            <a href="../logout.php?customerID="<?=$_SESSION['customerID']?>><button name="logOut" id="logout" class="butn log" type="submit">Logout</button></a>
+            <a href="../logout.php?customerID=<?=$_SESSION['customerID']?>"><button name="logOut" id="logout" class="butn log" type="submit">Logout</button></a>
             
 
 
