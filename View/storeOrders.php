@@ -22,7 +22,7 @@ $navbarContr = new NavBarContr();
 <body>
 <div class="navlanding">
             
-            <a href="notification.php?pharmacyID="<?=$_SESSION['pharmacyID']?>><img class="imgs bask" src="../assets/icons/notification.svg"></a>
+            <a href="../notificationPharm.php?pharmacyID="<?=$_SESSION['pharmacyID']?>><img class="imgs bask" src="../assets/icons/notification.svg"></a>
             <?php
 
             $notificationNo = $navbarContr->getPharmacyNotificationNo($_SESSION['pharmacyID']);
@@ -34,7 +34,7 @@ $navbarContr = new NavBarContr();
             ?>
             <a href="user.php?pharmacyID="<?=$_SESSION['pharmacyID']?>><img class="imgs bask" src="../assets/icons/user.svg"></a>
             
-            <a href="logout.php?pharmacyID="<?=$_SESSION['pharmacyID']?>><button name="logOut" id="logout" class="butn log" type="submit">Logout</button></a>
+            <a href="../logout.php?pharmacyID="<?=$_SESSION['pharmacyID']?>><button name="logOut" id="logout" class="butn log" type="submit">Logout</button></a>
             
     </div>
         <header class="epharm">E-Pharm</header>

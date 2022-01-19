@@ -15,7 +15,7 @@ class ResultsModel {
         if(!$stmt->execute(['%'.$searchq.'%'])){
             
             $stmt = null;
-            header("location: ../results.php?error=stmt=searchResultfailed");
+            header("location: ../View/results.php?error=stmt=searchResultfailed");
             exit();
         }
         
@@ -29,7 +29,7 @@ class ResultsModel {
 
         if(!$stmt->execute([$area])){
             $stmt = null;
-            header("location: ../reults.php?error=stmt=searchPharmacyfailed");
+            header("location: ../View/results.php?error=stmt=searchPharmacyfailed");
             exit();
         }
 
@@ -56,7 +56,7 @@ class ResultsModel {
 
         if(!$stmt->execute([$customerID, $medID,$area])){
             $stmt = null;
-            header("location: ../results.php?error=stmt=searchNotifyfailed");
+            header("location: ../View/results.php?error=stmt=searchNotifyfailed");
             exit();
         }
 
@@ -69,7 +69,7 @@ class ResultsModel {
         
         if(!$stmt->execute([$customerID, $medID,$area,$status])){
             $stmt = null;
-            header("location: ../results.php?error=stmt=setNotifyfailed");
+            header("location: ../View/results.php?error=stmt=setNotifyfailed");
             return false;
         }
         return true;
@@ -79,7 +79,7 @@ class ResultsModel {
         $stmt = $this->pdo->prepare("UPDATE notifyAvailability SET status=? WHERE customerID=? AND medID=? AND area=?");
         if(!$stmt->execute([$status,$customerID, $medID,$area])){
             $stmt = null;
-            header("location: ../results.php?error=stmt=updateNotifyfailed");
+            header("location: ../View/results.php?error=stmt=updateNotifyfailed");
             return false;
         }
         return true;

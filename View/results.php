@@ -5,6 +5,7 @@ include "../Controller/results_contr.php";
 include "../Controller/navBar.contr.php";
 include "../Model/navBar.model.php"; 
 $navbarContr = new NavBarContr();
+$_SESSION['customerID']=$_SESSION['customerID'];
 ?>
 
 <!DOCTYPE html>
@@ -27,8 +28,8 @@ $navbarContr = new NavBarContr();
     <div class="sub">
     <div class="navlanding">
             <a href="landing.php?customerID="<?php $_SESSION['customerID'] ?>><img class="imgs bask" src="../assets/icons/search.svg"></a>
-            <a href="notification.php?customerID="<?=$_SESSION['customerID']?>><img class="imgs bask" src="../assets/icons/notification.svg"></a>
-            <a href="cart.php?customerID="<?=$_SESSION['customerID']?>><img class="imgs bask" src="../assets/icons/cart.svg"></a>
+            <a href="../notification.php?customerID="<?=$_SESSION['customerID']?>><img class="imgs bask" src="../assets/icons/notification.svg"></a>
+            <a href="../cart.php?customerID="<?=$_SESSION['customerID']?>><img class="imgs bask" src="../assets/icons/cart.svg"></a>
             <?php 
             $notificationNo = $navbarContr->getCustomerNotificationNo($_SESSION['customerID']);
             if ($notificationNo != 0) {
@@ -37,11 +38,11 @@ $navbarContr = new NavBarContr();
             
             }
             ?>
-            <a href="user.php?customerID="<?=$_SESSION['customerID']?>><img class="imgs bask" src="../assets/icons/user.svg"></a>
+            <a href="../account.php?customerID="<?=$_SESSION['customerID']?>><img class="imgs bask" src="../assets/icons/user.svg"></a>
             <a href=""><button name="addPrescription" id="addPres" class="butn pres" type="submit">Add Prescription</button></a>
 
 
-            <a href="logout.php?customerID="<?=$_SESSION['customerID']?>><button name="logOut" id="logout" class="butn log" type="submit">Logout</button></a>
+            <a href="../logout.php?customerID="<?=$_SESSION['customerID']?>><button name="logOut" id="logout" class="butn log" type="submit">Logout</button></a>
             
 
 
@@ -87,7 +88,7 @@ $navbarContr = new NavBarContr();
           
         
             if(isset($_GET['find'])){
-                $resultsContr = new ResultsContr(2);
+                $resultsContr = new ResultsContr($_SESSION['customerID']);
                 $resultsContr->displaySearch();
             }
             

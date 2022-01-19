@@ -43,9 +43,12 @@
     height: 40px;
     margin-top: 2%;
     cursor: pointer;
+    font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
 }
 .butn:hover{
-    background-color:#2cb3ec ;
+  filter: hue-rotate(45deg) saturate(8);
 }
 .pres{
     width: 25%;
@@ -67,7 +70,7 @@
     margin-left: 20px;
 }
 .imgs:hover{
-    opacity: 0.8;
+  filter: hue-rotate(45deg) saturate(8);
     
 }
 .notificationNo {

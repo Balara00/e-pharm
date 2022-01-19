@@ -18,7 +18,7 @@ body{
     
   display: inline-block;
   height: 11%;
-  width: 50%;
+  width: 48%;
   margin-left: 49%;
   margin-top: 3%;
 }
@@ -33,9 +33,12 @@ body{
   height: 40px;
   margin-top: 2%;
   cursor: pointer;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
 }
 .butn:hover{
-  background-color:#2cb3ec ;
+  filter: hue-rotate(45deg) saturate(8);
 }
 .pres{
   width: 25%;
@@ -50,19 +53,19 @@ body{
   
 }
 .imgs{
-  height: 50px;
+  height: 45px;
   margin-top: -1%;
   z-index: 5;
   margin-left: 17px;
 }
 .imgs:hover{
-  opacity: 0.8;
+  filter: hue-rotate(45deg) saturate(8);
   
 }
 
 .notificationNo {
   position: absolute;
-  left: 55.83%;
+  left: 55.53%;
   top: 8.4%;
   background: #E31313;
   width: 25px;

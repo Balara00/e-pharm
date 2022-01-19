@@ -1,5 +1,5 @@
 <?php session_start(); 
-$_SESSION['customerID']=1;
+$_SESSION['customerID']=$_SESSION['customerID'];
 include "../Controller/myOrders_contr.php";
 include "../Model/navBar.model.php"; 
 include "../Controller/navBar.contr.php";
@@ -20,7 +20,7 @@ $navbarContr = new NavBarContr();
 <body>
 <div class="navlanding">
             <a href="landing.php?customerID="<?php $_SESSION['customerID'] ?>><img class="imgs bask" src="../assets/icons/search.svg"></a>
-            <a href="notification.php?customerID="<?=$_SESSION['customerID']?>><img class="imgs bask" src="../assets/icons/notification.svg"></a>
+            <a href="../notification.php?customerID="<?=$_SESSION['customerID']?>><img class="imgs bask" src="../assets/icons/notification.svg"></a>
             <?php 
             $notificationNo = $navbarContr->getCustomerNotificationNo($_SESSION['customerID']);
             if ($notificationNo != 0) {
@@ -29,13 +29,13 @@ $navbarContr = new NavBarContr();
             
             }
             ?>          
-            <a href="cart.php?customerID="<?=$_SESSION['customerID']?>><img class="imgs bask" src="../assets/icons/cart.svg"></a>
+            <a href="../cart.php?customerID="<?=$_SESSION['customerID']?>><img class="imgs bask" src="../assets/icons/cart.svg"></a>
 
-            <a href="user.php?customerID="<?=$_SESSION['customerID']?>><img class="imgs bask" src="../assets/icons/user.svg"></a>
+            <a href="../account.php?customerID="<?=$_SESSION['customerID']?>><img class="imgs bask" src="../assets/icons/user.svg"></a>
             <a href=""><button name="addPrescription" id="addPres" class="butn pres" type="submit">Add Prescription</button></a>
 
 
-            <a href="logout.php?customerID="<?=$_SESSION['customerID']?>><button name="logOut" id="logout" class="butn log" type="submit">Logout</button></a>
+            <a href="../logout.php?customerID="<?=$_SESSION['customerID']?>><button name="logOut" id="logout" class="butn log" type="submit">Logout</button></a>
             
 
 
@@ -45,9 +45,9 @@ $navbarContr = new NavBarContr();
         <div class="stripe-menu">
             <div class="stripe"></div>
             <div class="vertical-menu">
-                <a href="account.php?customerID="."$_SESSION['customerID']" class="a1">My Profile</a>
+                <a href="../account.php?customerID=" class="a1">My Profile</a>
                 <a id="a2" class="active" class="a2">My Orders</a>
-                <a href="myPrescriptions.php" class="a3">My Prescriptions</a>
+                <a href="../myPrescriptions.php" class="a3">My Prescriptions</a>
             </div>
         </div>
 
