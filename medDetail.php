@@ -20,7 +20,7 @@ session_start();
 
     <?php
 
-    include "classes/dbConnection.class.php";
+    include "classes/dbconnection.classes.php";
     include "classes/medicine.class.php";
     include "classes/pharmacy.class.php";
     include "classes/pharmacy_medicine.class.php";
