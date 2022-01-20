@@ -14,6 +14,14 @@ session_start();
     <title>E-Pharm Login</title>
 </head>
 
+<?php
+            include_once "classes/dbconnection.classes.php";
+            include_once "Model/account.models.php";
+            include_once "classes/customer.classes.php";
+            include_once "View/account.view.php";
+            $accountView = new AccountView();
+            ?>
+            
 <body class='EditBody'>
     <div class="MiddleBg">
       <!-- <div class="NavBar">
@@ -58,13 +66,7 @@ session_start();
         </div>
         <div class="Form">
           <form method="post" action="includes/editUser.inc.php">
-            <?php
-            include_once "classes/dbconnection.classes.php";
-            include_once "Model/account.models.php";
-            include_once "classes/customer.classes.php";
-            include_once "View/account.view.php";
-            $accountView = new AccountView();
-            ?>
+            
             <div id="editnote" class="Label">
               Enter your new data
             </div>
