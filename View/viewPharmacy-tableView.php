@@ -9,7 +9,7 @@
         <div class="row row-cols-3">
             <div class="col backk">
                 <div class="inside-row">
-                <a href="medDetail.php?customerID=<?php echo $this->getcustomerID() ."&medID=".$pharmacyMed->getmedID()."&pharmacyID=". $pharmacyMed->getpharmacyID(); ?>"> <img class="imgPharm" src="../uploads/<?= $pharmacyMed->getmedURL() ?>"></a><br>
+                <a href="../medDetail.php?customerID=<?php echo $this->getcustomerID() ."&medID=".$pharmacyMed->getmedID()."&pharmacyID=". $pharmacyMed->getpharmacyID(); ?>"> <img class="imgPharm" src="../uploads/<?= $pharmacyMed->getmedURL() ?>"></a><br>
                 <?php echo '<h class="drug-name">' . $this->getsearchq() . '</h>' ?><br>
                 <?php echo '<h class="price">Rs.' .$result['price'] . '</h>' ?><br>
                 <?php if ($pharmacyMed->getamount() == 0) {
