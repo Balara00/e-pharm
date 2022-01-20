@@ -26,6 +26,9 @@ if (isset($_POST['saveChanges'])) {
     // echo '<br>';
     // echo "mid ".$medID;
 
+    date_default_timezone_set('Asia/Colombo');
+    $date = date('m/d/Y h:i:s a', time());
+
     $med_edit_contr = new MedEditorContr();
     $med_edit_contr->saveMedChanges($amount, $price, $date);
     // unset($_POST["addToCart"]);
