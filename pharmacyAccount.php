@@ -21,7 +21,10 @@ $pharmacyDetails = $accountView->getPharmacyDetails();
    </head>
    <body>
      <div class="MiddleBg" >
-       <div class="NavBar">
+       <?php 
+       include "navBar_pharmacy.php";
+       ?>
+       <!-- <div class="NavBar">
          <h1 id="epharm">E-Pharm</h1>
          <ul class="nav justify-content-end NavBarContent">
           <li class="nav-item">
@@ -34,7 +37,7 @@ $pharmacyDetails = $accountView->getPharmacyDetails();
             <a class="nav-link" href="logout.php">Logout</a>
           </li>
         </ul>
-      </div>
+      </div> -->
       <!-- <div class="vertical-menu">
         <a href="View/viewStore.php" class="a1">Pharmacy Store</a>
         <a href="pharmacyAccount.php" class="active" class="a2">Pharmacy Profile</a>
@@ -46,42 +49,59 @@ $pharmacyDetails = $accountView->getPharmacyDetails();
           <div class="stripe"></div>
           <div class="vertical-menu">
               <a href="View/viewStore.php?pharmacyID=<?= $_SESSION['pharmacyID']?>" class="a1">Store</a>
-              <a class="active" href="pharmacyAccount.php?pharmacyID=<?= $_SESSION['pharmacyID']?>" id="a2"  class="a2">Pharmacy Profile</a>  
+              <a class="active" href="pharmacyAccount.php?pharmacyID=<?= $_SESSION['pharmacyID']?>" id="a2"  >Pharmacy Profile</a>  
               <a class="a4">Orders</a>
               <a href="prescriptions.php?pharmacyID=<?= $_SESSION['pharmacyID']?>" class="a5">Prescriptions</a>
           </div>
       </div>
-
-      <!-- <a href=""> <button class="plus"></button></a> -->
-      <!-- <a href="addNew.php"><img src="../assets/images/editBtn.png" class="editImg"></a> -->
-      
-
       <div class="orderType">
           <a class = "delivery delivery-pickup" href = "View/storeOrders.php?pharmacyID=<?= $_SESSION['pharmacyID'];?>&<?= "type=delivery"?>" >Delivery</a>
-          <a class = "pickup delivery-pickup" href="View/storeOrders.php?<?= "type=pickup"?>"">Pickup</a>
+          <a class = "pickup delivery-pickup" href="View/storeOrders.php?<?= "type=pickup"?>">Pickup</a>
       </div>
 
 
       <div class="OuterDetailsCard">
       <div class="DetailsCard" >
-        
-        <div class="detail">
-          <?php echo "Name: ".$pharmacyDetails["name"]."\n"; ?>
+        <div class="topBar"></div>
+        <div class="tag">
+          <label for="name"><b>Name:-</b></label>
         </div>
         <div class="detail">
-          <?php echo "Address: ".$pharmacyDetails["address"]."\n"; ?>
+          <?php echo $pharmacyDetails["name"]; ?>
+        </div>
+        <div class="tag">
+          <label for="Address"><b>Address:-</b></label>
         </div>
         <div class="detail">
+          <?php echo $pharmacyDetails["address"]; ?>
+        </div>
+        <div class="tag">
+          <label for="Email"><b>Email:-</b></label>
+        </div>
+        <div class="detail">
+          <?php echo $pharmacyDetails["username"]; ?>
+        </div>
+        <!-- <div class="detail">
           <?php echo "Email: ".$pharmacyDetails["username"]."\n"; ?>
+        </div> -->
+        <div class="tag">
+          <label for="contactNo"><b>Contact No:-</b></label>
         </div>
         <div class="detail">
-          <?php echo "Contact No: ".$pharmacyDetails["contactNo"]."\n"; ?>
+          <?php echo $pharmacyDetails["contactNo"]; ?>
+        </div>
+        <div class="tag">
+          <label for="area"><b>Area:-</b></label>
         </div>
         <div class="detail">
-          <?php echo "Area: ".$pharmacyDetails["area"]."\n"; ?>
+          <?php echo $pharmacyDetails["area"]; ?>
         </div>
-        <div class="detail">
-          <?php echo "Is Delivery Service Available: ";
+        <div class="tag" style="width: 50%;">
+          <label for="deliveryServince"><b>Is Delivery Service Available:-</b></label>
+        </div>
+        
+        <div class="detail" style="">
+          <?php 
           if($pharmacyDetails["deliveryServiceStatus"] == 1){
             echo "YES\n";
           }
@@ -90,8 +110,12 @@ $pharmacyDetails = $accountView->getPharmacyDetails();
           }
            ?>
         </div>
+
+        <div class="tag" style="width: 70%;">
+          <label for="deliveryServince"><b>No of delivery services that can handle per day:-</b></label>
+        </div>
         <div class="detail">
-          <?php echo "No of delivery services that can handle per day: ".$pharmacyDetails["dvOrdersPerDay"]."\n"; ?>
+          <?php echo $pharmacyDetails["dvOrdersPerDay"]; ?>
         </div>
         <div class="edit">
           <a href="editPharmacy.php">
