@@ -6,13 +6,15 @@ class Pharmacy{
     private $name;
     private $area;
     private $deliveryServiceStatus;
+    private $dvOrderNo;
     private $pharmacy_model;
 
-    public function __construct($pharmacyID, $name, $area, $deliveryServiceStatus){
+    public function __construct($pharmacyID, $name, $area, $deliveryServiceStatus, $dvOrderNo){
         $this->pharmacyID = $pharmacyID;
         $this->name = $name;
         $this->area = $area;
         $this->deliveryServiceStatus = $deliveryServiceStatus;
+        $this->dvOrderNo = $dvOrderNo;
     }
 
     public function getPharmacyID(){
@@ -31,6 +33,9 @@ class Pharmacy{
         return $this->deliveryServiceStatus;
     }
 
+    public function getdvOrders() {
+        return $this->dvOrderNo;
+    }
     // public function sendNotification($notification, $prescID, $pharmacyID, $notifyTime) {
     //     $this->pharmacy_model = new PharmacyModel();
 
