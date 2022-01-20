@@ -18,7 +18,7 @@
                             
                 <?php echo '<h class="date">' . $row['dateTime']  . '</h>' ?><br>
                 <?php echo '<h class="price">Rs.' . $row['price']  . '</h>' ?><br>
-                <?php echo '<h class="customer-name">' . $customer['name'].' - 0'.$customer['contactNo'] . '</h>' ?><br>
+                <?php echo '<h class="customer-name">' . $customer['name'].' - '.$customer['contactNo'] . '</h>' ?><br>
                 <h5 class="orderSummary">Order Summary</h5>
 
                 <?php 
@@ -62,11 +62,14 @@
                     echo '<p  class="status delivered">Reserved</p>';
                 
                 }
-                
+
                 ?>
                 
                 <form action="../includes/acceptdeclineOrder.php?orderID=<?= $row['orderID']; ?>&type=<?= $row['orderType']?>&pharmacyID=<?= $row['pharmacyID']; ?>" method="post">
+               
                     <button id="myBtn<?php echo $i; ?>" name="accept" onclick='return confirm("Are you sure?")' class="btn-primary btn accept" type="submit">Accept order</button>
+               
+                <!-- <button id="myBtn<?php echo $i; ?>" name="accept" onclick='return confirm("Are you sure?")' class="btn-primary btn accept" type="submit">Accept order</button> -->
                 </form>
                 
                 <form action="../includes/acceptdeclineOrder.php?orderID=<?= $row['orderID']; ?>&type=<?= $row['orderType']?>" method="post">
@@ -96,17 +99,55 @@
                <?php 
                 }
                 $orderstats=$this->getOrder($row['orderID']);
-                if($orderstats['approveStatus'] == 'accepted' || $orderstats['approveStatus'] == 'declined' || $orderstats['status']=='cancelled'){
-                        
+                if($orderstats['approveStatus'] == 'accepted') {
+                    ?>
+
+                    <script>
+                        function orderAccepted(i){
+                            var acceptBtn = document.getElementById("myBtn"+i);
+                            acceptBtn.disabled = true;
+                            acceptBtn.innerText = "Order Accepted";
+                            acceptBtn.style.background = "white";
+                            acceptBtn.style.color = "#1B93C7";
+                            // document.getElementById("myBtn"+i).setAttribute("style","display:none;")
+                            document.getElementById("myreceived"+i).style.display = "none";
+                    }
+                    </script>
+                   
+                <?php 
+                    echo '<script> orderAccepted('.$i.'); </script>';
+                } 
+
+                if ($orderstats['approveStatus'] == 'declined') {
+                ?>
+                    <script>
+                        function orderDeclined(i) {
+                            document.getElementById("myreceived"+i).style.display = "none";
+                            document.getElementById("myBtn"+i).style.display = "none";
+                            // var declineBtn = document.getElementById("myreceived"+i);
+                            // declineBtn.disabled = true;
+                            // declineBtn.innerText = "Order Declined";
+                            // declineBtn.style.background = "white";
+                            // declineBtn.style.color = "red";
+                            }
+                    </script>
+                <?php
+                    echo '<script> orderDeclined('.$i.'); </script>';
+                }
+
+                if ($orderstats['status']=='cancelled'){ 
                         ?>
                         <script>
                             function disableBtns(i){
-                                document.getElementById("myBtn"+i).disabled = true;
+                                document.getElementById("myBtn"+i).style.display = "none";
+                                document.getElementById("myreceived"+i).style.display = "none";
                                 // document.getElementById("myBtn"+i).setAttribute("style","display:none;")
-
-                                document.getElementById("myreceived"+i).disabled = true;
-                                // document.getElementById("myreceived"+i).setAttribute("style","display:none;")
                             }
+
+                            // function disableDeclineBtn(i) {
+                            //     // document.getElementById("myreceived"+i).disabled = true;
+                                
+                            // }
                                 
                             
                         </script>
