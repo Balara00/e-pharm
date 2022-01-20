@@ -10,7 +10,7 @@ class SignupCus
     public function isUser($username)
     {
         $stmt = $this->pdo->prepare("SELECT * FROM customer WHERE username=:temp");
-        $stmt->execute([':temp' => $username]);
+        $stmt->execute([':temp' => strtolower($username)]);
         $user = $stmt->fetch();
         if ($user) {
             if (strtolower($user['username']) === strtolower($username)) {
@@ -18,7 +18,7 @@ class SignupCus
             }
         }
         $stmt = $this->pdo->prepare("SELECT * FROM pharmacy WHERE username=:temp");
-        $stmt->execute([':temp' => $username]);
+        $stmt->execute([':temp' => strtolower($username)]);
         $user = $stmt->fetch();
         if ($user) { // if user exists
             if (strtolower($user['username']) === strtolower($username)) {
@@ -39,7 +39,7 @@ class SignupCus
         VALUES(:username,:password,:address,:name,:isActive,:verificationCode,:verifyingStatus,'')";
         $stmt = $this->pdo->prepare($query);
         $stmt->execute(array(
-            ':username' => $username,
+            ':username' => strtolower($username),
             ':password' => $password,
             ':address' => "",
             ':name' => $name,

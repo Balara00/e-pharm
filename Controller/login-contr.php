@@ -10,7 +10,7 @@ class LoginContr extends Controller{
   private $pharmacy;
 
   public function __construct($uid, $pwd){
-    $this->uid = $uid;
+    $this->uid = strtolower($uid);
     $check = md5($pwd);
     $this->pwd = $check;
     // $this->rememberMe = $rememberMe;
@@ -71,7 +71,7 @@ class LoginContr extends Controller{
   }
 
   public function emptyInput(){
-    $result;
+    // $result;
     if(empty($this->uid)||empty($this->pwd)){
       $result = false;
     }
