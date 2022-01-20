@@ -1,7 +1,6 @@
 <?php
-require_once "controller.php";
 
-class NavBarContr extends Controller {
+class NavBarContr {
     private $navBar_model;
 
     public function __construct() {

@@ -13,10 +13,20 @@ session_start();
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
     <title>Edit Pharmacy Details</title>
 </head>
-
+<?php
+            include_once "classes/dbconnection.classes.php";
+            include_once "Model/account.models.php";
+            //include_once "classes/customer.classes.php";
+            include_once "View/account.view.php";
+            $accountView = new AccountView();
+            $pharmacyDetails = $accountView->getPharmacyDetails();
+            ?>
 <body class='EditPharmacyBody'>
     <div class="MiddleBg">
-      <div class="NavBar">
+    <?php 
+       include "navBar_pharmacy.php";
+       ?>
+      <!-- <div class="NavBar">
         <h1 id="epharm">E-Pharm</h1>
         <ul class="nav justify-content-end NavBarContent">
          <li class="nav-item">
@@ -29,7 +39,7 @@ session_start();
            <a class="nav-link" href="logout.php">Logout</a>
          </li>
        </ul>
-      </div>
+      </div> -->
       <div class="editForm">
         <div class="error">
           <?php
@@ -57,14 +67,7 @@ session_start();
         </div>
         <div class="Form">
           <form method="post" action="includes/editPharmacy.inc.php">
-            <?php
-            include_once "classes/dbconnection.classes.php";
-            include_once "Model/account.models.php";
-            //include_once "classes/customer.classes.php";
-            include_once "View/account.view.php";
-            $accountView = new AccountView();
-            $pharmacyDetails = $accountView->getPharmacyDetails();
-            ?>
+            
             <div id="editnote" class="Label">
               Enter your new data
             </div>
@@ -107,8 +110,7 @@ session_start();
             <div class="TextInput">
               <input type="text" name="contactNumber"
               value="<?php echo  $pharmacyDetails["contactNo"]; ?>"
-              placeholder= "Contact Number"
-               required>
+              placeholder= "Contact Number">
             </div>
             <div class="WhiteSpace">
             </div>
@@ -126,6 +128,8 @@ session_start();
 
             <div class="edit">
               <button type="submit" class="btn" name="saveChanges"> Save Changes
+              </button>
+              <button type="submit" class="btn" name="cancel"> Cancel
               </button>
             </div>
           </form>

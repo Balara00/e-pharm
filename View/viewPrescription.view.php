@@ -43,7 +43,7 @@ class ViewPrescription_view extends ViewPrescription{
           echo "<p style='color:green'>Notified</p>";
         }
         elseif($results["approveState"] == "cancelled"){
-          echo "<p style='color:red'>Cancelled</p>";
+          echo "<p style='color:red'>Removed</p>";
         }
         // elseif($results["ApproveState"] == "Partially"){
         //   echo "<p style='color:grey'>Partially</p>";

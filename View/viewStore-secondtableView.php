@@ -20,7 +20,7 @@
                 <img class="imgPharm" src="../uploads/<?= $pharmacyMed->getmedURL() ?>"><br>
                 <?php echo '<h class="drug-name">' . $medicine['name'] . '</h>' ?><br>
                 <?php echo '<h class="price">Rs.' . $row['price']  . '</h>' ?><br>
-                <a href="edit.php"><button class="edit" type="submit" >Edit</button></a>
+                <a href="../medEditor.php?pharmacyID=<?php echo $_SESSION['pharmacyID'] ?>&medID=<?php echo $row['medID'] ?>"><button class="edit" type="submit" >Edit</button></a>
                 </div>
             </div>
             <?php } ?>  

@@ -22,7 +22,7 @@ if(isset($_GET['find'])){
                 die;
             }else{
                 $medID = $resultsCon->getmedID();
-                $medPrice = $resultsCon->getmedPrice();
+                // $medPrice = $resultsCon->getmedPrice();
             }
 
             $resultsCon->searchPharmaciesInArea($area);

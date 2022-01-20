@@ -12,7 +12,7 @@
                 <img class="imgPharm" src="../uploads/<?= $pharmacyMed->getmedURL() ?>"><br>
                 <?php echo '<h class="drug-name">' . $this->getsearchq() . '</h>' ?><br>
                 <?php echo '<h class="price">Rs.' . $result['price'] . '</h>' ?><br>
-                <a href="edit.php"><button class="edit" type="submit">Edit</button></a>
+                <a href="../medEditor.php?pharmacyID=<?php echo $_SESSION['pharmacyID'] ?>&medID=<?php echo $result['medID'] ?>"><button class="edit" type="submit">Edit</button></a>
                 </div>
             </div>
             

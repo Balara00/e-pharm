@@ -35,7 +35,9 @@ if (!isset($_SESSION['errors'])) {
     <link rel="stylesheet" type="text/css" href="assets/css/addMed.css">
     <title>Add Medicine</title>
 </head>
-
+<?php 
+    include "classes/dbconnection.classes.php";
+?>
 <body>
 
     <body class="index_body">
@@ -48,69 +50,80 @@ if (!isset($_SESSION['errors'])) {
                 </div>
                 <div class="form-container">
                     <form method="post" action="includes/addMed.inc.php" enctype="multipart/form-data">
-                        <div class="input-group" id="field_1">
-                            <img src="icons/user.svg" alt="">
-                            <input type="text" name="name" placeholder="Medicine Name" value="<?php echo $name; ?>" onfocus="change_color('field_1')">
-                            <?php if (in_array("Medicine name is required", $_SESSION['errors'])) : ?>
-                                <p class="tooltiptext">Medicine name is required</p>
-                                <style>
-                                    #field_1 {
-                                        border-color: #cc3c31;
-                                        -moz-box-shadow: 0 0 3px red;
-                                        -webkit-box-shadow: 0 0 3px red;
-                                        box-shadow: 0 0 3px #333 red;
-                                    }
-                                </style>
-                            <?php endif ?>
-                            <?php if (in_array("Medicine is already exists", $_SESSION['errors'])) : ?>
-                                <p class="tooltiptext">Medicine is already exists</p>
-                                <style>
-                                    #field_1 {
-                                        border-color: #cc3c31;
-                                        -moz-box-shadow: 0 0 3px red;
-                                        -webkit-box-shadow: 0 0 3px red;
-                                        box-shadow: 0 0 3px #333 red;
-                                    }
-                                </style>
-                            <?php endif ?>
+                        <div class='oneline'>
+                            <p class="txtt">Name of the Medicine</p>
+                            <div class="input-group" id="field_1">
+                                <!-- <img src="icons/user.svg" alt=""> -->
+                                <input type="text" name="name" value="<?php echo $name; ?>" onfocus="change_color('field_1')">
+                                <?php if (in_array("Medicine name is required", $_SESSION['errors'])) : ?>
+                                    <p class="tooltiptext">Name is required</p>
+                                    <style>
+                                        #field_1 {
+                                            border-color: #cc3c31;
+                                            -moz-box-shadow: 0 0 3px red;
+                                            -webkit-box-shadow: 0 0 3px red;
+                                            box-shadow: 0 0 3px #333 red;
+                                        }
+                                    </style>
+                                <?php endif ?>
+                                <?php if (in_array("Medicine is already exists", $_SESSION['errors'])) : ?>
+                                    <p class="tooltiptext">Medicine is already exists</p>
+                                    <style>
+                                        #field_1 {
+                                            border-color: #cc3c31;
+                                            -moz-box-shadow: 0 0 3px red;
+                                            -webkit-box-shadow: 0 0 3px red;
+                                            box-shadow: 0 0 3px #333 red;
+                                        }
+                                    </style>
+                                <?php endif ?>
 
+                            </div>
                         </div>
                         <div class="between-inputs"></div>
-                        <div class="input-group" id="field_2">
-                            <img src="icons/user.svg" alt="">
-                            <input type="number" name="price" oninput="validity.valid||(value='')" placeholder="Unit price (Rs.)" value="<?php echo $price; ?>" onfocus="change_color('field_2')">
-                            <?php if (in_array("Price is required", $_SESSION['errors'])) : ?>
-                                <p class="tooltiptext">Price is required</p>
-                                <style>
-                                    #field_2 {
-                                        border-color: #cc3c31;
-                                        -moz-box-shadow: 0 0 3px red;
-                                        -webkit-box-shadow: 0 0 3px red;
-                                        box-shadow: 0 0 3px #333 red;
-                                    }
-                                </style>
-                            <?php endif ?>
+                        <div class='oneline'>
+                            <p class="txtt">Unit Price (Rs.)</p>
+                            <div class="input-group" id="field_2">
+                                <!-- <img src="icons/user.svg" alt=""> -->
+                                <input type="number" name="price" oninput="validity.valid||(value='')" step="any" value="<?php echo $price; ?>" onfocus="change_color('field_2')">
+                                <?php if (in_array("Price is required", $_SESSION['errors'])) : ?>
+                                    <p class="tooltiptext">Price is required</p>
+                                    <style>
+                                        #field_2 {
+                                            border-color: #cc3c31;
+                                            -moz-box-shadow: 0 0 3px red;
+                                            -webkit-box-shadow: 0 0 3px red;
+                                            box-shadow: 0 0 3px #333 red;
+                                        }
+                                    </style>
+                                <?php endif ?>
+                            </div>
                         </div>
                         <div class="between-inputs"></div>
-                        <div class="input-group" id="field_3">
-                            <img src="icons/password.svg" alt="">
-                            <input type="number" placeholder="Quantity" oninput="validity.valid||(value='')" value="<?php echo $amount; ?>" name="amount" onfocus="change_color('field_3')">
-                            <?php if (in_array("Quantity is required", $_SESSION['errors'])) : ?>
-                                <p class="tooltiptext">Quantity is required</p>
-                                <style>
-                                    #field_3 {
-                                        border-color: #cc3c31;
-                                        -moz-box-shadow: 0 0 3px red;
-                                        -webkit-box-shadow: 0 0 3px red;
-                                        box-shadow: 0 0 3px #333 red;
-                                    }
-                                </style>
-                            <?php endif ?>
+                        <div class='oneline'>
+                            <p class="txtt">Quantity</p>
+                            <div class="input-group" id="field_3">
+                                <!-- <img src="icons/password.svg" alt=""> -->
+                                <input type="number" oninput="validity.valid||(value='')" value="<?php echo $amount; ?>" name="amount" onfocus="change_color('field_3')">
+                                <?php if (in_array("Quantity is required", $_SESSION['errors'])) : ?>
+                                    <p class="tooltiptext">Quantity is required</p>
+                                    <style>
+                                        #field_3 {
+                                            border-color: #cc3c31;
+                                            -moz-box-shadow: 0 0 3px red;
+                                            -webkit-box-shadow: 0 0 3px red;
+                                            box-shadow: 0 0 3px #333 red;
+                                        }
+                                    </style>
+                                <?php endif ?>
+                            </div>
                         </div>
                         <div class="between-inputs"></div>
                         <div class="input-file" id="field_4">
-                            Image of medicine
-                            <input type="file" name="uploadFile" id="fileToUpload" required aria-describedby="acceptedFilesBlock" accept=".png, .jpg, .jpeg">
+                            <div class='oneline'>
+                                <label for="fileToUpload" class="txtt">Image of Medicine </label>
+                                <input type="file" name="uploadFile" id="fileToUpload" required aria-describedby="acceptedFilesBlock" accept=".png, .jpg, .jpeg"><br>
+                            </div>
                             <small id="acceptedFilesBlock" class="form-text text-muted">(Only jpg, jpeg and png file types are accepted.)
                             </small>
 
@@ -119,7 +132,13 @@ if (!isset($_SESSION['errors'])) {
                         <div class="between-inputs"></div>
                         <div class="signup-btn">
                             <!-- <td class="td3"><br><br><br><input type="submit" name="saveChanges" class="saveChangesBtn" value="Save Changes" data-bs-toggle="modal" data-bs-target="#myModal" /></td> -->
-                            <button type="submit" class="btn" name="add_med" data-bs-toggle="modal" data-bs-target="#myModal">Add</button>
+                            <button type="submit" class="btn btn-primary" name="add_med" data-bs-toggle="modal" data-bs-target="#myModal">Add</button>
+                        </div>
+                    </form>
+                    <form method="post" action="includes/addMed.inc.php">
+                        <div class="back-btn">
+                            <!-- <td class="td3"><br><br><br><input type="submit" name="saveChanges" class="saveChangesBtn" value="Save Changes" data-bs-toggle="modal" data-bs-target="#myModal" /></td> -->
+                            <button type="submit" class="btn btn-primary" name="back">Back to Store</button>
                         </div>
                     </form>
                 </div>
@@ -142,7 +161,7 @@ if (!isset($_SESSION['errors'])) {
                         <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
 
-                    <img class="imgCart mx-auto" src="assets/images/cart.svg">
+                    <img class="imgCart mx-auto" src="assets/images/complete.svg">
                     <p class="mx-auto success">Successfully added to the store</p>
 
                     <!-- </div> -->

@@ -127,4 +127,11 @@ class StoreOrderContr extends Controller{
     public function getCustomerID(){
         return $this->customerID;
     }
+
+    public function isExceeded($pharmID) {
+        if ($this->storeOrderModel->getCurrentOrders($pharmID) == $this->storeOrderModel->getDelOrderNo($pharmID)) {
+            return true;
+        }
+        return false;
+    }
 }

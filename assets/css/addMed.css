@@ -24,7 +24,7 @@
   font-family: Ubuntu;
 }
 .sign-form {
-  width: 530px;
+  width: 620px;
   height: 530px;
   position: absolute;
   left: 10%;
@@ -65,11 +65,12 @@
 }
 .input-group {
   position: relative;
-  left: 70px;
+  margin: auto;
+  /* left: 70px;
   right: 70px;
-  margin: 0px 12px 0px 12px;
+  margin: 0px 12px 0px 12px; */
   padding-left: 10px;
-  width: 380px !important;
+  width: 270px !important;
   height: 40px;
   border: 2px solid #4186ff;
   border-radius: 20px;
@@ -77,12 +78,16 @@
 .input-file {
   color: #7a7a7a;
   position: relative;
-  left: 70px;
-  right: 70px;
-  margin: 0px 12px 0px 12px;
+  /* left: 70px;
+  right: 70px; */
+  margin: auto;
+  /* margin: 0px 12px 0px 12px; */
   padding-left: 10px;
-  width: 380px !important;
+  width: 460px !important;
   height: 40px;
+}
+.input-file input {
+  margin: auto;
 }
 .input-group img {
   position: relative;
@@ -109,14 +114,17 @@ textarea {
   background-color: transparent;
 }
 .signup-btn {
+  height: 48px;
   text-align: center;
+  margin: auto;
 }
 .signup-btn button {
-  left: 70px;
-  right: 70px;
-  margin: 25px 18px 25px 6px;
+  position: absolute;
+  left: 75px;
+  right: 60px;
+  margin: 25px 30px 25px 150px;
   padding-left: 10px;
-  width: 380px !important;
+  width: 150px !important;
   height: 40px;
   border: 2px solid #1b93c7;
   border-radius: 20px;
@@ -192,11 +200,16 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 input[type="file"]::file-selector-button {
-  border: 2px solid #6c5ce7;
   padding: 0.2em 0.4em;
-  border-radius: 0.2em;
-  background-color: #a29bfe;
+  width: 130px !important;
+  /* height: 40px; */
+  border: 2px solid #1b93c7;
+  border-radius: 5px;
+  background-color: #1b93c7;
+  text-align: center;
+  color: #fff;
 }
+
 .modal {
   display: block;
   position: fixed; /* Stay in place */
@@ -250,4 +263,35 @@ input[type="file"]::file-selector-button {
 .close {
   position: relative;
   vertical-align: right;
+}
+.oneline {
+  /* font-size: 13px; */
+  display: flex;
+  flex-direction: row;
+  color: #7a7a7a;
+  width: 450px;
+  margin: auto;
+}
+.txtt {
+  min-width: 170px;
+}
+.back-btn {
+  height: 45px;
+  text-align: center;
+  margin: auto;
+}
+.back-btn button {
+  position: absolute;
+  left: 75px;
+  right: 60px;
+  margin: 25px 30px 25px 150px;
+  padding-left: 10px;
+  width: 150px !important;
+  height: 35px;
+  border: 2px solid #7a7a7a;
+  border-radius: 20px;
+  background-color: #7a7a7a;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
 }

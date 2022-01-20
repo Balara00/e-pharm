@@ -44,7 +44,7 @@ $navbarContr = new NavBarContr();
             <div class="vertical-menu">
                 <a href="viewStore.php?pharmacyID=<?= $_SESSION['pharmacyID']?>" class="a1">Store</a>
                 <a href="../pharmacyAccount.php?pharmacyID=<?= $_SESSION['pharmacyID']?>" id="a2"  class="a2">Pharmacy Profile</a>  
-                <a class="active" class="a4">Orders</a>
+                <a class="active" class="a4" style="block-size: 80px;">Orders</a>
                 <a href="../prescriptions.php?pharmacyID=<?= $_SESSION['pharmacyID']?>" class="a5">Prescriptions</a>
             </div>
         </div>
@@ -55,12 +55,12 @@ $navbarContr = new NavBarContr();
 
         <div class="orderType">
             <a class = "delivery delivery-pickup" href = "storeOrders.php?pharmacyID=<?= $_SESSION['pharmacyID'];?>&<?= "type=delivery"?>" >Delivery</a>
-            <a class = "pickup delivery-pickup" href="storeOrders.php?<?= "type=pickup"?>"">Pickup</a>
+            <a class = "pickup delivery-pickup" href="storeOrders.php?<?= "type=pickup"?>">Pickup</a>
         </div>
 
         <div class="orderType">
             <a class = "delivery delivery-pickup" href = "storeOrders.php?pharmacyID=<?= $pharmacyID?>&<?= "type=delivery"?>" >Delivery</a>
-            <a class = "pickup delivery-pickup" href="storeOrders.php?pharmacyID=<?= $pharmacyID?>&<?= "type=pickup"?>"">Pickup</a>
+            <a class = "pickup delivery-pickup" href="storeOrders.php?pharmacyID=<?= $pharmacyID?>&<?= "type=pickup"?>">Pickup</a>
         </div>
 
         <Form class="radios" method="post" action="" >
@@ -80,10 +80,15 @@ $navbarContr = new NavBarContr();
                 <span class="checkmark"></span>
             </label>
 
-            <label class="containerRadio">Delivered
+            <?php 
+            if($_GET['type']== "delivery"){ ?>
+                <label class="containerRadio">Delivered
                 <input name="select" value="Delivered" type="radio">
                 <span class="checkmark"></span>
             </label>
+
+            <?php } ?>
+
             <label class="containerRadio">Declined
                 <input name="select" value="Declined" type="radio">
                 <span class="checkmark"></span>

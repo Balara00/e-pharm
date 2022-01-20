@@ -70,7 +70,7 @@ class MyOrderContr extends Controller{
     }
 
     public function __construct(){
-        $this->customerID = 1;
+        $this->customerID = $_SESSION['customerID'];
         $this->myOrderModel = new MyOrderModel();
         $this->medObjs = array();
         $this->pharmacyObjs = array();

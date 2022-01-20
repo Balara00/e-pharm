@@ -77,7 +77,7 @@ if (!isset($_SESSION['dvStatus'])) {
                         <img src="icons/user.svg" alt="">
                         <input type="text" name="name" placeholder="Pharmacy Name" value="<?php echo $name; ?>" onfocus="change_color('field_1')">
                         <?php if (in_array("Name is required", $_SESSION['errors'])) : ?>
-                            <p class="tooltiptext">Pharmacy name is required</p>
+                            <p class="tooltiptext">Name is required</p>
                             <style>
                                 #field_1 {
                                     border-color: #cc3c31;
@@ -90,7 +90,7 @@ if (!isset($_SESSION['dvStatus'])) {
                     </div>
                     <div class="bet-inputs"></div>
                     <div class="input-group" id="field_2">
-                        <img src="icons/user.svg" alt="">
+                        <img src="icons/username.svg" alt="">
                         <input type="email" name="username" placeholder="Username (Email Address)" value="<?php echo $username; ?>" onfocus="change_color('field_2')">
                         <?php if (in_array("Username is required", $_SESSION['errors'])) : ?>
                             <p class="tooltiptext">Username is required</p>
@@ -117,10 +117,10 @@ if (!isset($_SESSION['dvStatus'])) {
                     </div>
                     <div class="bet-inputs"></div>
                     <div class="input-group" id="field_5">
-                        <img src="icons/user.svg" alt="">
+                        <img src="icons/contact.svg" alt="">
                         <input type="number" name="contactNo" oninput="validity.valid||(value='')" placeholder="Contact Number" value="<?php echo $contactNo; ?>" onfocus="change_color('field_5')">
                         <?php if (in_array("Contact number is required", $_SESSION['errors'])) : ?>
-                            <p class="tooltiptext">Contact Number is required</p>
+                            <p class="tooltiptext">Contact No. is required</p>
                             <style>
                                 #field_5 {
                                     border-color: #cc3c31;
@@ -144,7 +144,7 @@ if (!isset($_SESSION['dvStatus'])) {
                     </div>
                     <div class="bet-inputs"></div>
                     <div class="input-group" id="field_6">
-                        <img src="icons/user.svg" alt="">
+                        <img src="icons/address.svg" alt="">
                         <input type="text" name="address" placeholder="Address" value="<?php echo $address; ?>" onfocus="change_color('field_6')">
                         <?php if (in_array("Address is required", $_SESSION['errors'])) : ?>
                             <p class="tooltiptext">Address is required</p>
@@ -160,7 +160,7 @@ if (!isset($_SESSION['dvStatus'])) {
                     </div>
                     <div class="bet-inputs"></div>
                     <div class="input-group" id="field_7">
-                        <img src="icons/user.svg" alt="">
+                        <img src="icons/area.svg" alt="">
                         <input type="text" name="area" placeholder="Area" value="<?php echo $area; ?>" onfocus="change_color('field_7')">
                         <?php if (in_array("Area is required", $_SESSION['errors'])) : ?>
                             <p class="tooltiptext">Area is required</p>
@@ -184,13 +184,15 @@ if (!isset($_SESSION['dvStatus'])) {
                     </div>
                     <div class="bet-inputs"></div>
                     <div class="input-group" id="field_8" style="display:none;border: 2px solid #4186ff;border-radius: 20px;">
-                        <img src="icons/user.svg" alt="">
-                        <input type="number" name="dvOrders" oninput="validity.valid||(value='')" placeholder="Number of delivery orders per day" value="<?php echo $dvOrders; ?>" onfocus="change_color('field_8')">
+                        <div class="oneline">
+                            <img src="icons/dvNo.svg" alt="">
+                            <input type="number" name="dvOrders" oninput="validity.valid||(value='')" placeholder="Number of delivery orders per day" value="<?php echo $dvOrders; ?>" onfocus="change_color('field_8')">
+                        </div>
                         <?php if (in_array("Number is required", $_SESSION['errors'])) : ?>
                             <p class="tooltiptext">Number of delivery orders is required</p>
                             <style>
                                 #field_8 {
-                                    border-color: #cc3c31;
+                                    border-color: #cc3c31 !important;
                                     -moz-box-shadow: 0 0 3px red;
                                     -webkit-box-shadow: 0 0 3px red;
                                     box-shadow: 0 0 3px #333 red;
@@ -238,7 +240,16 @@ if (!isset($_SESSION['dvStatus'])) {
                                 }
                             </style>
                         <?php endif ?>
-                        <?php unset($_SESSION['errors']); ?>
+                        <?php 
+                        unset($_SESSION['errors']); 
+                        unset($_SESSION['username']);
+                        unset($_SESSION['name']);
+                        unset($_SESSION['contactNo']);
+                        unset($_SESSION['area']);
+                        unset($_SESSION['address']);
+                        
+
+                        ?>
                     </div>
                     <div class="bet-inputs"></div>
                     <div class="input-group" id="field_4">
@@ -247,7 +258,7 @@ if (!isset($_SESSION['dvStatus'])) {
                     </div>
                     <div class="bet-inputs"></div>
                     <div class="signup-btn">
-                        <button type="submit" class="btn" name="reg_user">Sign Up</button>
+                        <button type="submit" class="btn btn-primary" name="reg_user">Sign Up</button>
                     </div>
                     <div class="login-askP">
                         <p>
@@ -269,6 +280,14 @@ if (!isset($_SESSION['dvStatus'])) {
         </script>
     <?php
     }
+
+    if (isset($_SESSION['dvStatus'])) {
+        unset($_SESSION['dvStatus']);
+    }
+    if (isset($_SESSION['dvOrders'])) {
+        unset($_SESSION['dvOrders']);
+    } 
+    
     ?>
 
     <script>

@@ -49,7 +49,7 @@
                     
                 ?>
                     
-                <form action="../includes/cancelOrder.php?orderID=<?= $row['orderID']; ?>" method="post">
+                <form action="../includes/cancelOrder.php?orderID=<?= $row['orderID']; ?>&type=<?= $row['orderType']; ?>" method="post">
                     <button id="myBtn<?php echo $i; ?>" name="cancel" onclick='return confirm("Are you sure?")' class="btn-primary btn cancelOrder" type="submit">Cancel order</button>
                 </form>
                 

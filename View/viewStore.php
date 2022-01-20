@@ -104,7 +104,7 @@ $navbarContr = new NavBarContr();?>
 
         <div class="orderType">
             <a class = "delivery delivery-pickup" href = "storeOrders.php?pharmacyID=<?= $_SESSION['pharmacyID'];?>&<?= "type=delivery"?>" >Delivery</a>
-            <a class = "pickup delivery-pickup" href="storeOrders.php?<?= "type=pickup"?>"">Pickup</a>
+            <a class = "pickup delivery-pickup" href="storeOrders.php?<?= "type=pickup"?>">Pickup</a>
         </div>
     
         <div class="scroll-flow">

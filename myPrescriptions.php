@@ -54,8 +54,8 @@ $prescriptions = $presView->getFilteredData($filter);
              <a href="myPrescriptions.php" class="active" class="a3">My Prescriptions</a>
          </div> -->
 
-         <div class="sidenav">
-        <!-- <div class="blueBar"></div> -->
+         <!-- <div class="sidenav">
+        <div class="blueBar"></div>
           <a href="account.php?customerID=">My Profile</a>
             <button class="dropdown-btn" style="border:none;">My Orders 
               <i class="fa fa-caret-down"></i>
@@ -66,7 +66,22 @@ $prescriptions = $presView->getFilteredData($filter);
             </div>
             <a href="myPrescriptions.php" class="active">My Prescriptions</a>
           </div>
-          
+           -->
+           <div class="stripe-menu">
+          <div class="stripe" style="height: 27.8%;"></div>
+          <div class="vertical-menu">
+              <a href="account.php?customerID=<?= $_SESSION['customerID']?>" class="a1">My Profile</a>
+              <!-- <a href="pharmacyAccount.php?pharmacyID=<?= $_SESSION['pharmacyID']?>" id="a2"  class="a2">Pharmacy Profile</a>   -->
+              <a class="a4">My Orders</a>
+              <a class="active" href="myPrescriptions.php?customerID=<?= $_SESSION['customerID']?>" class="a5">My Prescriptions</a>
+          </div>
+        </div> 
+
+        <div class="orderType">
+          <a class = "delivery delivery-pickup" href = "View/myOrders.php?<?= "type=delivery"?>" >Delivery</a>
+          <a class = "pickup delivery-pickup" href= "View/myOrders.php?<?= "type=pickup"?>">Pickup</a>
+        </div>
+
         <div class="LoginForm">
            <?php
            

@@ -37,7 +37,7 @@
 <!-- new -->
 
 <?php
-   
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -63,10 +63,10 @@
         <p class="forPharmacies text_index">For Pharmacies</p>
         
         <button onclick="document.location = 'login.php' " class="btn btn-primary loginBtnNav"><p class="landBtnText">Login</p></button>
-        <button class="btn btn-primary signUpBtnNav" disabled><p class="landBtnText">Sign Up</p></button>
+        <!-- <button class="btn btn-primary signUpBtnNav" disabled><p class="landBtnText">Sign Up</p></button> -->
 
-        <button onclick="document.location = 'signUpCus.php' " class="btn btn-primary signUpBtn customerSignUpBtn"> <p class="signUpBtnText"> Sign Up</br>& Order</p> </button>
-        <button onclick="document.location = 'signUpPharm.php' " class="btn btn-primary signUpBtn pharmacySignUpBtn"> <p class="signUpBtnText"> Register</br>Your Pharmacy</p> </button>
+        <button onclick="document.location = 'signupCus.php' " class="btn btn-primary signUpBtn customerSignUpBtn"> <p class="signUpBtnText"> Sign Up</br>& Order</p> </button>
+        <button onclick="document.location = 'signupPharm.php' " class="btn btn-primary signUpBtn pharmacySignUpBtn"> <p class="signUpBtnText"> Register</br>Your Pharmacy</p> </button>
             
     </div>
 </body>

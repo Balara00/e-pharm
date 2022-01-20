@@ -222,5 +222,21 @@ class StoreOrderModel{
 
     }
 
+    public function getCurrentOrders($pharmID) {
+        date_default_timezone_set('Asia/Colombo');
+        $date = date('m/d/Y', time());
+        $stmt = $this->pdo->prepare("SELECT orderID FROM order_ WHERE pharmacyID=:pID AND orderType=:ot AND dateTime LIKE '%{$date}%' AND approveStatus=:appStatus");
+        $stmt->execute(array(':pID' => $pharmID, ':ot' => 'delivery', ':appStatus' => 'accepted'));
+        $len = count($stmt->fetchAll(PDO::FETCH_ASSOC));
+        return $len;
+    }
+
+    public function getDelOrderNo($pharmID) {
+        $stmt = $this->pdo->prepare("SELECT dvOrdersPerDay FROM pharmacy WHERE pharmacyID=:pID");
+        $stmt->execute(array(':pID' => $pharmID));
+        $dvOrders = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        return $dvOrders['dvOrdersPerDay'];
+    }
     
 }

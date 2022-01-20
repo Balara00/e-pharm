@@ -296,12 +296,12 @@
     height: 40px;
     
     top: 8%;
-    left: 75%;
+    left: 85%;
     background: #1B93C7;
     border-radius: 45px;
 }
 
-.signUpBtnNav {
+/* .signUpBtnNav {
     position: absolute;
     width: 110px;
     height: 40px;
@@ -310,7 +310,7 @@
     top: 8%;
     background: #1B93C7;
     border-radius: 45px;
-}
+} */
 
 .landBtnText {
     font-family: Roboto;

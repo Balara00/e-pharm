@@ -38,10 +38,10 @@ body {
 }
 .sign-form {
   width: 558px;
-  height: 630px;
+  height: 650px;
   position: absolute;
   right: 5%;
-  top: 40px;
+  top: 25px;
   background-color: #fff;
   border-radius: 10px;
 }
@@ -92,9 +92,9 @@ body {
   margin: 0px 10px 0px 12px;
   padding-left: 10px;
   width: 380px !important;
-  height: 36px;
+  height: 40px;
   border: 2px solid #4186ff;
-  border-radius: 18px;
+  border-radius: 20px;
 }
 .input-group img {
   position: relative;
@@ -258,4 +258,9 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+}
+.oneline {
+  /* font-size: 13px; */
+  display: flex;
+  flex-direction: row;
 }

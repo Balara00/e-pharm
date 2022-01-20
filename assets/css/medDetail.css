@@ -1,0 +1,341 @@
+.viewMed_body {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    background-image: url(../images/background_img.svg);
+    background-position: top top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.viewMed_container{
+    background-image: url(../images/viewMed_img.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  
+    width: 86%;
+    height: 96%;
+    top: 2%;
+    left: 7%;
+    position: absolute;
+}
+
+
+/* Rectangle 56 */
+.medDetails {
+    position: absolute;
+    width: 595px;
+    height: 405px;
+    background-color: white;
+    border-radius: 0px 45px 45px 0px;
+
+    top: 120px;
+    left: 640px;
+
+}
+
+.stripe {
+    width: 405px;
+    height: 49px;
+    
+    background: #1B93C7;
+    border-radius: 45px 45px 0px 0px;
+    transform: rotate(90deg);  
+
+    position: absolute;
+    top: 178px;
+    left: 368px;
+}
+
+.imgMed {
+    position: absolute;
+    width: 570px;
+    height: 405px;
+    
+    top: 120px;
+    left: 85px;
+}
+
+.medicine{
+    /* Paracitamol 5mg */
+
+    position: absolute;
+    width: 438px;
+    height: 63px;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 55px;
+    line-height: 63px;
+    text-align: left;
+
+    color: #000000;
+
+    top: 25px;
+    left: 38px;
+}
+
+.pharmacy {
+    /* Aruna Pharmacy - Matara */
+
+    position: absolute;
+    width: 342px;
+    height: 34px;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 27px;
+    line-height: 34px;
+    text-align: left;
+
+    color: rgba(0, 0, 0, 0.46);
+
+    top: 100px;
+    left: 38px;
+}
+
+.price {
+        /* Rs.45.00 */
+
+    position: absolute;
+    width: 192px;
+    height: 57px;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 47px;
+    line-height: 57px;
+    text-align: left;
+
+    color: #0038FF;
+
+    top: 175px;
+    left: 38px;
+}
+
+.quantity {
+    position: absolute;
+    top: 235px;
+
+    height: 1000px !important;
+}
+
+
+.viewPharmacyBtn {
+    /* Rectangle 50 */
+
+    position: absolute;
+    width: 155px;
+    height: 45px;
+
+    background: #8A8C8D;
+    border-radius: 45px;
+
+    top: 125px;
+    left: 380px;
+
+    padding-top: 9px;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    /* identical to box height */
+    text-align: center;
+
+    color: #FFFFFF;
+
+    /* position: absolute;    
+    top: 9px;
+    left: 15px; */
+
+}
+
+
+.outOfStock {
+    position: absolute;
+    /* width: 101px;
+    height: 29px; */
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 29px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: red;
+
+    top: 260px;
+    left: 38px;
+
+}
+
+.medDetBtn {
+    position: absolute;
+    height: 45px;
+    
+    border-radius: 45px;
+    border: none;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 145%;
+    line-height: 34px;
+    text-align: center;
+
+    color: #FFFFFF;
+
+    top: 225px;
+}
+
+.buyNowBtn {
+    background: #1B93C7;
+    width: 140px;
+    left: -545px;
+}
+
+.addToCartBtn {
+    width: 170px;
+    left: -180px;
+}
+
+.reserveNowBtn {
+    background: #1B93C7;
+    width: 185px;
+    left: -385px;
+}
+
+#quantityTxtBox {
+    color: transparent;
+    text-shadow: 0px 0px 0px black;
+
+    position: absolute;
+    top: 22px;
+    left: 155px;
+
+    width: 70px;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 29px;
+}
+
+.quantityText {
+    /* Quantity */
+
+    position: absolute;
+    width: 101px;
+    height: 29px;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 29px;
+    /* identical to box height */
+    text-align: center;
+
+    color: #4F4F4F;
+
+    top: 25px;
+    left: 38px;
+}
+
+
+
+.modal {
+    display: block; 
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+  
+  /* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+  
+  /* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.viewCartBtn {
+    border-radius: 45px;
+    width: 250px;
+}
+
+.imgCart {
+    /* position: absolute; */
+    width: 200px;
+    height: 200px;   
+}
+
+.success {
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 29px;
+}
+
+.close {
+    position: relative;
+    vertical-align: right;
+}
+
+.deliveryStatusL {
+    position: relative;
+    top: 17.5%;
+    left: -118%;
+    color: #ff7b00;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.deliveryStatus {
+    position: relative;
+    top: 17.5%;
+    left: -205%;
+    color: #ff7b00;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+}
