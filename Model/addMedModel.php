@@ -9,8 +9,8 @@ class AddMedModel
     }
     public function getMedID($name)
     {
-        $stmt = $this->pdo->prepare("SELECT * FROM medicine WHERE name=:temp");
-        $stmt->execute([':temp' => $name]);
+        $stmt = $this->pdo->prepare("SELECT * FROM medicine WHERE lower(name)=:temp");
+        $stmt->execute([':temp' => strtolower($name)]);
         $med = $stmt->fetch();
         if ($med) {
             if (strtolower($med['name']) === strtolower($name)) {
