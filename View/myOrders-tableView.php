@@ -59,8 +59,17 @@
                 
                 <?php
                 $orderstats=$this->getOrder($row['orderID']);
+
+                if($row['orderType']=="pickup"){
+                    ?>
+                        <script>
+                            document.getElementById("myreceived<?= $i?>").setAttribute("style","display:none;");
+                        </script>
+                    <?php
+                    }
+                    
                 if($orderstats['status'] == 'received' || $orderstats['status'] == 'cancelled' || $orderstats['approveStatus'] == 'declined'
-                        || $orderstats['approveStatus'] == 'accepted') {
+                        ) {
                         
                         ?>
                         <script>
@@ -77,6 +86,15 @@
                         <?php 
                         echo '<script> disableBtns('.$i.'); </script>';
                     }
+                if( $orderstats['approveStatus'] == 'accepted'){?>
+                        <script>
+                            document.getElementById("myBtn<?= $i?>").disabled = true;
+                        </script>
+
+                <?php 
+                }    
+
+
                 ?>    
                 
                 </div>
@@ -90,13 +108,3 @@
         </div>
     </div>
 </div>
-
-
-    
-        
-
-
-
-
-    
-
