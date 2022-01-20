@@ -63,7 +63,7 @@ if (!isset($_SESSION['errors'])) {
                     </div>
                     <div class="between-inputs"></div>
                     <div class="input-group" id="field_2">
-                        <img src="icons/user.svg" alt="">
+                        <img src="icons/username.svg" alt="">
                         <input type="email" name="username" placeholder="Username (Email Address)" value="<?php echo $username; ?>" onfocus="change_color('field_2')">
                         <?php if (in_array("Username is required", $_SESSION['errors'])) : ?>
                             <p class="tooltiptext">Username is required</p>
@@ -128,7 +128,11 @@ if (!isset($_SESSION['errors'])) {
                                 }
                             </style>
                         <?php endif ?>
-                        <?php unset($_SESSION['errors']); ?>
+                        <?php 
+                        unset($_SESSION['errors']); 
+                        unset($_SESSION['username']);
+                        unset($_SESSION['name']);
+                        ?>
                     </div>
                     <div class="between-inputs"></div>
                     <div class="input-group" id="field_4">

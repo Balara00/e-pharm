@@ -13,7 +13,7 @@ class SignupCus
         $stmt->execute([':temp' => $username]);
         $user = $stmt->fetch();
         if ($user) {
-            if ($user['username'] === $username) {
+            if (strtolower($user['username']) === strtolower($username)) {
                 return true;
             }
         }
@@ -21,7 +21,7 @@ class SignupCus
         $stmt->execute([':temp' => $username]);
         $user = $stmt->fetch();
         if ($user) { // if user exists
-            if ($user['username'] === $username) {
+            if (strtolower($user['username']) === strtolower($username)) {
                 return true;
             }
         }

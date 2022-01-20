@@ -9,7 +9,7 @@ class SignupPharm
         $stmt->execute([':temp' => $username]);
         $user = $stmt->fetch();
         if ($user) { // if user exists
-            if ($user['username'] === $username) {
+            if (strtolower($user['username']) === strtolower($username)) {
                 return true;
             }
         }
@@ -17,7 +17,7 @@ class SignupPharm
         $stmt->execute([':temp' => $username]);
         $user = $stmt->fetch();
         if ($user) { // if user exists
-            if ($user['username'] === $username) {
+            if (strtolower($user['username']) === strtolower($username)) {
                 return true;
             }
         }
@@ -57,5 +57,25 @@ class SignupPharm
             ':verifyingStatus' => "pending",
 
         ));
+
+        $stmt = $pdo->prepare("SELECT * FROM pharmacy WHERE username=:temp");
+        $stmt->execute([':temp' => $username]);
+        $user = $stmt->fetch();
+        if ($user) { // if user exists
+            $pharmID = $user['pharmacyID'];
+        }
+
+        $query = "INSERT INTO rating_pharmacy (pharmacyID, totalRating, noOfReviews, averageRating) 
+        VALUES(:pharmacyID,:totalRating,:noOfReviews,:averageRating)";
+        $pdo = DBConnection::getInstance()->getPDO();
+        print_r($pdo);
+        $stmt = $pdo->prepare($query);
+        $stmt->execute(array(
+            ':pharmacyID' => $pharmID,
+            ':totalRating' => '0',
+            ':noOfReviews' => '0',
+            ':averageRating' => '0',
+        ));
+
     }
 }
