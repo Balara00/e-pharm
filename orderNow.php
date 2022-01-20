@@ -27,10 +27,10 @@ session_start();
 
         // $_SESSION['buyNow'] = "true";
         // $_SESSION['reseveNow'] = "true";
-        $_SESSION['order'] = "buyNow";
-        $_SESSION['customerID'] = '1';
-        $_SESSION['pharmacyID'] = '1';
-        $_SESSION['medQuantityArr'] = array('1' => '2', '2' => '4', '1' => '3');
+        // $_SESSION['order'] = "buyNow";
+        // $_SESSION['customerID'] = '1';
+        // $_SESSION['pharmacyID'] = '1';
+        // $_SESSION['medQuantityArr'] = array('1' => '2', '2' => '4', '1' => '3');
         
         $order_view = new OrderNowView();
 
