@@ -1,80 +1,80 @@
 <?php
 session_start();
-include_once "pdo.php";
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
-
-// require 'C:/laragon/bin/php/phpMailer/vendor/autoload.php';
-require 'vendor/autoload.php';
-
-if (isset($_POST["send_code"])) {
-
-  $email = $_POST["email"];
-
-  $customerStmt = $pdo->prepare("SELECT * FROM customer where username = :xyz");
-  $customerStmt->execute(array(":xyz" => $_POST["email"]));
-  $customerRow = $customerStmt->fetch(PDO::FETCH_ASSOC);
-  if ( $customerRow === false ) {
-    $_SESSION['error'] = 'Incorrect Email Address';
-    header( 'Location: forgetPassword.php' ) ;
-    return;
-  }
-
-  $mail = new PHPMailer(true);
-
-  try{
-    $mail->SMTPDebug = 0;//SMTP::DEBUG_SERVER;
-
-    //Send using SMTP
-    $mail->isSMTP();
-
-    //Set the SMTP server to send through
-    $mail->Host = 'smtp.gmail.com';
-
-    //Enable SMTP authentication
-    $mail->SMTPAuth = true;
-
-    //SMTP username
-    $mail->Username = 'ktst428@gmail.com';
-
-    //SMTP password
-    $mail->Password = '*AbbbbbA*';
-
-    //Enable TLS encryption;
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-
-    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
-    $mail->Port = 587;
-
-    //Recipients
-    $mail->setFrom('ktst428@gmail.com', 'E-Pharm');
-
-    //Add a recipient
-    $mail->addAddress($email);
-
-    //Set email format to HTML
-    $mail->isHTML(true);
-
-    $verification_code = substr(number_format(time() * rand(), 0, '', ''), 0, 6);
-
-    $mail->Subject = 'Email verification';
-    $mail->Body    = '<p>Your verification code is: <b style="font-size: 30px;">' . $verification_code . '</b></p>';
-
-    $mail->send();
-    // echo 'Message has been sent';
-    $customerSql = "UPDATE customer SET verificationCode = $verification_code WHERE username = :email";
-    $customerStmt = $pdo->prepare($customerSql);
-    $customerStmt->execute(array(':email' => $_POST['email']));
-
-    header("Location: verifyCode.php?email=".$email);
-
-  }
- catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-  }
-}
-
+// include_once "pdo.php";
+// use PHPMailer\PHPMailer\PHPMailer;
+// use PHPMailer\PHPMailer\Exception;
+// use PHPMailer\PHPMailer\SMTP;
+//
+// // require 'C:/laragon/bin/php/phpMailer/vendor/autoload.php';
+// require 'vendor/autoload.php';
+//
+// if (isset($_POST["send_code"])) {
+//
+//   $email = $_POST["email"];
+//
+//   $customerStmt = $pdo->prepare("SELECT * FROM customer where username = :xyz");
+//   $customerStmt->execute(array(":xyz" => $_POST["email"]));
+//   $customerRow = $customerStmt->fetch(PDO::FETCH_ASSOC);
+//   if ( $customerRow === false ) {
+//     $_SESSION['error'] = 'Incorrect Email Address';
+//     header( 'Location: forgetPassword.php' ) ;
+//     return;
+//   }
+//
+//   $mail = new PHPMailer(true);
+//
+//   try{
+//     $mail->SMTPDebug = 0;//SMTP::DEBUG_SERVER;
+//
+//     //Send using SMTP
+//     $mail->isSMTP();
+//
+//     //Set the SMTP server to send through
+//     $mail->Host = 'smtp.gmail.com';
+//
+//     //Enable SMTP authentication
+//     $mail->SMTPAuth = true;
+//
+//     //SMTP username
+//     $mail->Username = 'ktst428@gmail.com';
+//
+//     //SMTP password
+//     $mail->Password = '*AbbbbbA*';
+//
+//     //Enable TLS encryption;
+//     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+//
+//     //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+//     $mail->Port = 587;
+//
+//     //Recipients
+//     $mail->setFrom('ktst428@gmail.com', 'E-Pharm');
+//
+//     //Add a recipient
+//     $mail->addAddress($email);
+//
+//     //Set email format to HTML
+//     $mail->isHTML(true);
+//
+//     $verification_code = substr(number_format(time() * rand(), 0, '', ''), 0, 6);
+//
+//     $mail->Subject = 'Email verification';
+//     $mail->Body    = '<p>Your verification code is: <b style="font-size: 30px;">' . $verification_code . '</b></p>';
+//
+//     $mail->send();
+//     // echo 'Message has been sent';
+//     $customerSql = "UPDATE customer SET verificationCode = $verification_code WHERE username = :email";
+//     $customerStmt = $pdo->prepare($customerSql);
+//     $customerStmt->execute(array(':email' => $_POST['email']));
+//
+//     header("Location: verifyCode.php?email=".$email);
+//
+//   }
+//  catch (Exception $e) {
+//     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+//   }
+// }
+//
 
 
  ?>
@@ -120,9 +120,9 @@ if (isset($_POST["send_code"])) {
             ?>
         </div>
         <div class="Form">
-          <form action="forgetPassword.php" method="post">
+          <form action="includes/forgetPW.inc.php" method="post">
             <div class="TextInput">
-              <img src="mailIcon.svg" height="14px">
+              <img src="assets/icons/mailIcon.svg" height="14px">
               <input type="text" name="email" placeholder="email address">
             </div>
             <div class="WhiteSpace">

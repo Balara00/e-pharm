@@ -64,6 +64,7 @@ body{
   top: 40px;
   font-family: Ubuntu;
   color: #1b93c7;
+  
   position: relative;
   font-size: 350%;
 }
@@ -157,8 +158,8 @@ input:-webkit-autofill:active {
 
 .ForgetPw{
   position: relative;
-  text-align: right;
-  padding-right: 70px;
+  text-align: left;
+  padding-left: 70px;
   flex: 10;
   font-family: Ubuntu;
 }

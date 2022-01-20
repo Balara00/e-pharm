@@ -1,0 +1,186 @@
+.EditBody{
+    background-image: url(../images/img2.svg);
+    background-position: top top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    max-width: 100%;
+    height: auto;
+    /* overflow: scroll; */
+    /* position: fixed; */
+    overflow: hidden;
+}
+
+.MiddleBg{
+    background-image: url(../images/img1.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 5%;
+    bottom: 5%;
+    left: 5%;
+    right: 5%;
+    margin: auto;
+    width: 86%;
+    height: 96%;
+    padding: 10px;
+}
+
+
+#epharm{
+    left: 3%;
+    top: 2%;
+    font-family: Ubuntu;
+    position:absolute;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 72px;
+    line-height: 83px;
+    /* identical to box height */
+    text-align: center;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    /* E-Pharm */
+    background: -webkit-linear-gradient(#0041BF 0%, #000F2D 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.NavBar{
+  width: 96%;
+  height: 15%;
+  top: 50px;
+  bottom: 25px;
+}
+
+
+.editForm{
+  width: 558px;
+  top: 17%;
+  height: 550px;
+  position: absolute;
+  right: 8%;
+  /* top: 40px; */
+  background-color: #fff;
+  border-radius: 10px;
+  overflow-y: auto;
+  /* text-align: center; */
+}
+
+.Label{
+  flex: 10;
+  font-family: Ubuntu;
+  padding-left: 40px;
+  /* left: 10%; */
+  /* right: 70px; */
+  width: 300px;
+  height: 30px;
+  border-color: transparent;
+  background-color: transparent;
+  font-weight: bold;
+}
+
+#editnote{
+  font-weight: bold;
+  top: 10px;
+  font-family: Ubuntu;
+  color: #000;
+  position: relative;
+  font-size: 150%;
+  height: 20%;
+  margin-bottom: 40px;
+}
+
+
+.TextInput{
+  position: relative;
+  left: 70px;
+  right: 70px;
+  margin: 0px 12px 0px 12px;
+  padding-left: 10px;
+  width: 380px !important;
+  height: 40px;
+  border: 2px solid #4186ff;
+  border-radius: 20px;
+}
+
+.TextInput img{
+  position: relative;
+  left: 5px;
+  flex: 0.5;
+}
+
+.TextInput input{
+  flex: 10;
+  font-family: Ubuntu;
+  padding-left: 15px;
+  left: 20px;
+  right: 70px;
+  width: 300px;
+  height: 40px;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.TextInput input:focus{
+  outline: none;
+  background-color: transparent;
+}
+
+.TextInput input, textarea{
+  background-color: transparent;
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  border: 1px solid transparent;
+  -webkit-text-fill-color: #000;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.WhiteSpace{
+  position: relative;
+  height: 25px;
+  right: 100px;
+}
+
+
+.LoginBtn{
+  text-align: center;
+}
+
+.LoginBtn button{
+  left: 70px;
+  right: 70px;
+  margin: 25px 18px 25px 6px;
+  padding-left: 10px;
+  width: 380px !important;
+  height: 40px;
+  border: 2px solid #1b93c7;
+  border-radius: 20px;
+  background-color: #1b93c7;
+  text-align: center;
+  color: #fff;
+}
+
+.edit{
+  text-align: center;
+}
+
+.edit button{
+  left: 70%;
+  margin: 25px 18px 25px 6px;
+  padding-left: 10px;
+  width: 30% !important;
+  height: 40px;
+  border: 2px solid #1b93c7;
+  border-radius: 45px;
+  background-color: #1b93c7;
+  text-align: center;
+  color: #fff;
+}

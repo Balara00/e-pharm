@@ -38,7 +38,7 @@ body {
 }
 .sign-form {
   width: 558px;
-  height: 610px;
+  height: 630px;
   position: absolute;
   right: 5%;
   top: 40px;
@@ -53,23 +53,48 @@ body {
   position: relative;
   font-size: 350%;
 }
+#welcomeP {
+  font-weight: bold;
+  top: 20px;
+  font-family: Ubuntu;
+  color: #1b93c7;
+  position: relative;
+  font-size: 350%;
+}
 .welcome-container {
   text-align: center;
   width: 100%;
   margin-bottom: 70px;
 }
+.welcome-containerP {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
 .form-container {
 }
-.input-group {
+.input-groupP {
   position: relative;
   left: 70px;
   right: 70px;
   margin: 0px 12px 0px 12px;
   padding-left: 10px;
   width: 380px !important;
-  height: 40px;
+  height: 25px;
+  font-family: Ubuntu;
+  font-size: 16px;
+}
+.input-group {
+  font-size: 15px;
+  position: relative;
+  left: 70px;
+  right: 70px;
+  margin: 0px 10px 0px 12px;
+  padding-left: 10px;
+  width: 380px !important;
+  height: 36px;
   border: 2px solid #4186ff;
-  border-radius: 20px;
+  border-radius: 18px;
 }
 .input-group img {
   position: relative;
@@ -95,13 +120,46 @@ body {
 textarea {
   background-color: transparent;
 }
+#field_8 {
+  position: relative;
+  left: 70px;
+  right: 70px;
+  margin: 0px 12px 0px 12px;
+  padding-left: 10px;
+  width: 380px !important;
+  height: 40px;
+}
+#field_8 img {
+  position: relative;
+  left: 5px;
+  flex: 0.5;
+}
+#field_8 input {
+  flex: 10;
+  font-family: Ubuntu;
+  padding-left: 15px;
+  left: 20px;
+  right: 70px;
+  width: 360px;
+  height: 40px;
+  border-color: transparent;
+  background-color: transparent;
+}
+#field_8 input:focus {
+  outline: none;
+  background-color: transparent;
+}
+#field_8 input,
+textarea {
+  background-color: transparent;
+}
 .signup-btn {
   text-align: center;
 }
 .signup-btn button {
   left: 70px;
   right: 70px;
-  margin: 25px 18px 25px 6px;
+  margin: 10px 18px 5px 6px;
   padding-left: 10px;
   width: 380px !important;
   height: 40px;
@@ -113,6 +171,11 @@ textarea {
 }
 .login-ask {
   margin: 20px 0 20px 0;
+  color: #7a7a7a;
+  text-align: center;
+}
+.login-askP {
+  margin: 1px 0 1px 0;
   color: #7a7a7a;
   text-align: center;
 }
@@ -177,4 +240,22 @@ input:-webkit-autofill:active {
 #field {
   margin: 15px 12px 15px 12px;
   top: 5px;
+}
+.bet-inputs {
+  position: relative;
+  height: 10px;
+  right: 100px;
+}
+.isAvbTxt {
+  color: #7a7a7a;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }

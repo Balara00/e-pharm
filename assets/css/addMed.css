@@ -1,0 +1,253 @@
+.container {
+  background-image: url(../images/landingMain_img.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow-y: auto;
+  width: 86%;
+  height: 96%;
+  top: 2%;
+  left: 7%;
+  position: absolute;
+}
+
+.index_body {
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-image: url(../images/background_img.svg);
+  background-position: top top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  font-family: Ubuntu;
+}
+.sign-form {
+  width: 530px;
+  height: 530px;
+  position: absolute;
+  left: 10%;
+  top: 120px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+#welcome {
+  font-weight: bold;
+  top: 40px;
+  font-family: Ubuntu;
+  color: #1b93c7;
+  position: relative;
+  font-size: 350%;
+}
+.welcome-container {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 70px;
+}
+.welcome-containerP {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
+.form-container {
+}
+.input-groupP {
+  position: relative;
+  left: 70px;
+  right: 70px;
+  margin: 0px 12px 0px 12px;
+  padding-left: 10px;
+  width: 380px !important;
+  height: 25px;
+  font-family: Ubuntu;
+  font-size: 16px;
+}
+.input-group {
+  position: relative;
+  left: 70px;
+  right: 70px;
+  margin: 0px 12px 0px 12px;
+  padding-left: 10px;
+  width: 380px !important;
+  height: 40px;
+  border: 2px solid #4186ff;
+  border-radius: 20px;
+}
+.input-file {
+  color: #7a7a7a;
+  position: relative;
+  left: 70px;
+  right: 70px;
+  margin: 0px 12px 0px 12px;
+  padding-left: 10px;
+  width: 380px !important;
+  height: 40px;
+}
+.input-group img {
+  position: relative;
+  left: 5px;
+  flex: 0.5;
+}
+.input-group input {
+  flex: 10;
+  font-family: Ubuntu;
+  padding-left: 15px;
+  left: 20px;
+  right: 70px;
+  width: 360px;
+  height: 40px;
+  border-color: transparent;
+  background-color: transparent;
+}
+.input-group input:focus {
+  outline: none;
+  background-color: transparent;
+}
+.input-group input,
+textarea {
+  background-color: transparent;
+}
+.signup-btn {
+  text-align: center;
+}
+.signup-btn button {
+  left: 70px;
+  right: 70px;
+  margin: 25px 18px 25px 6px;
+  padding-left: 10px;
+  width: 380px !important;
+  height: 40px;
+  border: 2px solid #1b93c7;
+  border-radius: 20px;
+  background-color: #1b93c7;
+  text-align: center;
+  color: #fff;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  border: 1px solid transparent;
+  -webkit-text-fill-color: #000;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.between-inputs {
+  position: relative;
+  height: 25px;
+  right: 100px;
+}
+
+.input-group .tooltiptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #cc3c31;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 80%;
+  /* left: 50%; */
+  right: 0%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: smaller;
+}
+
+.input-group .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  /* left: 50%; */
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #cc3c31 transparent transparent transparent;
+}
+
+.input-group:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+#field {
+  margin: 15px 12px 15px 12px;
+  top: 5px;
+}
+
+.isAvbTxt {
+  color: #7a7a7a;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="file"]::file-selector-button {
+  border: 2px solid #6c5ce7;
+  padding: 0.2em 0.4em;
+  border-radius: 0.2em;
+  background-color: #a29bfe;
+}
+.modal {
+  display: block;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.imgCart {
+  /* position: absolute; */
+  width: 200px;
+  height: 200px;
+}
+
+.success {
+  /* font-family: Ubuntu; */
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 29px;
+}
+
+.close {
+  position: relative;
+  vertical-align: right;
+}

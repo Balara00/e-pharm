@@ -23,7 +23,7 @@
 
             <?php
             
-            echo '<a class="btn navbar-brand nav-link" href="landing.php?customerID=' .$_SESSION['customerID']. '"> <img src="assets/icons/search.svg" class="searchIcon iconNavBar"> </a>';
+            echo '<a class="btn navbar-brand nav-link" href="View/landing.php?customerID=' .$_SESSION['customerID']. '"> <img src="assets/icons/search.svg" class="searchIcon iconNavBar"> </a>';
 
             echo '<a class="navbar-brand nav-link" href="notification.php"> <img src="assets/icons/notification.svg" class="notificationIcon iconNavBar"> </a>';
 
