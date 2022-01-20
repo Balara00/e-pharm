@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include "../classes/dbConnection.class.php";
+include "../classes/dbconnection.classes.php";
 include "../Model/pharmacy.model.php";
 include "../classes/pharmacy.class.php";
 include "../classes/notificationMediator.php";

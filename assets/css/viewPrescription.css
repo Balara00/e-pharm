@@ -1,335 +1,364 @@
 body{
-    background-image: url(../images/img2.svg);
-    background-position: top top;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    max-width: 100%;
-    height: auto;
-    /* overflow: scroll; */
-    /* position: fixed; */
-    overflow: hidden;
+  background-image: url(../images/img2.svg);
+  background-position: top top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  max-width: 100%;
+  height: auto;
+  /* overflow: scroll; */
+  /* position: fixed; */
+  overflow: hidden;
 }
 
 .MiddleBg{
-    background-image: url(../images/middleBG.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    top: 5%;
-    bottom: 5%;
-    left: 5%;
-    right: 5%;
-    margin: auto;
-    width: 86%;
-    height: 96%;
-    padding: 10px;
+  background-image: url(../images/middleBG.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+  margin: auto;
+  width: 86%;
+  height: 96%;
+  padding: 10px;
 }
 
 
 #epharm{
-    left: 3%;
-    top: 2%;
-    font-family: Ubuntu;
-    position:absolute;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 72px;
-    line-height: 83px;
-    /* identical to box height */
-    text-align: center;
+  left: 3%;
+  top: 2%;
+  font-family: Ubuntu;
+  position:absolute;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 83px;
+  /* identical to box height */
+  text-align: center;
 
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-    /* E-Pharm */
-    background: -webkit-linear-gradient(#0041BF 0%, #000F2D 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  /* E-Pharm */
+  background: -webkit-linear-gradient(#0041BF 0%, #000F2D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .NavBar{
-  width: 96%;
-  height: 15%;
-  top: 50px;
-  bottom: 25px;
+width: 96%;
+height: 15%;
+top: 50px;
+bottom: 25px;
 }
 
 /* 
 .vertical-menu {
-  width: 25%;
-  float: left;
-  position: fixed;
+width: 25%;
+float: left;
+position: fixed;
 }
 
 .vertical-menu a {
-  background-color: #eee;
-  color: black;
-  display: block;
-  padding: 12px;
-  text-decoration: none;
+background-color: #eee;
+color: black;
+display: block;
+padding: 12px;
+text-decoration: none;
 }
 
 .vertical-menu a:hover {
-  background-color: #ccc;
+background-color: #ccc;
 }
 
 .vertical-menu a.active {
-  background-color: #1b93c7;
-  color: white;
+background-color: #1b93c7;
+color: white;
 } */
 
 
 .vertical-menu {
-  position: absolute;
-  
-  width: 13%;
-  top: 35.5%;
-  left: 9.3%;
-  height: 36.4%;
-  
-  border-top:1px solid black ;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
-  border-top-right-radius: 30px;
-   border-bottom-right-radius: 30px; 
-  
-  
-}
-  
-  .vertical-menu a {
-    
-    background-color: #eee;
-    color: black;
-     display: block; 
-     block-size: 60px;
-    padding: 12px;
-    text-decoration: none;
-    
-    font-weight: bold;
-    
-    
-    
-    
-  }
-  .vertical-menu .a4{
-      block-size: 80px;
-      padding-top: 20px;
-  }
+position: absolute;
+background-color: #eee;
+width: 14%;
+top: 29.25%;
+left: 9.3%;
+height: 38%;
 
-  
-  
-  .vertical-menu a:hover{
-    background-color: #ccc;
-  }
-  .vertical-menu a.active {
-    background-color: #65c6f0;
-    color: white;
-    border-bottom-right-radius: 30px; 
+/* border-top:1px solid black ;
+border-bottom: 1px solid black;
+border-right: 1px solid black; */
+border-top-right-radius: 30px;
+ border-bottom-right-radius: 30px; 
 
-  }
-  
-  
-  .stripe{
-    top: 36%;
-    position: fixed;
-    width: 3%;
-    height:36.44%;
-    border-radius: 30px 0px 0px 30px;
-    background: #1B93C7;
-    left: 12%;
-    border-bottom: 1px solid black;
-    border-top:1px solid black ;
-    border-left: 1px solid black;
-     
-  }
-  
-  
-  .a1{
-    border-top-right-radius: 30px;
-  }
 
-  .a5{
-    border-bottom-right-radius: 30px; 
-  }
-
-  .orderType{
-    position: absolute;
-    
-    width: 6%;
-    top: 53%;
-    left: 16.3%;
-    height: 11%;
-    z-index: 10;
-    
-   
-  }
-
-.delivery{
-  position: absolute;
-  height: 50%;
-  border-bottom: 1px solid black;
-}
-.pickup{
-  position: absolute;
-  top:50%;
-  height: 50%;
 }
 
-.delivery-pickup{
-  position: absolute;
-  background-color: #eee;
+.vertical-menu a {
+  background-color: white;
+  
   color: black;
-  display: flex;
-  background: grey;
-  
-  color: white;
+  display: block; 
+  block-size: 60px;
+  padding: 12px;
   text-decoration: none;
   
   font-weight: bold;
-  width: 100%;
-  padding-left: 20px;
-  padding-top: 5px;
+  
+  
+  
   
 }
-
-
-.DetailsCard{
-  width: 60%;
-  height: 80%;
-  padding: 10px;
-  position: relative;
-  left: 30%;
-  border: 5px solid #1b93c7;
-  background: #FFFFFF;
-  border-radius: 45px 0px;
-  text-align: left;
+.vertical-menu .a4{
+    block-size: 80px;
+    padding-top: 20px;
 }
 
 
-.detail{
-  height: 25%;
-  width: 100%;
-  padding: 20px;
+
+.vertical-menu a:hover{
+  background-color: #ccc;
 }
 
-.edit{
-  text-align: center;
+.orderType a:hover{
+  background-color: #ccc;
 }
 
-.edit button{
-  left: 70%;
-  margin: 25px 18px 25px 6px;
-  padding-left: 10px;
-  width: 30% !important;
-  height: 40px;
-  border: 2px solid #1b93c7;
-  border-radius: 45px;
-  background-color: #1b93c7;
-  text-align: center;
-  color: #fff;
+.vertical-menu a.active {
+  background-color: #65c6f0;
+  color: white;
+  border-bottom-right-radius: 30px; 
+
+}
+
+
+.stripe{
+  top: 30%;
+  position: fixed;
+  width: 3%;
+  height:36.2%;
+  border-radius: 30px 0px 0px 30px;
+  background: #1B93C7;
+  left: 12%;
+  /* border-bottom: 1px solid black;
+  border-top:1px solid black ;
+  border-left: 1px solid black; */
+   
 }
 
 
 .a1{
   border-top-right-radius: 30px;
 }
+
+.a5{
+  border-bottom-right-radius: 30px; 
+}
+
+.orderType{
+  position: absolute;
+  background-color: white;
+  color: black;
+  width: 7%;
+  top: 46.5%;
+  left: 16.3%;
+  height: 11.6%;
+  z-index: 10;
+  
+ 
+}
+
+.delivery{
+position: absolute;
+height: 50%;
+border: 1px solid black;
+}
+.pickup{
+position: absolute;
+top:50%;
+height: 50%;
+border: 1px solid black;
+}
+
+.delivery-pickup{
+position: absolute;
+background-color: #eee;
+color: black;
+display: flex;
+/* background: grey; */
+background: white;
+color: black;
+text-decoration: none;
+
+font-weight: bold;
+width: 100%;
+padding-left: 20px;
+padding-top: 5px;
+
+}
+
+
+.DetailsCard{
+width: 60%;
+height: 80%;
+padding: 10px;
+position: relative;
+left: 30%;
+border: 5px solid #1b93c7;
+background: #FFFFFF;
+border-radius: 45px 0px;
+text-align: left;
+}
+
+
+.detail{
+height: 25%;
+width: 100%;
+padding: 20px;
+}
+
+.edit{
+text-align: center;
+}
+
+.edit button{
+left: 70%;
+margin: 25px 18px 25px 6px;
+padding-left: 10px;
+width: 30% !important;
+height: 40px;
+border: 2px solid #1b93c7;
+border-radius: 45px;
+background-color: #1b93c7;
+text-align: center;
+color: #fff;
+}
+
+
+.a1{
+border-top-right-radius: 30px;
+}
 .a3{
-  border-bottom-right-radius: 30px;
+border-bottom-right-radius: 30px;
 }
 
 /* .PrescriptionContainer{
-  overflow-y: auto;
+overflow-y: auto;
 } */
 
 .presImg {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  width: 150px;
+border: 1px solid #ddd;
+border-radius: 4px;
+padding: 5px;
+width: 150px;
 }
 
 .LoginForm{
-  width: 558px;
-  height: 530px;
-  position: absolute;
-  left: 30%;
-  top: 15%;
-  /* background-color: #fff; */
-  border-radius: 10px;
-  overflow-y: auto;
+width: 558px;
+height: 530px;
+position: absolute;
+left: 30%;
+top: 15%;
+/* background-color: #fff; */
+border-radius: 10px;
+overflow-y: auto;
 }
 
 .PresDetailCard{
-  /* width: 50%; */
-  padding: 10px;
-  border-radius: 10px;
-  background-color: #fff;
-  position: relative;
-  /* left: 30%; */
-  top: 40px;
-  
+/* width: 50%; */
+padding: 10px;
+border-radius: 10px;
+background-color: #fff;
+position: relative;
+/* left: 30%; */
+top: 40px;
+
 }
 
 .FilterArea{
-  width: 20%;
-  height: 80%;
-  position: absolute;
-  left: 80%;
-  top: 15%;
-  
-  border-radius: 10px;
-  overflow-y: auto;
+width: 20%;
+height: 80%;
+position: absolute;
+left: 80%;
+top: 15%;
+
+border-radius: 10px;
+overflow-y: auto;
 }
 
-a:link {
-  text-decoration: none;
+.FilterArea a:link {
+font-family: Ubuntu;
+font-weight: bold;
+font-size: 20px;
+color: black;
+text-decoration: none;
 }
 a:visited {
-  text-decoration: none;
+text-decoration: none;
 }
 
 a:hover {
-  text-decoration: none;
+text-decoration: none;
 }
 
 a:active {
-  text-decoration: none;
+text-decoration: none;
 }
 
 
-.modal {
-    display: block; 
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: hidden; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-  
-  /* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%; /* Could be more or less, depending on screen size */
-}
-  
-  /* The Close Button */
+
+/* The Close Button */
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
-  
+
 .close:hover,
 .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
+
+.PrescDetail{
+background-color: #fff;
+padding: 10px;
+margin: 20px;
+border-radius: 20px;
+/* height: 275px; */
+}
+
+.ImgDiv{
+width: 200px;
+text-align: center;
+/* padding: 25px; */
+
+float: left;
+}
+
+.noteDiv{
+/* position: relative; */
+/* left: 200px; */
+top: 20px;
+height: 150px;
+left: 200px;
+/* text-align: center; */
+}
+
+.cardBottom{
+top: 200px;
+left: 20px;
+text-align: center;
+}
+
+.PrescDetail:hover{
+  
+box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px; 
+transform: translate3d(0px, -2px, 0px);
+
+}
+

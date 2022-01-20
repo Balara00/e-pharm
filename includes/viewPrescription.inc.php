@@ -37,3 +37,6 @@ elseif(isset($_POST['send'])){
     $viewPrescContr->executeStatus($notification);
     header("Location: ../prescriptions.php");
 }
+elseif(isset($_POST['cancel'])){
+    header("Location: ../prescriptions.php");
+}
