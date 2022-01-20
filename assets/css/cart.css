@@ -41,6 +41,8 @@
   position: relative;
   display: block;
   min-height: 330px;
+
+  left: 2%;
 }
 .row-med {
   position: relative;
@@ -75,7 +77,11 @@ td:last-child {
 .td1 {
   margin: 5px;
 }
+.td2 {
+  min-width: 280px;
+}
 .td4 {
+  min-width: 180px;
   text-align: right;
   padding: 10px;
 }
@@ -90,12 +96,12 @@ td:last-child {
 .saveChangesBtn {
   left: 70px;
   right: 70px;
-  margin: 25px 18px 25px 6px;
+  /* margin: 25px 18px 25px 6px; */
   padding-left: 10px;
-  width: 200px !important;
+  width: 140px !important;
   height: 40px;
   border: 2px solid #1b93c7;
-  border-radius: 20px;
+  border-radius: 5px;
   background-color: #1b93c7;
   text-align: center;
   color: #fff;
@@ -115,6 +121,7 @@ td:last-child {
 
 /* Modal Content/Box */
 .modal-content {
+  /* text-align: center; */
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
@@ -221,4 +228,38 @@ td:last-child {
   width: 100%;
   height: 30px;
   background-color: #ff7b00;
+}
+.modlBtn {
+  font-size: 18px;
+  margin-top: 10px;
+  width: 70px !important;
+  height: 40px;
+  border: 2px solid #1b93c7;
+  border-radius: 4px;
+  background-color: #1b93c7;
+  text-align: center;
+  color: #fff;
+}
+.oneline {
+  height: 60px;
+  margin: auto;
+  /* vertical-align: middle; */
+  width: 154px;
+  /* font-size: 13px; */
+  display: flex;
+  flex-direction: row;
+}
+#dltIcon:hover {
+  border: 1px solid #ff0000;
+  border-radius: 24px;
+  background-color: #ff0000;
+}
+#dltIcon {
+  border: 1px solid transparent;
+  border-radius: 24px;
+}
+.num-input {
+  border-color: #ccf0f5;
+  /* border-radius: 10px; */
+  background-color: #d5eef1;
 }

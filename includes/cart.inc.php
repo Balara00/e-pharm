@@ -32,7 +32,7 @@ if (isset($_GET['status'])) {
     }
 }
 if (isset($_POST['buyNow'])) {
-    $_SESSION['pharmID'] = $_POST['pharmID'];
+    $_SESSION['pharmacyID'] = $_POST['pharmID'];
     $_SESSION['medQuantityArr'] = unserialize($_POST['medQuantityArr']);
     $_SESSION['order'] = 'buyNow';
     if (isset($_SESSION['successDlt'])) {
@@ -42,7 +42,7 @@ if (isset($_POST['buyNow'])) {
     exit();
 }
 if (isset($_POST['reserveNow'])) {
-    $_SESSION['pharmID'] = $_POST['pharmID'];
+    $_SESSION['pharmacyID'] = $_POST['pharmID'];
     $_SESSION['medQuantityArr'] = unserialize($_POST['medQuantityArr']);
     $_SESSION['order'] = 'reserveNow';
     if (isset($_SESSION['successDlt'])) {

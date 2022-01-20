@@ -71,7 +71,7 @@ class cartModel
     {
         date_default_timezone_set('Asia/Colombo');
         $date = date('m/d/Y', time());
-        $stmt = $this->pdo->prepare("SELECT orderID FROM order_ WHERE pharmacyID=:pID AND orderType=:ot AND dateTime LIKE '%{$date}%'");
+        $stmt = $this->pdo->prepare("SELECT orderID FROM order_ WHERE pharmacyID=:pID AND orderType=:ot AND dateTime LIKE '%{$date}%' AND approveStatus != 'declined' AND status != 'cancelled'");
         $stmt->execute(array(':pID' => $pharmID, ':ot' => 'delivery'));
         $len = count($stmt->fetchAll(PDO::FETCH_ASSOC));
         return $len;

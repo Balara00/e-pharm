@@ -62,10 +62,10 @@ class CartContr extends Controller
     public function canBuyNow($dvStatus, $dvOrders, $pharmID)
     {
         if ($dvStatus == 0) {
-            return "Delivery service is not available now.";
+            return "Delivery service is not available.";
         } else {
-            if ($dvOrders == $this->cartModel->getCurrentOrders($pharmID)) {
-                return "Maximum number of delivery orders per day is exceeded for today.";
+            if ($dvOrders <= $this->cartModel->getCurrentOrders($pharmID)) {
+                return "Maximum number of delivery orders exceeded for now.";
             }
         }
         return "enable";
