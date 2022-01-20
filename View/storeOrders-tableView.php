@@ -124,11 +124,7 @@
                         function orderDeclined(i) {
                             document.getElementById("myreceived"+i).style.display = "none";
                             document.getElementById("myBtn"+i).style.display = "none";
-                            // var declineBtn = document.getElementById("myreceived"+i);
-                            // declineBtn.disabled = true;
-                            // declineBtn.innerText = "Order Declined";
-                            // declineBtn.style.background = "white";
-                            // declineBtn.style.color = "red";
+                            
                             }
                     </script>
                 <?php
@@ -141,25 +137,15 @@
                             function disableBtns(i){
                                 document.getElementById("myBtn"+i).style.display = "none";
                                 document.getElementById("myreceived"+i).style.display = "none";
-                                // document.getElementById("myBtn"+i).setAttribute("style","display:none;")
+                                
                             }
 
-                            // function disableDeclineBtn(i) {
-                            //     // document.getElementById("myreceived"+i).disabled = true;
-                                
-                            // }
-                                
-                            
                         </script>
                             
                         <script>
                             function disableDelivery(i){
                                 document.getElementById("myBtn"+i).disabled = true;
-                                // document.getElementById("myBtn"+i).setAttribute("style","display:none;")
-
-                                document.getElementById("myreceived"+i).disabled = true;
-                                // document.getElementById("myreceived"+i).setAttribute("style","display:none;")
-
+                                document.getElementById("myreceived"+i).disabled = true;                         
                                 document.getElementById("deliverBtn"+i).disabled = true;
                             }
 
@@ -167,7 +153,8 @@
                         <?php 
                         echo '<script> disableBtns('.$i.'); </script>';
                     }
-                if( $orderstats['deliveryStatus'] == 'delivered' || $orderstats['status']=='cancelled' || $orderstats['approveStatus'] == 'declined'){
+                if( $orderstats['deliveryStatus'] == 'delivered' || $orderstats['status']=='cancelled' || $orderstats['approveStatus'] == 'declined' ||
+                        $orderstats['approveStatus']=="pending"){
                     ?>
                     <script>
                         function disabledeliverBtns(i){
@@ -176,31 +163,18 @@
 
                         }
                             
-                        
                     </script>
                     <?php 
                     echo '<script> disabledeliverBtns('.$i.'); </script>';
                 }
                 ?>    
-                
                 </div>
             </div>
             <?php $i++; 
             }
             
             ?>  
-            
               
         </div>
     </div>
 </div>
-
-
-    
-        
-
-
-
-
-    
-
