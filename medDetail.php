@@ -76,7 +76,9 @@ session_start();
                     <?php echo ($pharmName. " - ". $pharmArea); ?>
                 </div>
 
-                <?php echo '<a class="btn btn-secondary viewPharmacyBtn" href="View/viewPharmacy.php">View Pharmacy</a>';?>
+                <?php echo '<a class="btn btn-secondary viewPharmacyBtn" href="View/viewPharmacy.php">View Pharmacy</a>';
+                $_SESSION['pharmacyID'] = $pharmID;
+                ?>
             
                 <div class="medicine">
                     <?php echo $medName;?>
@@ -98,18 +100,31 @@ session_start();
                             echo '<p class="quantityText">Quantity</p>';
                             echo '<input type="number" id="quantityTxtBox" name="quantityTxt" min="1" max="'. $medQuantity .'" required onKeyDown="return false" value="1">';
                             
+                            echo '<p class="deliveryStatus">Delivery service is not available.</p>';
                             echo '<input type="submit" name="buyNow" class="btn btn-primary buyNowBtn medDetBtn" value="Buy Now" disabled/>';
                             echo '<input type="submit" name="reserveNow" class="btn btn-primary reserveNowBtn medDetBtn" value="Reserve Now"/>';
                             echo '<input type="submit" name="addToCart"  class="btn btn-danger addToCartBtn medDetBtn" value="Add to Cart" data-bs-toggle="modal" data-bs-target="#myModal"/>';
                           
                         }else{
-                            echo '<p class="quantityText">Quantity</p>';
-                            echo '<input type="number" id="quantityTxtBox" name="quantityTxt" min="1" max="'. $medQuantity .'" required onKeyDown="return false" value="1">';
+                            if ($med_det_view->isExceed()) {
+                                echo '<p class="quantityText">Quantity</p>';
+                                echo '<input type="number" id="quantityTxtBox" name="quantityTxt" min="1" max="'. $medQuantity .'" required onKeyDown="return false" value="1">';
+                                
+                                echo '<p class="deliveryStatusL">Maximum number of delivery orders exceeded for now.</p>';
+                                echo '<input type="submit" name="buyNow" class="btn btn-primary buyNowBtn medDetBtn" value="Buy Now" disabled/>';
+                                echo '<input type="submit" name="reserveNow" class="btn btn-primary reserveNowBtn medDetBtn" value="Reserve Now"/>';
+                                echo '<input type="submit" name="addToCart"  class="btn btn-danger addToCartBtn medDetBtn" value="Add to Cart" data-bs-toggle="modal" data-bs-target="#myModal"/>';
+                              
+                            } else {
+                                echo '<p class="quantityText">Quantity</p>';
+                                echo '<input type="number" id="quantityTxtBox" name="quantityTxt" min="1" max="'. $medQuantity .'" required onKeyDown="return false" value="1">';
+                               
+                                echo '<input type="submit" name="buyNow" class="btn btn-primary buyNowBtn medDetBtn" value="Buy Now"/>';
+                                echo '<input type="submit" name="reserveNow" class="btn btn-primary reserveNowBtn medDetBtn" value="Reserve Now"/>';
+                                echo '<input type="submit" name="addToCart"  class="btn btn-danger addToCartBtn medDetBtn" value="Add to Cart" data-bs-toggle="modal" data-bs-target="#myModal"/>';
+                              
+                            }
                             
-                            echo '<input type="submit" name="buyNow" class="btn btn-primary buyNowBtn medDetBtn" value="Buy Now"/>';
-                            echo '<input type="submit" name="reserveNow" class="btn btn-primary reserveNowBtn medDetBtn" value="Reserve Now"/>';
-                            echo '<input type="submit" name="addToCart"  class="btn btn-danger addToCartBtn medDetBtn" value="Add to Cart" data-bs-toggle="modal" data-bs-target="#myModal"/>';
-                          
                     ?>
                 </div>
             </form>

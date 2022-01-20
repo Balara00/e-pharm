@@ -28,7 +28,7 @@ class MedDetailContr extends Controller {
     }
 
     public function setPharmObj($pharmacy_det) {
-        $this->pharmacy = new Pharmacy($this->pharmacyID, $pharmacy_det['name'], $pharmacy_det['area'], $pharmacy_det['deliveryServiceStatus']);
+        $this->pharmacy = new Pharmacy($this->pharmacyID, $pharmacy_det['name'], $pharmacy_det['area'], $pharmacy_det['deliveryServiceStatus'], $pharmacy_det['dvOrdersPerDay']);
     }
 
     public function setPharmMedObj($pharmacy_medicine_det) {
@@ -65,6 +65,16 @@ class MedDetailContr extends Controller {
 
     public function getPharmDelAvailability() {
         return ($this->pharmacy)->deliveryServiceStatus();
+    }
+
+    public function isExceed($pharmacyID) {
+        $dvOrders = $this->pharmacy->getdvOrders();
+        $currentOrders = $this->med_det_model->getCurrentOrders($pharmacyID);
+
+        if ($currentOrders >= $dvOrders) {
+            return true;
+        }
+        return false;
     }
 }
 

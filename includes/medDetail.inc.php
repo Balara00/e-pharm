@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include "../classes/dbConnection.class.php";
+include "../classes/dbconnection.classes.php";
 
 include "../Model/medDetail.model.php";
 

@@ -16,7 +16,7 @@ class MedDetailModel {
     }
 
     public function getPharmDetails() {
-        $stmt = $this->pdo -> prepare("SELECT `name`, `area`, `deliveryServiceStatus` FROM pharmacy WHERE pharmacyID = :pharmacyID");
+        $stmt = $this->pdo -> prepare("SELECT * FROM pharmacy WHERE pharmacyID = :pharmacyID");
         $stmt -> execute(array(
             ":pharmacyID" => $this->pharmacyID,
         ));
@@ -113,6 +113,16 @@ class MedDetailModel {
     //     echo 'success : '. $p . "\n";
     //     return $this->success;
     // }
+
+    public function getCurrentOrders($pharmID)
+    {
+        date_default_timezone_set('Asia/Colombo');
+        $date = date('m/d/Y', time());
+        $stmt = $this->pdo->prepare("SELECT orderID FROM order_ WHERE pharmacyID=:pID AND orderType=:ot AND dateTime LIKE '%{$date}%' AND approveStatus != 'declined' AND status != 'cancelled'");
+        $stmt->execute(array(':pID' => $pharmID, ':ot' => 'delivery'));
+        $len = count($stmt->fetchAll(PDO::FETCH_ASSOC));
+        return $len;
+    }
 }
 
 ?>

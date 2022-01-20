@@ -121,6 +121,8 @@
 .quantity {
     position: absolute;
     top: 235px;
+
+    height: 1000px !important;
 }
 
 
@@ -312,4 +314,28 @@
 .close {
     position: relative;
     vertical-align: right;
+}
+
+.deliveryStatusL {
+    position: relative;
+    top: 17.5%;
+    left: -118%;
+    color: #ff7b00;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.deliveryStatus {
+    position: relative;
+    top: 17.5%;
+    left: -205%;
+    color: #ff7b00;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
 }

@@ -55,6 +55,10 @@ class MedDetailView {
     public function getPharmDelAvailability() {
         return $this->med_det_contr->getPharmDelAvailability();
     }
+
+    public function isExceed() {
+        return $this->med_det_contr->isExceed($this->pharmacyID);
+    }
 }
 
 ?>
