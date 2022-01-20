@@ -25,7 +25,7 @@ foreach($result as $row) {
                 echo '<h class="availability available ">Available</h>';
             }
             ?></td>
-        <td class="td3"><a href="medDetail.php?customerID=<?php echo $this->getcustomerID() ."&medID=".$pharmacyMed->getmedID()."&pharmacyID=". $pharmacyMed->getpharmacyID(); ?>"><button id="view" name="view">View</button></a></td>
+        <td class="td3"><a href="../medDetail.php?customerID=<?php echo $this->getcustomerID() ."&medID=".$pharmacyMed->getmedID()."&pharmacyID=". $pharmacyMed->getpharmacyID(); ?>"><button id="view" name="view">View</button></a></td>
     <?php
 }
 echo '</table>';
