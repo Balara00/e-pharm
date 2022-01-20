@@ -69,8 +69,8 @@ class ViewPrescription{
         $date = date('m/d/Y h:i:s a', time());
         $pharmacyID = $_SESSION['pharmacyID'];
         $customerID = $this->getPrescription($prescID)['customerID'];
-        $stmt = $this->pdo->prepare('INSERT INTO `customer_notification`(`customerID`, `pharmacyID`, `notification`, `dateTime`, `isRead`)
-         VALUES (:cid, :pid, :note, :dateAndTime, "0")');
+        $stmt = $this->pdo->prepare('INSERT INTO `customer_notification`(`customerID`, `pharmacyID`, `notification`, `dateTime`, `isRead`, `isNew`)
+         VALUES (:cid, :pid, :note, :dateAndTime, "0", "1")');
         $stmt->execute(array(
         ':cid'=>$customerID,
         ':pid' => $pharmacyID, 
