@@ -122,4 +122,8 @@ class OrderNowContr extends Controller {
     public function sendNotification($pharmacyID, $notifyTime){
         $this->orderNow_model->sendNotification($pharmacyID, $notifyTime);
     }
+
+    public function deleteCartItems($customerID, $pharmacyID) {
+        $this->orderNow_model->deleteCartItems($customerID, $pharmacyID);
+    }
 }

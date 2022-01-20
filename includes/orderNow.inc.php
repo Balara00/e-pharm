@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include "../classes/dbConnection.class.php";
+include "../classes/dbconnection.classes.php";
 
 include "../Model/orderNow.model.php";
 
@@ -56,6 +56,12 @@ if (isset($_POST['confirmOrder'])) {
     $orderNow_contr->setOrderCustomer();
 
     $orderNow_contr->setOrderMedicine();
+
+    if (isset($_SESSION['fromCart'])) {
+        $orderNow_contr->deleteCartItems($customerID, $pharmacyID);
+        unset($_SESSION['fromCart']);
+    }
+    
 
     $orderNow_contr->sendNotification($pharmacyID, $date);
 

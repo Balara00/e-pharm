@@ -128,7 +128,7 @@ session_start();
         <label for="upload" class="form-label uploadPresc_txt">Prescription</label>
         <input type="file" class="form-form-control-file uploadPresc_photo" name="prescPhoto" id="mypres" aria-describedby="acceptedFilesBlock" accept=".png, .jpg, .jpeg"/>
         <input type="hidden" name="tot" value=<?php echo $total ?>>
-        <input type="submit" value="Confirm" class="btn btn-primary confirmOrderBtn" name="confirmOrder" data-bs-toggle="modal" data-bs-target="#myModal"/>
+        <input type="submit" id="confirmBtn" value="Confirm" class="btn btn-primary confirmOrderBtn" name="confirmOrder" data-bs-toggle="modal" data-bs-target="#myModal"/>
     
     </div>
 
@@ -163,17 +163,22 @@ session_start();
     modal.style.display = "none";
     }   
 
-    var btn = document.getElementById("confirmBtn");
-
-    btn.onclick = function() {
-        btn.style.display = "none";
-    }
     
-
 </script>
-
+<script>
+        function success(){
+            var btn = document.getElementById("confirmBtn");
+            btn.style.display = "none";
+        }
+        </script>
 <?php
-// if (isset($_SESSION['success'])) {
+    if (isset($_SESSION['successDlt'])) {
+        ?>
+        
+        <?php
+        unset($_SESSION['successDlt']);
+    }
+echo '<script> success(); </script>';
 unset($_SESSION['success']);
 }
 ?>
