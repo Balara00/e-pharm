@@ -32,7 +32,7 @@ $navbarContr = new NavBarContr();
             <a href="../cart.php?customerID=<?=$_SESSION['customerID']?>"><img class="imgs bask" src="../assets/icons/cart.svg"></a>
 
             <a href="../account.php?customerID=<?=$_SESSION['customerID']?>"><img class="imgs bask" src="../assets/icons/user.svg"></a>
-            <a href=""><button name="addPrescription" id="addPres" class="butn pres" type="submit">Add Prescription</button></a>
+            <a href="../uploadPrescription.php?customerID=<?=$_SESSION['customerID']?>"><button name="addPrescription" id="addPres" class="butn pres" type="submit">Add Prescription</button></a>
 
 
             <a href="../logout.php?customerID=<?=$_SESSION['customerID']?>"><button name="logOut" id="logout" class="butn log" type="submit">Logout</button></a>
