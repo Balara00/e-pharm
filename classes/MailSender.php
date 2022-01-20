@@ -29,10 +29,12 @@ class MailSender
             $mail->SMTPAuth = true;
 
             //SMTP username
-            $mail->Username = 'ktst428@gmail.com';
+            $mail->Username = 'epharm.quaranteam@gmail.com';
+            // $mail->Username = 'ktst428@gmail.com';
 
             //SMTP password
-            $mail->Password = '*AbbbbbA*';
+            $mail->Password = 'quaranteam@1';
+            // $mail->Password = '*AbbbbbA*';
 
             //Enable TLS encryption;
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
@@ -41,7 +43,7 @@ class MailSender
             $mail->Port = 587;
 
             //Recipients
-            $mail->setFrom('ktst428@gmail.com', 'E-Pharm');
+            $mail->setFrom('epharm.quaranteam@gmail.com', 'E-Pharm');
             //echo $username;
             //echo $name;
             //Add a recipient

@@ -11,8 +11,9 @@ class ForgetPW{
     public function sendUserMail($email){
 
         $dbc = DBConnection::getInstance();
-
-        $customerStmt = $dbc->getPDO()->prepare("SELECT * FROM customer where username = :xyz");
+        $pdo = $dbc->getPDO();
+        
+        $customerStmt = $pdo->prepare("SELECT * FROM customer where username = :xyz");
         $customerStmt->execute(array(":xyz" => $email));
         $customerRow = $customerStmt->fetch(PDO::FETCH_ASSOC);
         if ( $customerRow === false ) {
@@ -36,10 +37,12 @@ class ForgetPW{
             $mail->SMTPAuth = true;
         
             //SMTP username
-            $mail->Username = 'daruvindid99@gmail.com';
+            $mail->Username = 'epharm.quaranteam@gmail.com';
+            // $mail->Username = 'daruvindid99@gmail.com';
         
             //SMTP password
-            $mail->Password = 'ru4620dil7068';
+            $mail->Password = 'quaranteam@1';
+            // $mail->Password = 'ru4620dil7068';
         
             //Enable TLS encryption;
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
@@ -48,7 +51,7 @@ class ForgetPW{
             $mail->Port = 587;
         
             //Recipients
-            $mail->setFrom('daruvindid99@gmail.com', 'E-Pharm');
+            $mail->setFrom('epharm.quaranteam@gmail.com', 'E-Pharm');
         
             //Add a recipient
             $mail->addAddress($email);
@@ -64,7 +67,7 @@ class ForgetPW{
             $mail->send();
             // echo 'Message has been sent';
             $customerSql = "UPDATE customer SET verificationCode = $verification_code WHERE username = :email";
-            $customerStmt = $dbc->connect()->prepare($customerSql);
+            $customerStmt = $pdo->prepare($customerSql);
             $customerStmt->execute(array(':email' => $email));
         
             header("Location: ../verifyCode.php?email=".$email);

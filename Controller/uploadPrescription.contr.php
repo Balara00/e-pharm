@@ -64,7 +64,7 @@ class UploadPrescriptionContr extends Controller {
         $prescID = $this->uploadPresc_model->getPrescID($this->fileNameNew);
 
         foreach($pharmDet as $pharm) {
-            $this->notificationMed->addUser(new Pharmacy($pharm['pharmacyID'], $pharm['name'], $area, $pharm['deliveryServiceStatus']));
+            $this->notificationMed->addUser(new Pharmacy($pharm['pharmacyID'], $pharm['name'], $area, $pharm['deliveryServiceStatus'], $pharm['dvOrdersPerDay']));
             $this->uploadPresc_model->setPharmPresc($pharm['pharmacyID'], $prescID);
 
         }
