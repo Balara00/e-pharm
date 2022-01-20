@@ -76,7 +76,7 @@ session_start();
                     <?php echo ($pharmName. " - ". $pharmArea); ?>
                 </div>
 
-                <?php echo '<a class="btn btn-secondary viewPharmacyBtn" href="viewPharmacy.php?pharmacyID='. $pharmID .'">View Pharmacy</a>';?>
+                <?php echo '<a class="btn btn-secondary viewPharmacyBtn" href="View/viewPharmacy.php">View Pharmacy</a>';?>
             
                 <div class="medicine">
                     <?php echo $medName;?>
