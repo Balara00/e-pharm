@@ -13,7 +13,7 @@ class AddMedModel
         $stmt->execute([':temp' => $name]);
         $med = $stmt->fetch();
         if ($med) {
-            if ($med['name'] === $name) {
+            if (strtolower($med['name']) === strtolower($name)) {
                 return $med['medID'];
             }
         }

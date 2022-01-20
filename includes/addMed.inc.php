@@ -18,4 +18,8 @@ if (isset($_POST['add_med'])) {
     $addMedContr = new AddMedContr($name, $price, $amount, $file);
     $addMedContr->addMedicine();
 }
+if (isset($_POST['back'])) {
+    header("Location: ../View/viewStore.php?pharmacyID=" . $_SESSION['pharmacyID']);
+    exit();
+}
 header("Location: ../addMedicine.php");
