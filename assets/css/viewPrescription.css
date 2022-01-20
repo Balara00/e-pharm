@@ -53,6 +53,8 @@ body{
   top: 50px;
   bottom: 25px;
 }
+
+/* 
 .vertical-menu {
   width: 25%;
   float: left;
@@ -74,7 +76,123 @@ body{
 .vertical-menu a.active {
   background-color: #1b93c7;
   color: white;
+} */
+
+
+.vertical-menu {
+  position: absolute;
+  
+  width: 13%;
+  top: 35.5%;
+  left: 9.3%;
+  height: 36.4%;
+  
+  border-top:1px solid black ;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  border-top-right-radius: 30px;
+   border-bottom-right-radius: 30px; 
+  
+  
 }
+  
+  .vertical-menu a {
+    
+    background-color: #eee;
+    color: black;
+     display: block; 
+     block-size: 60px;
+    padding: 12px;
+    text-decoration: none;
+    
+    font-weight: bold;
+    
+    
+    
+    
+  }
+  .vertical-menu .a4{
+      block-size: 80px;
+      padding-top: 20px;
+  }
+
+  
+  
+  .vertical-menu a:hover{
+    background-color: #ccc;
+  }
+  .vertical-menu a.active {
+    background-color: #65c6f0;
+    color: white;
+    border-bottom-right-radius: 30px; 
+
+  }
+  
+  
+  .stripe{
+    top: 36%;
+    position: fixed;
+    width: 3%;
+    height:36.44%;
+    border-radius: 30px 0px 0px 30px;
+    background: #1B93C7;
+    left: 12%;
+    border-bottom: 1px solid black;
+    border-top:1px solid black ;
+    border-left: 1px solid black;
+     
+  }
+  
+  
+  .a1{
+    border-top-right-radius: 30px;
+  }
+
+  .a5{
+    border-bottom-right-radius: 30px; 
+  }
+
+  .orderType{
+    position: absolute;
+    
+    width: 6%;
+    top: 53%;
+    left: 16.3%;
+    height: 11%;
+    z-index: 10;
+    
+   
+  }
+
+.delivery{
+  position: absolute;
+  height: 50%;
+  border-bottom: 1px solid black;
+}
+.pickup{
+  position: absolute;
+  top:50%;
+  height: 50%;
+}
+
+.delivery-pickup{
+  position: absolute;
+  background-color: #eee;
+  color: black;
+  display: flex;
+  background: grey;
+  
+  color: white;
+  text-decoration: none;
+  
+  font-weight: bold;
+  width: 100%;
+  padding-left: 20px;
+  padding-top: 5px;
+  
+}
+
+
 .DetailsCard{
   width: 60%;
   height: 80%;

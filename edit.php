@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +16,7 @@
 
 <body class='EditBody'>
     <div class="MiddleBg">
-      <div class="NavBar">
+      <!-- <div class="NavBar">
         <h1 id="epharm">E-Pharm</h1>
         <ul class="nav justify-content-end NavBarContent">
          <li class="nav-item">
@@ -29,7 +29,8 @@
            <a class="nav-link" href="logout.php">Logout</a>
          </li>
        </ul>
-      </div>
+      </div> -->
+      <?php include "navBar.php"; ?>
       <div class="editForm">
         <div class="error">
           <?php

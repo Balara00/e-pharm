@@ -1,5 +1,11 @@
 <?php
-
+session_start();
+include_once "classes/dbconnection.classes.php";
+include_once "Model/account.models.php";
+include_once "classes/customer.classes.php";
+include_once "View/account.view.php";
+$accountView = new AccountView();
+$pharmacyDetails = $accountView->getPharmacyDetails();
  ?>
 
  <!DOCTYPE html>
@@ -29,21 +35,36 @@
           </li>
         </ul>
       </div>
-      <div class="vertical-menu">
-        <a href="store.php" class="a1">Pharmacy Store</a>
+      <!-- <div class="vertical-menu">
+        <a href="View/viewStore.php" class="a1">Pharmacy Store</a>
         <a href="pharmacyAccount.php" class="active" class="a2">Pharmacy Profile</a>
         <a href="orders.php" class="a3">Orders</a>
         <a href="prescriptions.php" class="a4">Prescriptions</a>
+      </div> -->
+
+      <div class="stripe-menu">
+          <div class="stripe"></div>
+          <div class="vertical-menu">
+              <a href="View/viewStore.php?pharmacyID=<?= $_SESSION['pharmacyID']?>" class="a1">Store</a>
+              <a class="active" href="pharmacyAccount.php?pharmacyID=<?= $_SESSION['pharmacyID']?>" id="a2"  class="a2">Pharmacy Profile</a>  
+              <a class="a4">Orders</a>
+              <a href="prescriptions.php?pharmacyID=<?= $_SESSION['pharmacyID']?>" class="a5">Prescriptions</a>
+          </div>
       </div>
+
+      <!-- <a href=""> <button class="plus"></button></a> -->
+      <!-- <a href="addNew.php"><img src="../assets/images/editBtn.png" class="editImg"></a> -->
+      
+
+      <div class="orderType">
+          <a class = "delivery delivery-pickup" href = "View/storeOrders.php?pharmacyID=<?= $_SESSION['pharmacyID'];?>&<?= "type=delivery"?>" >Delivery</a>
+          <a class = "pickup delivery-pickup" href="View/storeOrders.php?<?= "type=pickup"?>"">Pickup</a>
+      </div>
+
+
+      <div class="OuterDetailsCard">
       <div class="DetailsCard" >
-        <?php
-        include_once "classes/dbconnection.classes.php";
-        include_once "Model/account.models.php";
-        include_once "classes/customer.classes.php";
-        include_once "View/account.view.php";
-        $accountView = new AccountView();
-        $pharmacyDetails = $accountView->getPharmacyDetails();
-        ?>
+        
         <div class="detail">
           <?php echo "Name: ".$pharmacyDetails["name"]."\n"; ?>
         </div>
@@ -79,6 +100,8 @@
         </div>
 
       </div>
+      </div>
+      
      </div>
    </body>
  </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php session_start(); 
 include "../Controller/viewStore_contr.php";
-$pharmacyID=1005;
+$pharmacyID= $_SESSION['pharmacyID'];
 $viewPharmacyContr = new ViewStoreContr($pharmacyID); 
 include "../Model/navBar.model.php"; 
 include "../Controller/navBar.contr.php";
@@ -33,7 +33,7 @@ $navbarContr = new NavBarContr();?>
 
             }
             ?>
-            <a href="user.php?pharmacyID="<?=$_SESSION['pharmacyID']?>><img class="imgs bask" src="../assets/icons/user.svg"></a>
+            <a href="../pharmacyAccount.php?pharmacyID="<?=$_SESSION['pharmacyID']?>><img class="imgs bask" src="../assets/icons/user.svg"></a>
             
             <a href="../logout.php?pharmacyID="<?=$_SESSION['pharmacyID']?>><button name="logOut" id="logout" class="butn log" type="submit">Logout</button></a>
             
@@ -78,7 +78,7 @@ $navbarContr = new NavBarContr();?>
         <header class="pharmacy"><?=$pharmacy['name']?> - <?=$pharmacy['area']?></header>
 
         
-        <form id="Form" action="viewPharmacy.php" method="get">
+        <form id="Form" action="viewStore.php" method="get">
             <div class="wrap">
                 <div class="search">
 
@@ -91,20 +91,19 @@ $navbarContr = new NavBarContr();?>
         <div class="stripe-menu">
             <div class="stripe"></div>
             <div class="vertical-menu">
-                <a class="active" href="account.php?customerID="."$_SESSION['customerID']" class="a1">Store</a>
-                <a id="a2"  class="a2">Pharmacy Profile</a>
-                <a href="myPrescriptions.php" class="a3">My Prescriptions</a>
+                <a class="active" href="viewStore.php?pharmacyID=<?= $_SESSION['pharmacyID']?>" class="a1">Store</a>
+                <a href="../pharmacyAccount.php?pharmacyID=<?= $_SESSION['pharmacyID']?>" id="a2"  class="a2">Pharmacy Profile</a>  
                 <a class="a4">Orders</a>
-                <a href="" class="a5">Prescriptions</a>
+                <a href="../prescriptions.php?pharmacyID=<?= $_SESSION['pharmacyID']?>" class="a5">Prescriptions</a>
             </div>
         </div>
 
-       <a href=""> <button class="plus"></button></a>
+       <a href="../addMedicine.php"> <button class="plus"></button></a>
         <!-- <a href="addNew.php"><img src="../assets/images/editBtn.png" class="editImg"></a> -->
         
 
         <div class="orderType">
-            <a class = "delivery delivery-pickup" href = "storeOrders.php?pharmacyID=<?= $pharmacyID;?>&<?= "type=delivery"?>" >Delivery</a>
+            <a class = "delivery delivery-pickup" href = "storeOrders.php?pharmacyID=<?= $_SESSION['pharmacyID'];?>&<?= "type=delivery"?>" >Delivery</a>
             <a class = "pickup delivery-pickup" href="storeOrders.php?<?= "type=pickup"?>"">Pickup</a>
         </div>
     
@@ -113,7 +112,8 @@ $navbarContr = new NavBarContr();?>
         
             if(isset($_GET['find']) ){
                 
-                $viewPharmacyContr->displaySearch(preg_replace('/[0-9\@\.\;\" "]+/', '', $_GET['search']));
+                // $viewPharmacyContr->displaySearch(preg_replace('/[0-9\@\.\;\" "]+/', '', $_GET['search']));
+                $viewPharmacyContr->displaySearch(preg_replace('/[@\.\;]+/', '', $_GET['search']));
             }else{
                 
                 $viewPharmacyContr->displayAllItems();

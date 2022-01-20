@@ -1,6 +1,5 @@
 <?php
 
-
 class Account{
 
   private $pdo;

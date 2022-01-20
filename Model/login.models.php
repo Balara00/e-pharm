@@ -79,7 +79,7 @@ class Login{
     $noOfnew = count($stmt->fetchAll(PDO::FETCH_ASSOC));
 
     $stmt = $this->pdo->prepare("DELETE FROM pharmacy_notification WHERE pharmacyID=:pharmID AND `notification`=$notification AND isNew=1");
-    $stmt->execute(array(array(':pharmID' => $pharmID)));
+    $stmt->execute(array(':pharmID' => $pharmID));
 
     $notification = $noOfnew . ' prescriptions have uploaded. Check for availability of medicines.';
     date_default_timezone_set('Asia/Colombo');

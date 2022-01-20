@@ -18,7 +18,7 @@ class ViewStoreContr extends Controller{
     public function displaySearch($searchq){
             $this->searchq = $searchq;
             if(! $this->searchMed($this->searchq)){
-                        
+                $_SESSION['searchq'] = $this->searchq;       
                 $this->view("result-errorView");
                 die();
             }
@@ -65,7 +65,7 @@ class ViewStoreContr extends Controller{
             return false;
         }else{
         $this->medID = $result['medID'];
-        $this->medPrice = $result['price'];
+        // $this->medPrice = $result['price'];
         return true;
         }
     }

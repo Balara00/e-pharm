@@ -4,16 +4,16 @@ class LoginContr extends Controller{
 
   private $uid;
   private $pwd;
-  private $rememberMe;
+  // private $rememberMe;
   private $loginModel;
   private $customer;
   private $pharmacy;
 
-  public function __construct($uid, $pwd, $rememberMe){
+  public function __construct($uid, $pwd){
     $this->uid = $uid;
     $check = md5($pwd);
     $this->pwd = $check;
-    $this->rememberMe = $rememberMe;
+    // $this->rememberMe = $rememberMe;
     $this->loginModel = new Login();
   }
 
@@ -31,18 +31,18 @@ class LoginContr extends Controller{
     $pharmacy = $this->loginModel->getPharmacy($this->uid, $this->pwd);
 
     if ( $customer !== false OR $pharmacy !== false) {
-      if(isset($_POST['RememberMe'])){
-        setcookie ("username",$this->uid,time()+ (10 * 365 * 24 * 60 * 60));
-        setcookie ("password",$this->pwd,time()+ (10 * 365 * 24 * 60 * 60));
-      }
-      else{
-        if(isset($_COOKIE["username"])){
-          setcookie ("username","");
-        }
-        if(isset($_COOKIE["password"])){
-          setcookie ("password","");
-        }
-      }
+      // if(isset($_POST['RememberMe'])){
+      //   setcookie ("username",$this->uid,time()+ (10 * 365 * 24 * 60 * 60));
+      //   setcookie ("password",$this->pwd,time()+ (10 * 365 * 24 * 60 * 60));
+      // }
+      // else{
+      //   if(isset($_COOKIE["username"])){
+      //     setcookie ("username","");
+      //   }
+      //   if(isset($_COOKIE["password"])){
+      //     setcookie ("password","");
+      //   }
+      // }
       $this->checkPickUpOrderStatus();
       // echo "remember me ".$_POST['RememberMe']."<br>";
       // echo "this uid ".$this->uid;
@@ -58,7 +58,7 @@ class LoginContr extends Controller{
         $_SESSION["pharmacyID"] = $pharmacy['pharmacyID'];
         $_SESSION["username"] = $this->uid;
         $this->setCombineNotification($pharmacy['pharmacyID']);
-        header("Location: ../pharmacyLanding.php?pharmacyID=".$pharmacy['pharmacyID']);
+        header("Location: ../View/viewStore.php?pharmacyID=".$pharmacy['pharmacyID']);
       }
       
     }

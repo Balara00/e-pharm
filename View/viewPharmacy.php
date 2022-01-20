@@ -1,6 +1,6 @@
 <?php session_start();
 
-$pharmacyID=$_GET['pharmacyID'];
+$pharmacyID=$_SESSION['pharmacyID'];
 include "../Controller/viewPharmacy_contr.php";
 $viewPharmacyContr = new ViewPharmacyContr($pharmacyID);
 
