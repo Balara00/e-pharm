@@ -43,6 +43,11 @@ $cart = $cartView->showCart($_SESSION['customerID']);
             </div>
             <?php
             $idCount = 0;
+
+            if (count($cart) == 0) {
+                echo '<p class="empty">Oops! Your Cart is Empty.<p>';
+                echo '<img class="noItem_img" src="assets/images/noItem_shopping-cart.svg">';
+            }
             foreach ($cart as $pharmID => $medList) {
                 $buyNw = true;
                 $idCount++;

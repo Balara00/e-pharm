@@ -6,7 +6,7 @@ class SignupPharm
     {
         $pdo = DBConnection::getInstance()->getPDO();
         $stmt = $pdo->prepare("SELECT * FROM customer WHERE username=:temp");
-        $stmt->execute([':temp' => $username]);
+        $stmt->execute([':temp' => strtolower($username)]);
         $user = $stmt->fetch();
         if ($user) { // if user exists
             if (strtolower($user['username']) === strtolower($username)) {
@@ -14,7 +14,7 @@ class SignupPharm
             }
         }
         $stmt = $pdo->prepare("SELECT * FROM pharmacy WHERE username=:temp");
-        $stmt->execute([':temp' => $username]);
+        $stmt->execute([':temp' => strtolower($username)]);
         $user = $stmt->fetch();
         if ($user) { // if user exists
             if (strtolower($user['username']) === strtolower($username)) {
@@ -44,7 +44,7 @@ class SignupPharm
         print_r($pdo);
         $stmt = $pdo->prepare($query);
         $stmt->execute(array(
-            ':username' => $username,
+            ':username' => strtolower($username),
             ':password' => $password,
             ':name' => $name,
             ':contactNo' => $contactNo,
@@ -59,7 +59,7 @@ class SignupPharm
         ));
 
         $stmt = $pdo->prepare("SELECT * FROM pharmacy WHERE username=:temp");
-        $stmt->execute([':temp' => $username]);
+        $stmt->execute([':temp' => strtolower($username)]);
         $user = $stmt->fetch();
         if ($user) { // if user exists
             $pharmID = $user['pharmacyID'];

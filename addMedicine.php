@@ -145,6 +145,20 @@ if (!isset($_SESSION['errors'])) {
             </div>
         </div>
 
+        <?php 
+        if (isset($_SESSION['medname'])) {
+            unset($_SESSION['medname']);
+        }
+        if (isset($_SESSION['price'])) {
+            unset($_SESSION['price']);
+        } 
+        if (isset($_SESSION['amount'])) {
+            unset($_SESSION['amount']);
+        } 
+        if (isset($_SESSION['errors'])) {
+            unset($_SESSION['errors']);
+        }
+        ?>
         <?php
         if (isset($_SESSION['successAdd'])) {
         ?>
@@ -184,6 +198,7 @@ if (!isset($_SESSION['errors'])) {
         <?php
 
             // if (isset($_SESSION['success'])) {
+
             unset($_SESSION['successAdd']);
         }
         ?>

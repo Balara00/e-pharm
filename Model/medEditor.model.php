@@ -98,13 +98,12 @@ class MedEditorModel {
     public function sendNotification($customerID, $notification, $notifyTime) {
         
         // $sql = "INSERT INTO `pharmacy_notification`(`prescID`, `pharmacyID`, `notification`, `dateTime`, `notificationState`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]')";
-        $sql = "INSERT INTO `customer_notification`(`customerID`, `pharmacyID`, `notification`, `dateTime`) VALUES (:customerID, :pharmacyID, :notification, :dateTime)";
+        $sql = "INSERT INTO `customer_notification`(`customerID`, `pharmacyID`, `notification`, `dateTime`, `isRead`, `isNew`) VALUES (:customerID, :pharmacyID, :notification, :dateTime, 0, 1)";
         
         $stmt = $this->pdo -> prepare($sql);
 
         echo $sql;
         echo '<br>';
-
 
         $stmt -> execute(array(
             ':customerID' => $customerID,

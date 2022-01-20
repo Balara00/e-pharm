@@ -104,7 +104,7 @@ class OrderNowModel {
 
     public function sendNotification($pharmacyID, $notifyTime) {
         
-        $sql = "INSERT INTO `pharmacy_notification`(`pharmacyID`, `notification`, `dateTime`) VALUES (:pharmacyID, :notification, :dateTime)";
+        $sql = "INSERT INTO `pharmacy_notification`(`pharmacyID`, `notification`, `dateTime`, `isNew`) VALUES (:pharmacyID, :notification, :dateTime, 1)";
         
         $stmt = $this->pdo -> prepare($sql);
 ////////////////////////////////////////////////////
@@ -116,6 +116,14 @@ class OrderNowModel {
         $_SESSION['success'] = "Notifications sent";
         // header("Location: ../uploadPrescription.php?customerID=".$_GET['customerID']);
 
+        return;
+    }
+
+    public function deleteCartItems($customerID, $pharmacyID) {
+        $stmt = $this->pdo->prepare("DELETE FROM cart WHERE customerID=:temp AND pharmacyID=:temp1");
+        $stmt->execute(array(':temp' => $customerID, ':temp1' => $pharmacyID));
+
+        $_SESSION['successDlt'] = "Cart item deleted"; 
         return;
     }
 }

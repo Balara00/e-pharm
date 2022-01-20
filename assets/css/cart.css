@@ -263,3 +263,20 @@ td:last-child {
   /* border-radius: 10px; */
   background-color: #d5eef1;
 }
+
+.empty {
+  text-align: center;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 29px;
+  color: #ff0000;
+}
+
+.noItem_img {
+  position: absolute;
+  background-color: #EBEBEB;
+  left: 38.5%;
+  
+}
