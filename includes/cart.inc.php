@@ -35,6 +35,7 @@ if (isset($_POST['buyNow'])) {
     $_SESSION['pharmacyID'] = $_POST['pharmID'];
     $_SESSION['medQuantityArr'] = unserialize($_POST['medQuantityArr']);
     $_SESSION['order'] = 'buyNow';
+    $_SESSION['fromCart'] = true;
     if (isset($_SESSION['successDlt'])) {
         unset($_SESSION['successDlt']);
     }
@@ -45,6 +46,7 @@ if (isset($_POST['reserveNow'])) {
     $_SESSION['pharmacyID'] = $_POST['pharmID'];
     $_SESSION['medQuantityArr'] = unserialize($_POST['medQuantityArr']);
     $_SESSION['order'] = 'reserveNow';
+    $_SESSION['fromCart'] = true;
     if (isset($_SESSION['successDlt'])) {
         unset($_SESSION['successDlt']);
     }
