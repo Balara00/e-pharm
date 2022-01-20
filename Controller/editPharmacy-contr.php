@@ -15,6 +15,6 @@ class EditPharmacyContr extends EditPharmacy{
     }
 
     public function editPharmacyDetails(){
-        $this->setPharmacyDetails($_SESSION["customerID"], $this->name, $this->address, $this->area, $this->contactNumber);
+        $this->setPharmacyDetails($_SESSION["pharmacyID"], $this->name, $this->address, $this->area, $this->contactNumber);
     }
 }

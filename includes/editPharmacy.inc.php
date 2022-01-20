@@ -3,7 +3,7 @@ session_start();
 if(isset($_POST["saveChanges"])){
   $name = $_POST["name"];
   $address = $_POST["address"];
-  $address = $_POST["area"];
+  $area = $_POST["area"];
   $contactNumber = $_POST["contactNumber"];
   $uid = $_SESSION['pharmacyID'];
 
@@ -13,5 +13,8 @@ if(isset($_POST["saveChanges"])){
 
   $edit = new EditPharmacyContr($name, $address, $area, $contactNumber);
   $edit->editPharmacyDetails();
+}
+elseif(isset($_POST['cancel'])){
+  header("location: ../pharmacyAccount.php");
 }
  ?>
